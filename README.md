@@ -1,7 +1,7 @@
 # Ask-Anything
 
 Currently, Ask-Anything is a simple yet interesting tool for chatting with video.
-Our tean is trying to build smart and robust ChatBot for video understanding now.
+Our team is trying to build smart and robust ChatBot for video understanding now.
 
 
 # :fire: Updates
