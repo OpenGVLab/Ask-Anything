@@ -21,7 +21,6 @@ Click the image or [here](http://106.14.223.212:7860/) to chat with chatGPT arou
 
 
 # :speech_balloon: Example
-# https://user-images.githubusercontent.com/24236723/233038130-af1f8894-dd33-4d3c-9e8d-b861b9bb8671.mp4
 https://user-images.githubusercontent.com/24236723/233144636-cdccf8a8-e845-42d7-ba6f-5200be7b6c30.mp4
 
 
