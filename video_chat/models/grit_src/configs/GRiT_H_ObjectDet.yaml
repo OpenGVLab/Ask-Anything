@@ -1,0 +1,21 @@
+_BASE_: "Base.yaml"
+MODEL:
+  TRAIN_TASK: ["ObjectDet"]
+  TEST_TASK: "ObjectDet"
+  MASK_ON: True
+  ROI_HEADS:
+    SOFT_NMS_ENABLED: True
+  BEAM_SIZE: 3
+  WEIGHTS: "detectron2://ImageNetPretrained/MAE/mae_pretrain_vit_huge_p14to16.pth"
+  BACKBONE:
+    NAME: build_vit_fpn_backbone_huge
+  VIT_LAYERS: 32
+SOLVER:
+  MAX_ITER: 135000
+  VIT_LAYER_DECAY_RATE: 0.9
+DATASETS:
+  TRAIN: ("GRiT_coco2017_train",)
+  TEST: ("coco_2017_val",)
+DATALOADER:
+  DATASET_BS: 1
+OUTPUT_DIR: "./output/GRiT_H_ObjectDet"
