@@ -3,10 +3,18 @@
 Currently, Ask-Anything is a simple yet interesting tool for chatting with video.
 Our team is trying to build smart and robust ChatBot for video understanding now.
 
+<a src="https://img.shields.io/badge/%F0%9F%A4%97-Open%20in%20Spaces-blue" href="http://106.14.223.212:7860/">
+    <img src="https://img.shields.io/badge/%F0%9F%A4%97-Open%20in%20Spaces-blue" alt="Open in Spaces">
+</a>
+
+# :movie_camera: Online Demo
+
+Click the image or [here](http://106.14.223.212:7860/) to chat with chatGPT around your videos
+[![demo](video_chat/assert/dancing2.png)](http://106.14.223.212:7860/)
 
 # :fire: Updates
-- 2023/04/19: Code release
-  - [VideoChat](./video_chat/): Explicit communication with ChatGPT. Sensitive with time.
+- 2023/04/19: Code release & Online Demo
+  - [VideoChat](./video_chat/): Explicit communication with ChatGPT. Sensitive with time. [demo is avaliable!](http://106.14.223.212:7860/)
   - [MiniGPT-4 for video](./video_miniGPT4/): Implicit communication with Vicuna. Not sensitive with time. (Simple extension of [MiniGPT-4](https://github.com/Vision-CAIR/MiniGPT-4), which will be improved in the future.)
 
 
@@ -17,7 +25,7 @@ https://user-images.githubusercontent.com/24236723/233038130-af1f8894-dd33-4d3c-
 
 # :hourglass_flowing_sand: Ongoing
 
-Our team is mainly focus on general video understanding and long-term video reasoning:
+Our team mainly focus on general video understanding and long-term video reasoning:
 
 - [ ] Strong video foundation model.
 - [ ] Large-scale and high-quality video-text dataset.
