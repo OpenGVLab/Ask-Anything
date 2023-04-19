@@ -11,9 +11,9 @@ VideoChat is a multifunctional video question answering tool that combines the f
 
 # :speech_balloon: Example
 
-![images](video_chat/assert/hugging.png)
-![images](video_chat/assert/dancing.png)
-![images](video_chat/assert/dancing2.png)
+![images](assert/hugging.png)
+![images](assert/dancing.png)
+![images](assert/dancing2.png)
 
 # :running: Usage
 
