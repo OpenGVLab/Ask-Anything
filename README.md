@@ -12,6 +12,8 @@ Our team is trying to build smart and robust ChatBot for video understanding now
 Click the image or [here](http://106.14.223.212:7860/) to chat with chatGPT around your videos
 [![demo](video_chat/assert/dancing2.png)](http://106.14.223.212:7860/)
 
+
+
 # :fire: Updates
 - 2023/04/19: Code release & Online Demo
   - [VideoChat](./video_chat/): Explicit communication with ChatGPT. Sensitive with time. [demo is avaliable!](http://106.14.223.212:7860/)
@@ -19,7 +21,8 @@ Click the image or [here](http://106.14.223.212:7860/) to chat with chatGPT arou
 
 
 # :speech_balloon: Example
-https://user-images.githubusercontent.com/24236723/233038130-af1f8894-dd33-4d3c-9e8d-b861b9bb8671.mp4
+# https://user-images.githubusercontent.com/24236723/233038130-af1f8894-dd33-4d3c-9e8d-b861b9bb8671.mp4
+https://user-images.githubusercontent.com/24236723/233144636-cdccf8a8-e845-42d7-ba6f-5200be7b6c30.mp4
 
 
 
