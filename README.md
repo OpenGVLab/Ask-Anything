@@ -9,14 +9,14 @@ Our team is trying to build smart and robust ChatBot for video understanding now
 
 # :movie_camera: Online Demo
 
-Click the image or [here](http://106.14.223.212:7860/) to chat with chatGPT around your videos
-[![demo](video_chat/assert/dancing2.png)](http://106.14.223.212:7860/)
+Click the image or [here](https://yinanhe.github.io/projects/chatvideo.html) to chat with chatGPT around your videos
+[![demo](video_chat/assert/dancing2.png)](https://yinanhe.github.io/projects/chatvideo.html)
 
 
 
 # :fire: Updates
 - 2023/04/19: Code release & Online Demo
-  - [VideoChat](./video_chat/): Explicit communication with ChatGPT. Sensitive with time. [demo is avaliable!](http://106.14.223.212:7860/)
+  - [VideoChat](./video_chat/): Explicit communication with ChatGPT. Sensitive with time. [demo is avaliable!](https://yinanhe.github.io/projects/chatvideo.html)
   - [MiniGPT-4 for video](./video_miniGPT4/): Implicit communication with Vicuna. Not sensitive with time. (Simple extension of [MiniGPT-4](https://github.com/Vision-CAIR/MiniGPT-4), which will be improved in the future.)
 
 
