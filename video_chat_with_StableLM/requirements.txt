@@ -1,0 +1,36 @@
+openai
+einops
+gradio
+imageio
+decord
+simplet5
+imageio-ffmpeg
+Pillow
+scipy
+numpy
+openmim
+mmcv
+spacy
+simplet5
+decord
+omegaconf
+lvis
+scipy
+boto3
+jsonschema
+entrypoints
+nltk
+webdataset
+accelerate
+bitsandbytes
+langchain==0.0.101
+timm==0.4.12
+transformers==4.28.1
+fairscale==0.4.4
+pycocoevalcap
+torch==1.13.1
+torchvision==0.14.1
+wget==3.2
+setuptools==59.5.0
+en_core_web_sm @ https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.0.0/en_core_web_sm-3.0.0.tar.gz
+detectron2 @ git+https://github.com/facebookresearch/detectron2.git
