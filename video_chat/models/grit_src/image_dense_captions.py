@@ -31,11 +31,9 @@ def dense_pred_to_caption(predictions):
     return new_caption
 
 def dense_pred_to_caption_only_name(predictions):
-    boxes = predictions["instances"].pred_boxes if predictions["instances"].has("pred_boxes") else None
     object_description = predictions["instances"].pred_object_descriptions.data
     new_caption = ",".join(object_description)
-    # for i in range(len(object_description)):
-    #     new_caption += (object_description[i] + ": " + str([int(a) for a in boxes[i].tensor.cpu().detach().numpy()[0]])) + "; "
+    del predictions
     return new_caption
 
 def setup_cfg(args):
@@ -79,8 +77,3 @@ def init_demo(device):
     cfg = setup_cfg(args2)
     demo = VisualizationDemo(cfg)
     return demo
-
-if __name__=="__main__":
-    import os
-    os.environ['CUDA_VISIBLE_DEVICES']='7'
-    print(image_caption_api("images/dancing_example_4.mp4_20230417_135359.263.jpg",'cuda'))

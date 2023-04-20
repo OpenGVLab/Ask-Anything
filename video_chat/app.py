@@ -57,17 +57,19 @@ def inference(video_path, input_tag, progress=gr.Progress()):
     action_tensor = trans_action(tmpa)
     TC, H, W = action_tensor.shape
     action_tensor = action_tensor.reshape(1, TC//3, 3, H, W).permute(0, 2, 1, 3, 4).to(device)
-    prediction = intern_action(action_tensor)
-    prediction = F.softmax(prediction, dim=1).flatten()
-    prediction = kinetics_classnames[str(int(prediction.argmax()))]
+    with torch.no_grad():
+        prediction = intern_action(action_tensor)
+        prediction = F.softmax(prediction, dim=1).flatten()
+        prediction = kinetics_classnames[str(int(prediction.argmax()))]
 
     # dense caption
     dense_caption = []
     dense_index = np.arange(0, len(data)-1, 5)
     original_images = data[dense_index,:,:,::-1]
-    for original_image in original_images:
-        dense_caption.append(dense_caption_model.run_caption_tensor(original_image))
-    dense_caption = ' '.join([f"Second {i+1} : {j}.\n" for i,j in zip(dense_index,dense_caption)])
+    with torch.no_grad():
+        for original_image in original_images:
+            dense_caption.append(dense_caption_model.run_caption_tensor(original_image))
+        dense_caption = ' '.join([f"Second {i+1} : {j}.\n" for i,j in zip(dense_index,dense_caption)])
     
     # Video Caption
     image = torch.cat(tmp).to(device)   
@@ -91,8 +93,14 @@ def inference(video_path, input_tag, progress=gr.Progress()):
         progress(0.8, desc="Understanding Videos")
         synth_caption = model_T5.predict('. '.join(caption))
     print(frame_caption, dense_caption, synth_caption)
+
+    del data, action_tensor, original_image, image,tmp,tmpa
+    torch.cuda.empty_cache()
+    torch.cuda.ipc_collect()
     return ' | '.join(tag_1),' | '.join(tag_2), frame_caption, dense_caption, synth_caption[0], gr.update(interactive = True), prediction
 
+def set_example_video(example: list) -> dict:
+    return gr.Video.update(value=example[0])
 
 
 with gr.Blocks(css="#chatbot {overflow:auto; height:500px;}") as demo:
@@ -100,6 +108,7 @@ with gr.Blocks(css="#chatbot {overflow:auto; height:500px;}") as demo:
     gr.Markdown(
         """
         Ask-Anything is a multifunctional video question answering tool that combines the functions of Action Recognition, Visual Captioning and ChatGPT. Our solution generates dense, descriptive captions for any object and action in a video, offering a range of language styles to suit different user preferences. It supports users to have conversations in different lengths, emotions, authenticity of language.<br>  
+        <p><a href='https://github.com/OpenGVLab/Ask-Anything'><img src='https://img.shields.io/badge/Github-Code-blue'></a></p><p>
         """
     )
     
@@ -120,7 +129,6 @@ with gr.Blocks(css="#chatbot {overflow:auto; height:500px;}") as demo:
                 placeholder="Paste your OpenAI API key here to start (sk-...)",
                 show_label=False,
                 lines=1,
-                type="password",
             )
             chatbot = gr.Chatbot(elem_id="chatbot", label="gpt")
             state = gr.State([])
@@ -137,14 +145,17 @@ with gr.Blocks(css="#chatbot {overflow:auto; height:500px;}") as demo:
                 with gr.Column(scale=0.10, min_width=0):
                     clear = gr.Button("🔄Clear️")    
 
-    
+    with gr.Row():
+            example_videos = gr.Dataset(components=[input_video_path], samples=[['images/yoga.mp4'], ['images/making_cake.mp4'], ['images/playing_guitar.mp4']])
+
+    example_videos.click(fn=set_example_video, inputs=example_videos, outputs=example_videos.components)
     caption.click(bot.memory.clear)
     caption.click(lambda: gr.update(interactive = False), None, chat_video)
     caption.click(lambda: [], None, chatbot)
     caption.click(lambda: [], None, state)    
     caption.click(inference,[input_video_path,input_tag],[model_tag_output, user_tag_output, image_caption_output, dense_caption_output,video_caption_output, chat_video, loadinglabel])
 
-    chat_video.click(bot.init_agent, [openai_api_key_textbox, image_caption_output, dense_caption_output, video_caption_output, model_tag_output, state], [input_raws,chatbot, state])
+    chat_video.click(bot.init_agent, [openai_api_key_textbox, image_caption_output, dense_caption_output, video_caption_output, model_tag_output, state], [input_raws,chatbot, state, openai_api_key_textbox])
 
     txt.submit(bot.run_text, [txt, state], [chatbot, state])
     txt.submit(lambda: "", None, txt)

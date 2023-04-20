@@ -65,7 +65,8 @@ class ConversationBot:
                 {agent_scratchpad}
                 """
         self.memory.clear()
-        
+        if not openai_api_key.startswith('sk-'):
+            return gr.update(visible = False),state, state, "Please paste your key here !"
         self.llm = OpenAI(temperature=0, openai_api_key=openai_api_key)
        
         self.agent = initialize_agent(
@@ -77,7 +78,7 @@ class ConversationBot:
             return_intermediate_steps=True,
             agent_kwargs={'prefix': PREFIX, 'format_instructions': FORMAT_INSTRUCTIONS, 'suffix': SUFFIX}, )
         state = state + [("I upload a video, Please watch it first! ","I have watch this video, Let's chat!")]
-        return gr.update(visible = True),state, state
+        return gr.update(visible = True),state, state, openai_api_key
 
 if __name__=="__main__":
     import pdb
