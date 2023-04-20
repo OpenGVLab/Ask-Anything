@@ -147,4 +147,4 @@ with gr.Blocks() as demo:
 
 
 # demo.launch(share=True, enable_queue=True)
-demo.launch(server_name="10.140.54.61", server_port=10034)
+demo.launch(server_name="0.0.0.0", server_port=10034)
