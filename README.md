@@ -16,7 +16,7 @@ Click the image or [here](https://yinanhe.github.io/projects/chatvideo.html) to 
 
 # :fire: Updates
 
-- 2023/04/20: Chat with [StableLM](https://github.com/Stability-AI/StableLM)
+- 2023/04/20: Chat with StableLM
   - [video_chat_with_StableLM](./video_chat_with_StableLM/): Explicit communication with StableLM. 
 
 - 2023/04/19: Code release & Online Demo
