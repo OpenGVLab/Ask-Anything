@@ -19,11 +19,13 @@ VideoChat is a multifunctional video question answering tool that combines the f
 
 ```shell
 # Clone the repository:
-git clone ask-anything.git
+git clone https://github.com/OpenGVLab/Ask-Anything.git
 cd ask-anything/video_chat
 
 # Install dependencies:
 pip install -r requirements.txt
+pip install https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.0.0/en_core_web_sm-3.0.0.tar.gz
+python -m pip install 'git+https://github.com/facebookresearch/detectron2.git'
 
 # Download the checkpoints
 wget https://huggingface.co/spaces/xinyu1205/Tag2Text/resolve/main/tag2text_swin_14m.pth ./pretrained_models/tag2text_swin_14m.pth
