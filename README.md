@@ -34,7 +34,7 @@ https://user-images.githubusercontent.com/24236723/233144636-cdccf8a8-e845-42d7-
 Our team constantly studies general video understanding and long-term video reasoning:
 
 - [ ] Strong video foundation model.
-- [ ] Video-text dataset and video reasoning benchmark.
+- [ ] Video-text dataset, video reasoning and dense-captioning benchmark.
 - [ ] Video-language system with LLMs.
 - [ ] Artificial Intelligence Generated Content (AIGC) for Video.
 - [ ] ...
