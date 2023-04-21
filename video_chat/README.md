@@ -18,6 +18,10 @@ VideoChat is a multifunctional video question answering tool that combines the f
 # :running: Usage
 
 ```shell
+# We recommend using conda to manage the environment and use python3.8.16
+conda create -n chatvideo python=3.8.16
+conda activate chatvideo
+
 # Clone the repository:
 git clone https://github.com/OpenGVLab/Ask-Anything.git
 cd ask-anything/video_chat

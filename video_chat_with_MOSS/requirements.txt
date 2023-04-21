@@ -32,5 +32,3 @@ torch==1.13.1
 torchvision==0.14.1
 wget==3.2
 setuptools==59.5.0
-en_core_web_sm @ https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.0.0/en_core_web_sm-3.0.0.tar.gz
-detectron2 @ git+https://github.com/facebookresearch/detectron2.git
