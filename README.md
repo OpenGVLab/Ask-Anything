@@ -1,6 +1,6 @@
 # Ask-Anything
 
-[中文](README_cn.md) [Demo](https://yinanhe.github.io/projects/chatvideo.html)
+[中文](README_cn.md) | [Demo](https://yinanhe.github.io/projects/chatvideo.html)
 
 Currently, Ask-Anything is a simple yet interesting tool for chatting with video.
 Our team is trying to build smart and robust ChatBot for video understanding now.
