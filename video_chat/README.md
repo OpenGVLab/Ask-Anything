@@ -27,8 +27,8 @@ pip install -r requirements.txt
 
 # Download the checkpoints
 wget https://huggingface.co/spaces/xinyu1205/Tag2Text/resolve/main/tag2text_swin_14m.pth ./pretrained_models/tag2text_swin_14m.pth
-wget wget https://datarelease.blob.core.windows.net/grit/models/grit_b_densecap_objectdet.pth ./pretrained_models/grit_b_densecap_objectdet.pth
-git clone https://huggingface.co/mrm8488/flan-t5-large-finetuned-openai-summarize_from_feedback pretrained_models/flan-t5-large-finetuned-openai-summarize_from_feedback
+wget https://datarelease.blob.core.windows.net/grit/models/grit_b_densecap_objectdet.pth ./pretrained_models/grit_b_densecap_objectdet.pth
+git clone https://huggingface.co/mrm8488/flan-t5-large-finetuned-openai-summarize_from_feedback ./pretrained_models/flan-t5-large-finetuned-openai-summarize_from_feedback
 
 # Configure the necessary ChatGPT APIs
 export OPENAI_API_KEY={Your_Private_Openai_Key}
