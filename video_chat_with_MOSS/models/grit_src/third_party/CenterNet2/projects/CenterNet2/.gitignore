@@ -1,0 +1,10 @@
+# compilation and distribution
+__pycache__
+_ext
+*.pyc
+*.pyd
+*.so
+centernet.egg-info/
+build/
+dist/
+wheels/
