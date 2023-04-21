@@ -9,8 +9,11 @@ Our team is trying to build smart and robust ChatBot for video understanding now
 
 # :movie_camera: Online Demo
 
-Click the image or [here](https://yinanhe.github.io/projects/chatvideo.html) to chat with chatGPT around your videos
-[![demo](video_chat/assert/dancing2.png)](https://yinanhe.github.io/projects/chatvideo.html)
+
+<div align=center><h2><a href="https://yinanhe.github.io/projects/chatvideo.html">Click here  to chat with chatGPT around your videos!</a></h2></div>
+
+https://user-images.githubusercontent.com/24236723/233630363-b20304ab-763b-40e5-b526-e2a6b9e9cae2.mp4
+
 
 
 
@@ -28,7 +31,8 @@ Click the image or [here](https://yinanhe.github.io/projects/chatvideo.html) to 
 
 
 # :speech_balloon: Example
-https://user-images.githubusercontent.com/24236723/233144636-cdccf8a8-e845-42d7-ba6f-5200be7b6c30.mp4
+https://user-images.githubusercontent.com/24236723/233631602-6a69d83c-83ef-41ed-a494-8e0d0ca7c1c8.mp4
+
 
 
 
