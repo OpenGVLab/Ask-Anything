@@ -1,4 +1,4 @@
-# VideoChat with StableLM
+# VideoChat with MOSS
 
 VideoChat is a multifunctional video question answering tool that combines the functions of Action Recognition, Visual Captioning and StableLM. Our solution generates dense, descriptive captions for any object and action in a video, offering a range of language styles to suit different user preferences. It supports users to have conversations in different lengths, emotions, authenticity of language.
 
@@ -8,13 +8,11 @@ VideoChat is a multifunctional video question answering tool that combines the f
 
 # :fire: Updates
 
-- **2023/04/20**: Code Release
+- **2023/04/21**: Code Release
 
 # :speech_balloon: Example
 
-![images](assert/dancing_stableLM.png)
-![images](assert/dancing_stableLM1.png)
-![images](assert/yoga_stablelm.png)
+![images](assert/yoga_moss.png)
 
 # :running: Usage
 
@@ -38,4 +36,4 @@ python app.py
 
 # Acknowledgement
 
-The project is based on [InternVideo](https://github.com/OpenGVLab/InternVideo), [Tag2Text](https://github.com/xinyu1205/Tag2Text), [GRiT](https://github.com/JialianW/GRiT) and [StableLM](https://github.com/Stability-AI/StableLM). Thanks for the authors for their efforts.
+The project is based on [InternVideo](https://github.com/OpenGVLab/InternVideo), [Tag2Text](https://github.com/xinyu1205/Tag2Text), [GRiT](https://github.com/JialianW/GRiT) and [MOSS](https://github.com/OpenLMLab/MOSS). Thanks for the authors for their efforts.
