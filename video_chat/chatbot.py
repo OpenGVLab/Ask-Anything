@@ -67,8 +67,8 @@ class ConversationBot:
         self.memory.clear()
         if not openai_api_key.startswith('sk-'):
             return gr.update(visible = False),state, state, "Please paste your key here !"
-        self.llm = OpenAI(temperature=0, openai_api_key=openai_api_key)
-       
+        self.llm = OpenAI(temperature=0, openai_api_key=openai_api_key,model_name="gpt-4")
+        openai.api_base = 'https://closeai.deno.dev/v1'  
         self.agent = initialize_agent(
             self.tools,
             self.llm,

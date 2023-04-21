@@ -129,6 +129,7 @@ with gr.Blocks(css="#chatbot {overflow:auto; height:500px;}") as demo:
                 placeholder="Paste your OpenAI API key here to start (sk-...)",
                 show_label=False,
                 lines=1,
+                type="password",
             )
             chatbot = gr.Chatbot(elem_id="chatbot", label="gpt")
             state = gr.State([])
