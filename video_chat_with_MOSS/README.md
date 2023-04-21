@@ -19,7 +19,7 @@ VideoChat is a multifunctional video question answering tool that combines the f
 ```shell
 # Clone the repository:
 git clone https://github.com/OpenGVLab/Ask-Anything.git
-cd ask-anything/video_chat_with_StableLM
+cd ask-anything/video_chat_with_MOSS
 
 # Install dependencies:
 pip install -r requirements.txt
@@ -29,7 +29,7 @@ wget https://huggingface.co/spaces/xinyu1205/Tag2Text/resolve/main/tag2text_swin
 wget https://datarelease.blob.core.windows.net/grit/models/grit_b_densecap_objectdet.pth ./pretrained_models/grit_b_densecap_objectdet.pth
 
 
-# Run the VideoChat gradio demo.
+# Run the VideoChat_with_MOSS gradio demo.
 python app.py
 
 ```
