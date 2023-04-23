@@ -12,8 +12,8 @@
 
 <div align=center><h2><a href="https://yinanhe.github.io/projects/chatvideo.html">单击此处与ChatVideo一起边看视频边聊天!</a></h2></div>
 
-https://user-images.githubusercontent.com/24236723/233630363-b20304ab-763b-40e5-b526-e2a6b9e9cae2.mp4
 
+https://user-images.githubusercontent.com/43169235/233814633-200df34b-7402-49b8-8b8d-dc3b32386c95.mp4
 
 
 # :fire: 更新
