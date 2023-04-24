@@ -3,8 +3,12 @@
 目前，Ask-Anything是一个简单而有趣的与视频聊天工具。
 我们的团队正在努力建立一个智能且强大的用于视频理解的聊天机器人。
 
-<a src="https://img.shields.io/badge/%F0%9F%A4%97-Open%20in%20Spaces-blue" href="https://yinanhe.github.io/projects/chatvideo.html">
-    <img src="https://img.shields.io/badge/%F0%9F%A4%97-Open%20in%20Spaces-blue" alt="体验Demo">
+ <a src="https://img.shields.io/badge/%F0%9F%A4%97-Open%20in%20Spaces-blue" href="https://huggingface.co/spaces/ynhe/AskAnything">
+    <img src="https://img.shields.io/badge/%F0%9F%A4%97-Open%20in%20Spaces-blue" alt="Open in Huggingface">
+</a> | <a src="https://img.shields.io/discord/1099920215724277770?label=Discord&logo=discord" href="https://discord.gg/A2Ex6Pph6A">
+    <img src="https://img.shields.io/discord/1099920215724277770?label=Discord&logo=discord">
+</a> | <a src="https://img.shields.io/badge/GPU%20Demo-Open-green?logo=alibabacloud" href="https://yinanhe.github.io/projects/chatvideo.html">
+    <img src="https://img.shields.io/badge/GPU%20Demo-Open-green?logo=alibabacloud"> 
 </a>
 
 # :movie_camera: 在线演示Demo
