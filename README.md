@@ -1,13 +1,19 @@
 # Ask-Anything
 
-[中文](README_cn.md) | [Demo](https://yinanhe.github.io/projects/chatvideo.html)
+[中文](README_cn.md) | <a src="https://img.shields.io/badge/%F0%9F%A4%97-Open%20in%20Spaces-blue" href="https://huggingface.co/spaces/ynhe/AskAnything">
+    <img src="https://img.shields.io/badge/%F0%9F%A4%97-Open%20in%20Spaces-blue" alt="Open in Huggingface">
+</a> | <a src="https://img.shields.io/discord/1099920215724277770?label=Discord&logo=discord" href="https://discord.gg/A2Ex6Pph6A">
+    <img src="https://img.shields.io/discord/1099920215724277770?label=Discord&logo=discord">
+</a> | <a src="https://img.shields.io/badge/GPU%20Demo-Open-green?logo=alibabacloud" href="https://yinanhe.github.io/projects/chatvideo.html">
+    <img src="https://img.shields.io/badge/GPU%20Demo-Open-green?logo=alibabacloud"> 
+</a>
 
 Currently, Ask-Anything is a simple yet interesting tool for chatting with video.
 Our team is trying to build smart and robust ChatBot for video understanding now.
 
-<a src="https://img.shields.io/badge/%F0%9F%A4%97-Open%20in%20Spaces-blue" href="https://yinanhe.github.io/projects/chatvideo.html">
-    <img src="https://img.shields.io/badge/%F0%9F%A4%97-Open%20in%20Spaces-blue" alt="Open in Spaces">
-</a>
+
+
+
 
 # :movie_camera: Online Demo
 
