@@ -17,14 +17,14 @@ Our team is trying to build smart and robust ChatBot for video understanding now
 
 
 
-# :movie_camera: Online Demo
-
-
-<div align=center><h2><a href="https://yinanhe.github.io/projects/chatvideo.html">Click here  to chat with chatGPT around your videos!</a></h2></div>
+# :movie_camera: Online Demo [\[click here\]](https://yinanhe.github.io/projects/chatvideo.html)
 
 https://user-images.githubusercontent.com/24236723/233630363-b20304ab-763b-40e5-b526-e2a6b9e9cae2.mp4
 
-
+<video controls>
+  <source src="https://user-images.githubusercontent.com/24236723/233630363-b20304ab-763b-40e5-b526-e2a6b9e9cae2.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video>
 
 
 # :fire: Updates
@@ -46,7 +46,13 @@ https://user-images.githubusercontent.com/24236723/233630363-b20304ab-763b-40e5-
 # :speech_balloon: Example
 https://user-images.githubusercontent.com/24236723/233631602-6a69d83c-83ef-41ed-a494-8e0d0ca7c1c8.mp4
 
+# 🔨 Getting Started
 
+### Build video chat with:
+* [ChatGPT](https://github.com/OpenGVLab/Ask-Anything/tree/main/video_chat#running-usage)
+* [StableLM](https://github.com/OpenGVLab/Ask-Anything/tree/main/video_chat_with_StableLM#running-usage)
+* [MiniGPT-4](https://github.com/OpenGVLab/Ask-Anything/tree/main/video_miniGPT4#running-usage)
+* [MOSS](https://github.com/OpenGVLab/Ask-Anything/tree/main/video_chat_with_MOSS#running-usage)
 
 
 # :hourglass_flowing_sand: Ongoing
