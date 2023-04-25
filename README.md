@@ -1,6 +1,6 @@
 # Ask-Anything
 
-[中文](README_cn.md) | <a src="https://img.shields.io/badge/%F0%9F%A4%97-Open%20in%20Spaces-blue" href="https://huggingface.co/spaces/ynhe/AskAnything">
+<a src="https://img.shields.io/badge/%F0%9F%A4%97-Open%20in%20Spaces-blue" href="https://huggingface.co/spaces/ynhe/AskAnything">
     <img src="https://img.shields.io/badge/%F0%9F%A4%97-Open%20in%20Spaces-blue" alt="Open in Huggingface">
 </a> | <a src="https://img.shields.io/discord/1099920215724277770?label=Discord&logo=discord" href="https://discord.gg/A2Ex6Pph6A">
     <img src="https://img.shields.io/discord/1099920215724277770?label=Discord&logo=discord">
@@ -9,9 +9,14 @@
 </a> | <a src="https://img.shields.io/twitter/follow/opengvlab?style=social" href="https://twitter.com/opengvlab">
     <img src="https://img.shields.io/twitter/follow/opengvlab?style=social"> 
 </a>
+<br></br>
+
+[中文 README](README_cn.md)
 
 Currently, Ask-Anything is a simple yet interesting tool for chatting with video.
-Our team is trying to build smart and robust ChatBot for video understanding now.
+Our team is trying to build a smart and robust chatbot that can understand video.
+
+We are also working on a updated version, stay tuned! ⭐️
 
 
 
