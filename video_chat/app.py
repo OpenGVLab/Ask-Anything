@@ -7,7 +7,7 @@ from PIL import Image
 from models.tag2text import tag2text_caption
 from util import *
 import gradio as gr
-from chatbot import *
+from chatbot_lv import *
 from load_internvideo import *
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 from simplet5 import SimpleT5
@@ -44,60 +44,60 @@ dense_caption_model.initialize_model()
 print("[INFO] initialize dense caption model success!")
 
 def inference(video_path, input_tag, progress=gr.Progress()):
-    data = loadvideo_decord_origin(video_path)
-    progress(0.2, desc="Loading Videos")
+    video_data = loadvideo_decord_origin(video_path)
+    prediction_list, frame_caption_list, dense_caption_list, tag_1, tag_2 = [],[],[],set(),set()
+    # split video every 60s
+    for start in progress.tqdm(range(0,len(video_data),60)):
+        data = video_data[start:start+60,...]
+        # InternVideo
+        action_index = np.linspace(0, len(data)-1, 8).astype(int)
+        tmp,tmpa = [],[]
+        for i,img in enumerate(data):
+            tmp.append(transform(img).to(device).unsqueeze(0))
+            if i in action_index:
+                tmpa.append(topil(img))
+        action_tensor = trans_action(tmpa)
+        TC, H, W = action_tensor.shape
+        action_tensor = action_tensor.reshape(1, TC//3, 3, H, W).permute(0, 2, 1, 3, 4).to(device)
+        with torch.no_grad():
+            prediction = intern_action(action_tensor)
+            prediction = F.softmax(prediction, dim=1).flatten()
+            prediction = kinetics_classnames[str(int(prediction.argmax()))]
+            prediction_list.append(prediction)
 
-    # InternVideo
-    action_index = np.linspace(0, len(data)-1, 8).astype(int)
-    tmp,tmpa = [],[]
-    for i,img in enumerate(data):
-        tmp.append(transform(img).to(device).unsqueeze(0))
-        if i in action_index:
-            tmpa.append(topil(img))
-    action_tensor = trans_action(tmpa)
-    TC, H, W = action_tensor.shape
-    action_tensor = action_tensor.reshape(1, TC//3, 3, H, W).permute(0, 2, 1, 3, 4).to(device)
-    with torch.no_grad():
-        prediction = intern_action(action_tensor)
-        prediction = F.softmax(prediction, dim=1).flatten()
-        prediction = kinetics_classnames[str(int(prediction.argmax()))]
-
-    # dense caption
-    dense_caption = []
-    dense_index = np.arange(0, len(data)-1, 5)
-    original_images = data[dense_index,:,:,::-1]
-    with torch.no_grad():
-        for original_image in original_images:
-            dense_caption.append(dense_caption_model.run_caption_tensor(original_image))
-        dense_caption = ' '.join([f"Second {i+1} : {j}.\n" for i,j in zip(dense_index,dense_caption)])
-    
-    # Video Caption
-    image = torch.cat(tmp).to(device)   
-    
-    model.threshold = 0.68
-    if input_tag == '' or input_tag == 'none' or input_tag == 'None':
-        input_tag_list = None
-    else:
-        input_tag_list = []
-        input_tag_list.append(input_tag.replace(',',' | '))
-    with torch.no_grad():
-        caption, tag_predict = model.generate(image,tag_input = input_tag_list,max_length = 50, return_tag_predict = True)
-        progress(0.6, desc="Watching Videos")
-        frame_caption = ' '.join([f"Second {i+1}:{j}.\n" for i,j in enumerate(caption)])
-        if input_tag_list == None:
-            tag_1 = set(tag_predict)
-            tag_2 = ['none']
+        # dense caption
+        dense_caption = []
+        dense_index = np.arange(0, len(data)-1, 5)
+        original_images = data[dense_index,:,:,::-1]
+        with torch.no_grad():
+            for idx,original_image in zip(dense_index,original_images):
+                dense_caption.append((idx+start,dense_caption_model.run_caption_tensor(original_image)))
+            
+        
+        # Video Caption
+        image = torch.cat(tmp).to(device)   
+        
+        model.threshold = 0.68
+        if input_tag == '' or input_tag == 'none' or input_tag == 'None':
+            input_tag_list = None
         else:
-            _, tag_1 = model.generate(image,tag_input = None, max_length = 50, return_tag_predict = True)
-            tag_2 = set(tag_predict)
-        progress(0.8, desc="Understanding Videos")
-        synth_caption = model_T5.predict('. '.join(caption))
-    print(frame_caption, dense_caption, synth_caption)
-
+            input_tag_list = []
+            input_tag_list.append(input_tag.replace(',',' | '))
+        with torch.no_grad():
+            caption, tag_predict = model.generate(image,tag_input = input_tag_list,max_length = 50, return_tag_predict = True)
+            tag_1.update(tag_predict)
+            tag_2 = ['none']
+    #print(frame_caption, dense_caption, synth_caption)
+    frame_caption_list.extend(caption)
+    dense_caption_list.extend(dense_caption)
+    synth_caption = model_T5.predict('. '.join(caption))
+    frame_caption = ' '.join([f"Second {i+1}:{j}.\n" for i,j in enumerate(frame_caption_list)])
+    dense_caption = ' '.join([f"Second {i+1} : {j}.\n" for (i,j) in dense_caption_list])
     del data, action_tensor, original_image, image,tmp,tmpa
     torch.cuda.empty_cache()
     torch.cuda.ipc_collect()
-    return ' | '.join(tag_1),' | '.join(tag_2), frame_caption, dense_caption, synth_caption[0], gr.update(interactive = True), prediction
+    
+    return ' | '.join(tag_1),' | '.join(tag_2), frame_caption, dense_caption, synth_caption[0], gr.update(interactive = True), ','.join(set(prediction_list))
 
 def set_example_video(example: list) -> dict:
     return gr.Video.update(value=example[0])
