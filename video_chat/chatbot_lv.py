@@ -12,7 +12,7 @@ from langchain.prompts.prompt import PromptTemplate
 import re
 import gradio as gr
 import openai
-openai.api_base = 'https://closeai.deno.dev/v1'
+
 
 
 class ConversationBot:
