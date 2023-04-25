@@ -6,6 +6,8 @@
     <img src="https://img.shields.io/discord/1099920215724277770?label=Discord&logo=discord">
 </a> | <a src="https://img.shields.io/badge/GPU%20Demo-Open-green?logo=alibabacloud" href="https://yinanhe.github.io/projects/chatvideo.html">
     <img src="https://img.shields.io/badge/GPU%20Demo-Open-green?logo=alibabacloud"> 
+</a> | <a src="https://img.shields.io/twitter/follow/opengvlab?style=social" href="https://twitter.com/opengvlab">
+    <img src="https://img.shields.io/twitter/follow/opengvlab?style=social"> 
 </a>
 
 Currently, Ask-Anything is a simple yet interesting tool for chatting with video.
