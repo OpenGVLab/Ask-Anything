@@ -29,6 +29,9 @@ https://user-images.githubusercontent.com/24236723/233630363-b20304ab-763b-40e5-
 
 # :fire: Updates
 
+- 2023/04/25 Watch videos longer than one minute with chatGPT
+  - [VideoChat_LongVideo](https://github.com/OpenGVLab/Ask-Anything/tree/long_video_support/video_chat): Update langchain to the latest version.
+
 - 2023/04/21 Chat with MOSS
   - [video_chat_with_MOSS](./video_chat_with_MOSS/): Explicit communication with MOSS. 
 
