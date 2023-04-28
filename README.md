@@ -1,4 +1,4 @@
-# Ask-Anything
+# Ask-Anything [Long-Term Video]
 
 [中文](README_cn.md) | [Demo](https://yinanhe.github.io/projects/chatvideo.html)
 
