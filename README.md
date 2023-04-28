@@ -33,9 +33,8 @@ Your browser does not support the video tag.
 
 
 # :fire: Updates
-
 - 2023/04/25 Watch videos longer than one minute with chatGPT
-  - [VideoChat_LongVideo](https://github.com/OpenGVLab/Ask-Anything/tree/long_video_support/video_chat): Update langchain to the latest version.
+  - [VideoChat_LongVideo](https://github.com/OpenGVLab/Ask-Anything/tree/long_video_support/): Update langchain and whisper to the latest version.
 
 - 2023/04/21 Chat with MOSS
   - [video_chat_with_MOSS](./video_chat_with_MOSS/): Explicit communication with MOSS. 
