@@ -13,8 +13,7 @@ A new branch for Watch videos longer than one minute with chatGPT.
 
 - 2023/04/25 Watch videos longer than one minute with chatGPT
   - [VideoChat_LongVideo](https://github.com/OpenGVLab/Ask-Anything/tree/long_video_support/video_chat): Update langchain to the latest version.
-<<<<<<< Updated upstream
-=======
+
 
 
 # :speech_balloon: Example
@@ -53,4 +52,4 @@ python app.py
 
 The project is based on [InternVideo](https://github.com/OpenGVLab/InternVideo), [Tag2Text](https://github.com/xinyu1205/Tag2Text), [GRiT](https://github.com/JialianW/GRiT), [mrm8488](https://huggingface.co/mrm8488/flan-t5-large-finetuned-openai-summarize_from_feedback) and [ChatGPT](https://openai.com/blog/chatgpt). Thanks for the authors for their efforts.
 
->>>>>>> Stashed changes
+
