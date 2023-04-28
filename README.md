@@ -20,6 +20,8 @@ A new branch for Watch videos longer than one minute with chatGPT.
 
 ![images](video_chat/assert/huaqiang.png)
 
+![images](video_chat/assert/dahuaxiyou.png)
+
 # :running: Usage
 
 ```shell
