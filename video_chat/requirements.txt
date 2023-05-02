@@ -25,7 +25,7 @@ accelerate
 bitsandbytes
 langchain==0.0.101
 timm==0.4.12
-transformers==4.28.0
+transformers
 fairscale==0.4.4
 pycocoevalcap
 torch==1.13.1
