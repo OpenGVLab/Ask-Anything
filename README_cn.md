@@ -7,14 +7,14 @@
     <img src="https://img.shields.io/badge/%F0%9F%A4%97-Open%20in%20Spaces-blue" alt="Open in Huggingface">
 </a> | <a src="https://img.shields.io/discord/1099920215724277770?label=Discord&logo=discord" href="https://discord.gg/A2Ex6Pph6A">
     <img src="https://img.shields.io/discord/1099920215724277770?label=Discord&logo=discord">
-</a> | <a src="https://img.shields.io/badge/GPU%20Demo-Open-green?logo=alibabacloud" href="https://yinanhe.github.io/projects/chatvideo.html">
+</a> | <a src="https://img.shields.io/badge/GPU%20Demo-Open-green?logo=alibabacloud" href="https://ask.opengvlab.com">
     <img src="https://img.shields.io/badge/GPU%20Demo-Open-green?logo=alibabacloud"> 
 </a>
 
 # :movie_camera: 在线演示Demo
 
 
-<div align=center><h2><a href="https://yinanhe.github.io/projects/chatvideo.html">单击此处与ChatVideo一起边看视频边聊天!</a></h2></div>
+<div align=center><h2><a href="https://ask.opengvlab.com">单击此处与ChatVideo一起边看视频边聊天!</a></h2></div>
 
 
 https://user-images.githubusercontent.com/43169235/233814633-200df34b-7402-49b8-8b8d-dc3b32386c95.mp4
@@ -29,7 +29,7 @@ https://user-images.githubusercontent.com/43169235/233814633-200df34b-7402-49b8-
   - [video_chat_with_StableLM](./video_chat_with_StableLM/): 将视频与StableLM显式编码
 
 - 2023/04/19: 代码发布和在线演示Demo发布
-  - [VideoChat](./video_chat/): 将视频与ChatGPT显式编码，对时序信息敏感 [demo is avaliable!](https://yinanhe.github.io/projects/chatvideo.html)
+  - [VideoChat](./video_chat/): 将视频与ChatGPT显式编码，对时序信息敏感 [demo is avaliable!](https://ask.opengvlab.com)
   - [MiniGPT-4 for video](./video_miniGPT4/): 将视频与Vicuna隐式编码. 对时序信息不敏感. (是[MiniGPT-4](https://github.com/Vision-CAIR/MiniGPT-4)的简单拓展, 将来会有所改进.)
 
 
