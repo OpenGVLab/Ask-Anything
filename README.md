@@ -4,7 +4,7 @@
     <img src="https://img.shields.io/badge/%F0%9F%A4%97-Open%20in%20Spaces-blue" alt="Open in Huggingface">
 </a> | <a src="https://img.shields.io/discord/1099920215724277770?label=Discord&logo=discord" href="https://discord.gg/A2Ex6Pph6A">
     <img src="https://img.shields.io/discord/1099920215724277770?label=Discord&logo=discord">
-</a> | <a src="https://img.shields.io/badge/GPU%20Demo-Open-green?logo=alibabacloud" href="https://yinanhe.github.io/projects/chatvideo.html">
+</a> | <a src="https://img.shields.io/badge/GPU%20Demo-Open-green?logo=alibabacloud" href="https://ask.opengvlab.com">
     <img src="https://img.shields.io/badge/GPU%20Demo-Open-green?logo=alibabacloud"> 
 </a> | <a src="https://img.shields.io/twitter/follow/opengvlab?style=social" href="https://twitter.com/opengvlab">
     <img src="https://img.shields.io/twitter/follow/opengvlab?style=social"> 
@@ -22,7 +22,7 @@ We are also working on a updated version, stay tuned! ⭐️
 
 
 
-# :movie_camera: Online Demo [\[click here\]](https://yinanhe.github.io/projects/chatvideo.html)
+# :movie_camera: Online Demo [\[click here\]](https://ask.opengvlab.com)
 
 https://user-images.githubusercontent.com/24236723/233630363-b20304ab-763b-40e5-b526-e2a6b9e9cae2.mp4
 
@@ -43,7 +43,7 @@ Your browser does not support the video tag.
   - [video_chat_with_StableLM](./video_chat_with_StableLM/): Explicit communication with StableLM. 
 
 - 2023/04/19: Code release & Online Demo
-  - [VideoChat](./video_chat/): Explicit communication with ChatGPT. Sensitive with time. [demo is avaliable!](https://yinanhe.github.io/projects/chatvideo.html)
+  - [VideoChat](./video_chat/): Explicit communication with ChatGPT. Sensitive with time. [demo is avaliable!](https://ask.opengvlab.com)
   - [MiniGPT-4 for video](./video_miniGPT4/): Implicit communication with Vicuna. Not sensitive with time. (Simple extension of [MiniGPT-4](https://github.com/Vision-CAIR/MiniGPT-4), which will be improved in the future.)
 
 
