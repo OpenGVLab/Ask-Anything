@@ -95,8 +95,8 @@ In this study, we initiate an exploration into video understanding by introducin
     ```shell
     # convert_llama_weights_to_hf is copied from transformers
     python src/transformers/models/llama/convert_llama_weights_to_hf.py \
-    	--input_dir /path/to/downloaded/llama/weights \
-    	--model_size 7B --output_dir /output/path
+      --input_dir /path/to/downloaded/llama/weights \
+      --model_size 7B --output_dir /output/path
     ```
     - Download [StableVicuna-13b-deelta](https://huggingface.co/CarperAI/stable-vicuna-13b-delta) and process it:
     ```shell
@@ -110,7 +110,7 @@ In this study, we initiate an exploration into video understanding by introducin
     
 - Download [VideoChat](https://drive.google.com/file/d/1BqmWHWCZBPkhTNWDAq0IfGpbkKLz9C0V/view?usp=share_link) model:
   
-    - Change the `ckpt` in [config.json](./configs/config.json).
+    - Change the `videochat_model_path` in [config.json](./configs/config.json).
     
 - Running demo with Gradio:
     ```shell
