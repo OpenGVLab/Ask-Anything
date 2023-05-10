@@ -46,6 +46,7 @@ Please follow the instrction in [MiniGPT-4](https://github.com/Vision-CAIR/MiniG
         --target /output/path/to/vicuna-13b \
         --delta lmsys/vicuna-13b-delta-v1.0
     ```
+    - Change the `llama_model` in [minigpt4.yaml](./minigpt4/configs/models/minigpt4.yaml).
 - Download [MiniGPT-4](https://github.com/Vision-CAIR/MiniGPT-4) model:
     - Linear layer can be downloaded [here](https://drive.google.com/file/d/1a4zLvaiDBr-36pasffmgpvH5P7CKmpze/view?usp=share_link).
     - Change the `ckpt` in [minigpt4_eval.yaml](./eval_configs/minigpt4_eval.yaml).

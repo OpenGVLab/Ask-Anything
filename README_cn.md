@@ -21,16 +21,21 @@ https://user-images.githubusercontent.com/43169235/233814633-200df34b-7402-49b8-
 
 
 # :fire: 更新
+- 2023/05/11 端到端VideoChat
+  - [VideoChat](./video_chat/): 基于指令微调的图像视频聊天机器人
+
+- 2023/04/25 与ChatGPT一起看超过1分钟的视频
+  - [VideoChat LongVideo](https://github.com/OpenGVLab/Ask-Anything/tree/long_video_support/): 使用langchain和whisper处理长时信息
 
 - 2023/04/21 与MOSS一起看视频
   - [video_chat_with_MOSS](./video_chat_with_MOSS/): 将视频与MOSS显式编码
 
 - 2023/04/20: 与StableLM一起看视频
-  - [video_chat_with_StableLM](./video_chat_with_StableLM/): 将视频与StableLM显式编码
+  - [VideoChat with StableLM](./video_chat_with_StableLM/): 将视频与StableLM显式编码
 
 - 2023/04/19: 代码发布和在线演示Demo发布
-  - [VideoChat](./video_chat/): 将视频与ChatGPT显式编码，对时序信息敏感 [demo is avaliable!](https://ask.opengvlab.com)
-  - [MiniGPT-4 for video](./video_miniGPT4/): 将视频与Vicuna隐式编码. 对时序信息不敏感. (是[MiniGPT-4](https://github.com/Vision-CAIR/MiniGPT-4)的简单拓展, 将来会有所改进.)
+  - [VideoChat with ChatGPT](./video_chat_with_ChatGPT): 将视频与ChatGPT显式编码，对时序信息敏感 [demo is avaliable!](https://ask.opengvlab.com)
+  - [MiniGPT-4 for video](./video_miniGPT4/): 将视频与Vicuna隐式编码， 对时序信息不敏感。 ([MiniGPT-4](https://github.com/Vision-CAIR/MiniGPT-4)的简单拓展，将来会改进。)
 
 
 # :speech_balloon: 示例

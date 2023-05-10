@@ -1,49 +1,134 @@
-# VideoChat
+# 🦜 VideoChat [[paper]()]
 
-VideoChat is a multifunctional video question answering tool that combines the functions of Action Recognition, Visual Captioning and ChatGPT. Our solution generates dense, descriptive captions for any object and action in a video, offering a range of language styles to suit different user preferences. It supports users to have conversations in different lengths, emotions, authenticity of language.
-- Video-Text Generation
-- Chat about uploaded video
-- Interactive demo
+![images](assert/framework.png)
+In this study, we initiate an exploration into video understanding by introducing VideoChat, an **end-to-end chat-centric video understanding system**. It integrates video foundation models and large language models via a learnable neural interface, excelling in **spatiotemporal reasoning, event localization, and causal relationship inference**. To instructively tune this system, we propose a **video-centric instruction dataset**, composed of thousands of videos matched with detailed descriptions and conversations. This dataset emphasizes **spatiotemporal reasoning and causal relationships**, providing a valuable asset for training chat-centric video understanding systems. Preliminary qualitative experiments reveal our system’s potential across a broad spectrum of video applications and set the standard for future research.
+
 
 # :fire: Updates
+- **2023/05/11**: Release the 🦜**VideoChat V1**, which can **handle both image and video understanding!**
+    - [Model](https://drive.google.com/file/d/1BqmWHWCZBPkhTNWDAq0IfGpbkKLz9C0V/view?usp=share_link) and [Data](https://github.com/OpenGVLab/InternVideo/blob/main/Data/instruction_data.md).
+    - 🧑‍💻 *Online demo is Preparing*.
+    - 🧑‍🔧 *Tuning scripts are cleaning*.
 
-- **2023/04/19**: Code Release
+# :hourglass_flowing_sand: Schedule
+
+- [x] Small-scale video instuction data and tuning
+- [x] Instruction tuning on BLIP+UniFormerV2+Vicuna
+- [ ] Large-scale and complex video instuction data
+- [ ] Instruction tuning on strong video foundation model
+- [ ] User-friendly interactions with longer videos
+- [ ] ...
 
 # :speech_balloon: Example
 
-![images](assert/hugging.png)
-![images](assert/dancing.png)
-![images](assert/dancing2.png)
+<div align="center">
+<b>
+  <font size="4">Comparison with ChatGPT, MiniGPT-4, LLaVA and mPLUG-Owl. </font>
+  <br>
+  <font size="4" color="red">Our VideoChat can handle both image and video understanding well!</font>
+</b>
+</div>
+<div align="center">
+<img src="assert/comparison.png" width="90%">
+</div>
+
+<div align="center">
+  <font size="4">
+	<a href="https://pjlab-gvm-data.oss-cn-shanghai.aliyuncs.com/papers/media/jesse_dance.mp4">[Video]</a> <b>Why the video is funny?</b>
+  </font>
+</div>
+<div align="center">
+<img src="assert/humor.png" width="50%">
+</div>
+
+<div align="center">
+  <font size="4">
+	<a href="https://pjlab-gvm-data.oss-cn-shanghai.aliyuncs.com/papers/media/jp_dance.mp4">[Video]</a> <b>Spatial perception</b>
+  </font>
+</div>
+<div align="center">
+<img src="assert/spatial.png" width="50%">
+</div>
+
+<div align="center">
+  <font size="4">
+	<a href="https://pjlab-gvm-data.oss-cn-shanghai.aliyuncs.com/papers/media/car_accident.mp4">[Video]</a> <b>Temporal perception</b>
+  </font>
+</div>
+<div align="center">
+<img src="assert/temporal.png" width="50%">
+</div>
+
+<div align="center">
+  <font size="4">
+	<a href="https://pjlab-gvm-data.oss-cn-shanghai.aliyuncs.com/papers/media/idol_dancing.mp4">[Video]</a> <b>Multi-turn conversation</b>
+  </font>
+</div>
+<div align="center">
+<img src="assert/multi_turn.png" width="50%">
+</div>
+
+<div align="center">
+  <font size="4">
+	<b>Image understanding</b>
+  </font>
+</div>
+<div align="center">
+<img src="assert/image.png" width="100%">
+</div>
 
 # :running: Usage
 
-```shell
-# We recommend using conda to manage the environment and use python3.8.16
-conda create -n chatvideo python=3.8.16
-conda activate chatvideo
+- Prepare the envirment.
+    ```shell
+    pip install -r requirements.txt
+    ```
+    
+- Download [BLIP2](https://huggingface.co/docs/transformers/main/model_doc/blip-2) model:
+    - ViT: `wget https://storage.googleapis.com/sfr-vision-language-research/LAVIS/models/BLIP2/eva_vit_g.pth`
+    - QFormer: `wget https://storage.googleapis.com/sfr-vision-language-research/LAVIS/models/BLIP2/blip2_pretrained_flant5xxl.pth`
+    - Change the `vit_model_path` and `q_former_model_path` in [config.json](./configs/config.json).
+    
+- Download [StabelVicuna](https://huggingface.co/CarperAI/stable-vicuna-13b-delta) model:
+    - LLAMA: Download it from the [original repo](https://github.com/facebookresearch/llama) or [hugging face](https://huggingface.co/decapoda-research/llama-13b-hf).
+    - If you download LLAMA from the original repo, please process it via the following command:
+    ```shell
+    # convert_llama_weights_to_hf is copied from transformers
+    python src/transformers/models/llama/convert_llama_weights_to_hf.py \
+    	--input_dir /path/to/downloaded/llama/weights \
+    	--model_size 7B --output_dir /output/path
+    ```
+    - Download [StableVicuna-13b-deelta](https://huggingface.co/CarperAI/stable-vicuna-13b-delta) and process it:
+    ```shell
+    # fastchat v0.1.10
+    python3 apply_delta.py \
+      --base /path/to/model_weights/llama-13b \
+      --target stable-vicuna-13b \
+      --delta CarperAI/stable-vicuna-13b-delta
+    ```
+    - Change the `llama_model_path` in [config.json](./configs/config.json).
+    
+- Download [VideoChat](https://drive.google.com/file/d/1BqmWHWCZBPkhTNWDAq0IfGpbkKLz9C0V/view?usp=share_link) model:
+  
+    - Change the `ckpt` in [config.json](./configs/config.json).
+    
+- Running demo with Gradio:
+    ```shell
+    python demo.py
+    ```
+    
+- Another demo on Jupyter Notebook can found in [demo.ipynb](demo.ipynb)
 
-# Clone the repository:
-git clone https://github.com/OpenGVLab/Ask-Anything.git
-cd ask-anything/video_chat
 
-# Install dependencies:
-pip install -r requirements.txt
-pip install https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.0.0/en_core_web_sm-3.0.0.tar.gz
-python -m pip install 'git+https://github.com/facebookresearch/detectron2.git'
+# :page_facing_up: Citation
 
-# Download the checkpoints
-wget https://huggingface.co/spaces/xinyu1205/Tag2Text/resolve/main/tag2text_swin_14m.pth ./pretrained_models/tag2text_swin_14m.pth
-wget https://datarelease.blob.core.windows.net/grit/models/grit_b_densecap_objectdet.pth ./pretrained_models/grit_b_densecap_objectdet.pth
-git clone https://huggingface.co/mrm8488/flan-t5-large-finetuned-openai-summarize_from_feedback ./pretrained_models/flan-t5-large-finetuned-openai-summarize_from_feedback
+If you find this project useful in your research, please consider cite:
+```BibTeX
 
-# Configure the necessary ChatGPT APIs
-export OPENAI_API_KEY={Your_Private_Openai_Key}
-
-# Run the VideoChat gradio demo.
-python app.py
 ```
 
-# Acknowledgement
+# :thumbsup: Acknowledgement
 
-The project is based on [InternVideo](https://github.com/OpenGVLab/InternVideo), [Tag2Text](https://github.com/xinyu1205/Tag2Text), [GRiT](https://github.com/JialianW/GRiT), [mrm8488](https://huggingface.co/mrm8488/flan-t5-large-finetuned-openai-summarize_from_feedback) and [ChatGPT](https://openai.com/blog/chatgpt). Thanks for the authors for their efforts.
+Thanks to the open source of the following projects:
 
+[InternVideo](https://github.com/OpenGVLab/InternVideo), [UniFormerV2](https://github.com/OpenGVLab/UniFormerV2), [MiniGPT-4](https://github.com/Vision-CAIR/MiniGPT-4), [LLaVA](https://github.com/haotian-liu/LLaVA), [BLIP2](https://huggingface.co/docs/transformers/main/model_doc/blip-2), [StableLM](https://github.com/Stability-AI/StableLM).
