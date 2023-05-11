@@ -1,27 +1,28 @@
-🚀: We update `video_chat` by **instruction tuning for image & video chatting** now! Old version of `video_chat` moved to `video_chat_with_chatGPT`. We release instruction data at [InternVideo](https://github.com/OpenGVLab/InternVideo/blob/main/Data/instruction_data.md)
 
-# Ask-Anything
+
+# 🦜 Ask-Anything
 
 <a src="https://img.shields.io/badge/%F0%9F%A4%97-Open%20in%20Spaces-blue" href="https://huggingface.co/spaces/ynhe/AskAnything">
     <img src="https://img.shields.io/badge/%F0%9F%A4%97-Open%20in%20Spaces-blue" alt="Open in Huggingface">
 </a> | <a src="https://img.shields.io/discord/1099920215724277770?label=Discord&logo=discord" href="https://discord.gg/A2Ex6Pph6A">
     <img src="https://img.shields.io/discord/1099920215724277770?label=Discord&logo=discord">
-</a> | <a src="https://img.shields.io/badge/GPU%20Demo-Open-green?logo=alibabacloud" href="https://ask.opengvlab.com">
-    <img src="https://img.shields.io/badge/GPU%20Demo-Open-green?logo=alibabacloud"> 
-</a> | <a src="https://img.shields.io/twitter/follow/opengvlab?style=social" href="https://twitter.com/opengvlab">
-    <img src="https://img.shields.io/twitter/follow/opengvlab?style=social"> </a>  |<a src="https://img.shields.io/badge/WeChat-Group-green?logo=wechat" href="https://pjlab-gvm-data.oss-cn-shanghai.aliyuncs.com/papers/media/wechat_group.jpg"> <img src="https://img.shields.io/badge/WeChat-Group-green?logo=wechat">
+</a>   |<a src="https://img.shields.io/badge/WeChat-Group-green?logo=wechat" href="https://pjlab-gvm-data.oss-cn-shanghai.aliyuncs.com/papers/media/wechat_group.jpg"> <img src="https://img.shields.io/badge/WeChat-Group-green?logo=wechat">| <a src="https://img.shields.io/twitter/follow/opengvlab?style=social" href="https://twitter.com/opengvlab">
+    <img src="https://img.shields.io/twitter/follow/opengvlab?style=social"> </a>
 </a>
-<br></br>
+<br>
+<a src="https://img.shields.io/badge/Video%20Chat%20(vChat)-Open-green?logo=alibabacloud" href="https://vchat.opengvlab.com">
+    <img src="https://img.shields.io/badge/Video%20Chat%20(vChat)-Open-green?logo=alibabacloud"> End2end ChatBOT for video and image.
+<br>    
+    <a src="https://img.shields.io/badge/Video%20Chat%20with%20ChatGPT-Open-green?logo=alibabacloud" href="https://ask.opengvlab.com">
+    <img src="https://img.shields.io/badge/Video%20Chat%20with%20ChatGPT-Open-green?logo=alibabacloud">  Explicit communication with ChatGPT.  </a>
+</a> 
+
 
 [中文 README 及 中文交流群](README_cn.md)
 
-Currently, Ask-Anything is a simple yet interesting tool for chatting with video.
-Our team is trying to build a smart and robust chatbot that can understand video.
+🚀: We update `video_chat` by **instruction tuning for image & video chatting** now! Old version of `video_chat` moved to `video_chat_with_chatGPT`. We release instruction data at [InternVideo](https://github.com/OpenGVLab/InternVideo/blob/main/Data/instruction_data.md)
 
-We are also working on a updated version, stay tuned! ⭐️
-
-
-
+⭐️: We are also working on a updated version, stay tuned! 
 
 
 # :movie_camera: Online Demo [\[click here\]](https://ask.opengvlab.com)
