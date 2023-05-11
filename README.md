@@ -61,6 +61,17 @@ https://user-images.githubusercontent.com/24236723/233631602-6a69d83c-83ef-41ed-
 * [MiniGPT-4](https://github.com/OpenGVLab/Ask-Anything/tree/main/video_miniGPT4#running-usage)
 * [MOSS](https://github.com/OpenGVLab/Ask-Anything/tree/main/video_chat_with_MOSS#running-usage)
 
+# :page_facing_up: Citation
+
+If you find this project useful in your research, please consider cite:
+```BibTeX
+@article{2023videochat,
+  title={VideoChat: Chat-Centric Video Understanding},
+  author={KunChang Li, Yinan He, Yi Wang, Yizhuo Li, Wenhai Wang, Ping Luo, Yali Wang, Limin Wang, and Yu Qiao},
+  journal={arXiv preprint arXiv:2305.06355},
+  year={2023}
+}
+```
 
 # :hourglass_flowing_sand: Ongoing
 
