@@ -87,4 +87,11 @@ Our team constantly studies general video understanding and long-term video reas
 - [ ] Artificial Intelligence Generated Content (AIGC) for Video.
 - [ ] ...
 
+# 🌤️ Discussion Group
+
+If you have any questions during the trial, running or deployment, feel free to join our WeChat group discussion! If you have any ideas or suggestions for the project, you are also welcome to join our WeChat group discussion!
+
+<p align="center"><img width="300" alt="image" src="https://s1.ax1x.com/2023/05/11/p9rBdaT.jpg"></p> 
+
+
 We are hiring researchers, engineers and interns in **General Vision Group, Shanghai AI Lab**.  If you are interested in working with us, please contact [Yi Wang](https://shepnerd.github.io/) (`wangyi@pjlab.org.cn`).
