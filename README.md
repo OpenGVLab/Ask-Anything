@@ -37,7 +37,7 @@ Your browser does not support the video tag.
 
 # :fire: Updates
 - 2023/05/11 End-to-end VideoChat
-  - [VideoChat](./video_chat/): Instruction tuning for image & video chatting.
+  - [VideoChat](./video_chat/): Instruction tuning for video chatting (also supports image one).
 
 - 2023/04/25 Watch videos longer than one minute with chatGPT
   - [VideoChat LongVideo](https://github.com/OpenGVLab/Ask-Anything/tree/long_video_support/): Incorporating langchain and whisper into VideoChat.
