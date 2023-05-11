@@ -1,4 +1,4 @@
-# 🦜 VideoChat [[paper](https://arxiv.org/abs/2305.06355)]
+# 🦜 VideoChat [[paper](https://arxiv.org/abs/2305.06355)/[demo](https://vchat.opengvlab.com/)]
 
 ![images](assert/framework.png)
 In this study, we initiate an exploration into video understanding by introducing VideoChat, an **end-to-end chat-centric video understanding system**. It integrates video foundation models and large language models via a learnable neural interface, excelling in **spatiotemporal reasoning, event localization, and causal relationship inference**. To instructively tune this system, we propose a **video-centric instruction dataset**, composed of thousands of videos matched with detailed descriptions and conversations. This dataset emphasizes **spatiotemporal reasoning and causal relationships**, providing a valuable asset for training chat-centric video understanding systems. Preliminary qualitative experiments reveal our system’s potential across a broad spectrum of video applications and set the standard for future research.
@@ -6,8 +6,8 @@ In this study, we initiate an exploration into video understanding by introducin
 
 # :fire: Updates
 - **2023/05/11**: Release the 🦜**VideoChat V1**, which can **handle both image and video understanding!**
-    - [Model](https://drive.google.com/file/d/1BqmWHWCZBPkhTNWDAq0IfGpbkKLz9C0V/view?usp=share_link) and [Data](https://github.com/OpenGVLab/InternVideo/blob/main/Data/instruction_data.md).
-    - 🧑‍💻 *Online demo is Preparing*.
+    - 🎊 [**Model**](https://drive.google.com/file/d/1BqmWHWCZBPkhTNWDAq0IfGpbkKLz9C0V/view?usp=share_link) and [**Data**](https://github.com/OpenGVLab/InternVideo/blob/main/Data/instruction_data.md).
+    - 🤗 [**Online Demo**](https://vchat.opengvlab.com/)
     - 🧑‍🔧 *Tuning scripts are cleaning*.
 
 # :hourglass_flowing_sand: Schedule
@@ -22,6 +22,9 @@ In this study, we initiate an exploration into video understanding by introducin
 # :speech_balloon: Example
 
 <div align="center">
+<a href="https://vchat.opengvlab.com/"><h1>Try Our Demo🦜</h1></a>
+</div>
+<div align="center">
 <b>
   <font size="4">Comparison with ChatGPT, MiniGPT-4, LLaVA and mPLUG-Owl. </font>
   <br>
@@ -31,6 +34,7 @@ In this study, we initiate an exploration into video understanding by introducin
 <div align="center">
 <img src="assert/comparison.png" width="90%">
 </div>
+
 
 <div align="center">
   <font size="4">
