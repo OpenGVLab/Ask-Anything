@@ -1,3 +1,5 @@
+🚀: We update `video_chat` by **instruction tuning for image & video chatting** now! Old version of `video_chat` moved to `video_chat_with_chatGPT`. We release instruction data at [InternVideo](https://github.com/OpenGVLab/InternVideo/blob/main/Data/instruction_data.md)
+
 # Ask-Anything
 
 <a src="https://img.shields.io/badge/%F0%9F%A4%97-Open%20in%20Spaces-blue" href="https://huggingface.co/spaces/ynhe/AskAnything">
@@ -11,7 +13,7 @@
 </a>
 <br></br>
 
-[中文 README](README_cn.md)
+[中文 README 及 中文交流群](README_cn.md)
 
 Currently, Ask-Anything is a simple yet interesting tool for chatting with video.
 Our team is trying to build a smart and robust chatbot that can understand video.
