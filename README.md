@@ -1,6 +1,6 @@
 
 
-# 🦜 [Ask-Anything](https://arxiv.org/pdf/2305.06355.pdf)
+# 🦜 Ask-Anything \[[Paper\]](https://arxiv.org/pdf/2305.06355.pdf)
 
 <a src="https://img.shields.io/badge/%F0%9F%A4%97-Open%20in%20Spaces-blue" href="https://huggingface.co/spaces/ynhe/AskAnything">
     <img src="https://img.shields.io/badge/%F0%9F%A4%97-Open%20in%20Spaces-blue" alt="Open in Huggingface">
@@ -20,7 +20,7 @@
 
 [中文 README 及 中文交流群](README_cn.md) | [Paper](https://arxiv.org/abs/2305.06355)
 
-🚀: We update `video_chat` by **instruction tuning for image & video chatting** now! Old version of `video_chat` moved to `video_chat_with_chatGPT`. We release instruction data at [InternVideo](https://github.com/OpenGVLab/InternVideo/blob/main/Data/instruction_data.md)
+🚀: We update `video_chat` by **instruction tuning for image & video chatting** now! Its paper is now [available](https://arxiv.org/pdf/2305.06355.pdf). The old version of `video_chat` moved to `video_chat_with_chatGPT`. We release **instruction data** at [InternVideo](https://github.com/OpenGVLab/InternVideo/blob/main/Data/instruction_data.md).
 
 ⭐️: We are also working on a updated version, stay tuned! 
 
@@ -36,8 +36,9 @@ Your browser does not support the video tag.
 
 
 # :fire: Updates
-- 2023/05/11 End-to-end VideoChat
+- 2023/05/11 End-to-end VideoChat and its technical report.
   - [VideoChat](./video_chat/): Instruction tuning for video chatting (also supports image one).
+  - [Paper](https://arxiv.org/pdf/2305.06355.pdf): We present how we craft VideoChat with two versions (via text and embed) along with some discussions on its background, applications, and more.
 
 - 2023/04/25 Watch videos longer than one minute with chatGPT
   - [VideoChat LongVideo](https://github.com/OpenGVLab/Ask-Anything/tree/long_video_support/): Incorporating langchain and whisper into VideoChat.
