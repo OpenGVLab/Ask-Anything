@@ -1,4 +1,4 @@
-# Ask-Anything
+# Ask-Anything \[[Paper\]](https://arxiv.org/pdf/2305.06355.pdf)
 
 目前，Ask-Anything是一个简单而有趣的与视频聊天工具。
 我们的团队正在努力建立一个智能且强大的用于视频理解的聊天机器人。
@@ -11,6 +11,10 @@
     <img src="https://img.shields.io/badge/GPU%20Demo-Open-green?logo=alibabacloud"> 
 </a>
 
+🚀: 我们通过**指令微调**更新了`video_chat`！相关内容可见我们的[技术报告](https://arxiv.org/pdf/2305.06355.pdf). `video_chat`之前版本已经移动到`video_chat_with_chatGPT`. 相关的**指令微调数据**可见[InternVideo](https://github.com/OpenGVLab/InternVideo/blob/main/Data/instruction_data.md).
+
+⭐️: 我们还在进行更新版本的开发，敬请期待！
+
 # :movie_camera: 在线演示Demo
 
 
@@ -22,7 +26,8 @@ https://user-images.githubusercontent.com/43169235/233814633-200df34b-7402-49b8-
 
 # :fire: 更新
 - 2023/05/11 端到端VideoChat
-  - [VideoChat](./video_chat/): 基于**指令微调**的图像视频聊天机器人
+  - [VideoChat](./video_chat/): 基于**指令微调**的视频聊天机器人（也支持图像聊天）
+  - [论文](https://arxiv.org/pdf/2305.06355.pdf): 我们展示了如何制作具有两个版本的VideoChat（通过文本和特征），同时还讨论了其背景、应用等方面。
 
 - 2023/04/25 与ChatGPT一起看超过1分钟的视频
   - [VideoChat LongVideo](https://github.com/OpenGVLab/Ask-Anything/tree/long_video_support/): 使用langchain和whisper处理长时信息
@@ -52,7 +57,7 @@ https://user-images.githubusercontent.com/24236723/233631602-6a69d83c-83ef-41ed-
 ```BibTeX
 @article{2023videochat,
   title={VideoChat: Chat-Centric Video Understanding},
-  author={KunChang Li, Yinan He, Yi Wang, Yizhuo Li, Wenhai Wang, Ping Luo, Yali Wang, Limin Wang, and Yu Qiao},
+  author={Li, Kunchang and He, Yinan and Wang, Yi and Li, Yizhuo and Wang, Wenhai and Luo, Ping and Wang, Yali and Wang, Limin and Qiao, Yu},
   journal={arXiv preprint arXiv:2305.06355},
   year={2023}
 }

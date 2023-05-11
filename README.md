@@ -20,7 +20,7 @@
 
 [中文 README 及 中文交流群](README_cn.md) | [Paper](https://arxiv.org/abs/2305.06355)
 
-🚀: We update `video_chat` by **instruction tuning for image & video chatting** now! Its paper is now [available](https://arxiv.org/pdf/2305.06355.pdf). The old version of `video_chat` moved to `video_chat_with_chatGPT`. We release **instruction data** at [InternVideo](https://github.com/OpenGVLab/InternVideo/blob/main/Data/instruction_data.md).
+🚀: We update `video_chat` by **instruction tuning for video & image chatting** now! Its paper is now [available](https://arxiv.org/pdf/2305.06355.pdf). The old version of `video_chat` moved to `video_chat_with_chatGPT`. We release **instruction data** at [InternVideo](https://github.com/OpenGVLab/InternVideo/blob/main/Data/instruction_data.md).
 
 ⭐️: We are also working on a updated version, stay tuned! 
 
@@ -71,7 +71,7 @@ If you find this project useful in your research, please consider cite:
 ```BibTeX
 @article{2023videochat,
   title={VideoChat: Chat-Centric Video Understanding},
-  author={KunChang Li, Yinan He, Yi Wang, Yizhuo Li, Wenhai Wang, Ping Luo, Yali Wang, Limin Wang, and Yu Qiao},
+  author={Li, Kunchang and He, Yinan and Wang, Yi and Li, Yizhuo and Wang, Wenhai and Luo, Ping and Wang, Yali and Wang, Limin and Qiao, Yu},
   journal={arXiv preprint arXiv:2305.06355},
   year={2023}
 }
