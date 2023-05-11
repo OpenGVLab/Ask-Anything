@@ -1,6 +1,6 @@
 
 
-# 🦜 Ask-Anything
+# 🦜 Ask-Anything 
 
 <a src="https://img.shields.io/badge/%F0%9F%A4%97-Open%20in%20Spaces-blue" href="https://huggingface.co/spaces/ynhe/AskAnything">
     <img src="https://img.shields.io/badge/%F0%9F%A4%97-Open%20in%20Spaces-blue" alt="Open in Huggingface">
@@ -18,7 +18,7 @@
 </a> 
 
 
-[中文 README 及 中文交流群](README_cn.md)
+[中文 README 及 中文交流群](README_cn.md) | [Paper](https://arxiv.org/abs/2305.06355)
 
 🚀: We update `video_chat` by **instruction tuning for image & video chatting** now! Old version of `video_chat` moved to `video_chat_with_chatGPT`. We release instruction data at [InternVideo](https://github.com/OpenGVLab/InternVideo/blob/main/Data/instruction_data.md)
 
