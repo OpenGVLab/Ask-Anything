@@ -19,11 +19,8 @@ In this study, we initiate an exploration into video understanding by introducin
 - [ ] User-friendly interactions with longer videos
 - [ ] ...
 
-# :speech_balloon: Example
+# :speech_balloon: Example [Online🦜](https://vchat.opengvlab.com/)
 
-<div align="center">
-<a href="https://vchat.opengvlab.com/"><h1>Try Our Demo🦜</h1></a>
-</div>
 <div align="center">
 <b>
   <font size="4">Comparison with ChatGPT, MiniGPT-4, LLaVA and mPLUG-Owl. </font>
