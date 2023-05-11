@@ -9,7 +9,7 @@
 </a> | <a src="https://img.shields.io/badge/GPU%20Demo-Open-green?logo=alibabacloud" href="https://ask.opengvlab.com">
     <img src="https://img.shields.io/badge/GPU%20Demo-Open-green?logo=alibabacloud"> 
 </a> | <a src="https://img.shields.io/twitter/follow/opengvlab?style=social" href="https://twitter.com/opengvlab">
-    <img src="https://img.shields.io/twitter/follow/opengvlab?style=social"> 
+    <img src="https://img.shields.io/twitter/follow/opengvlab?style=social"> </a>  |<a src="https://img.shields.io/badge/WeChat-Group-green?logo=wechat" href="https://pjlab-gvm-data.oss-cn-shanghai.aliyuncs.com/papers/media/wechat_group.jpg"> <img src="https://img.shields.io/badge/WeChat-Group-green?logo=wechat">
 </a>
 <br></br>
 
