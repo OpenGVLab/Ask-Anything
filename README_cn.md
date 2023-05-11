@@ -11,7 +11,7 @@
     <img src="https://img.shields.io/badge/GPU%20Demo-Open-green?logo=alibabacloud"> 
 </a>
 
-🚀: 我们通过**指令微调**更新了`video_chat`！相关内容可见我们的[技术报告](https://arxiv.org/pdf/2305.06355.pdf). `video_chat`之前版本已经移动到`video_chat_with_chatGPT`. 相关的**指令微调数据**可见[InternVideo](https://github.com/OpenGVLab/InternVideo/blob/main/Data/instruction_data.md).
+🚀: 我们通过**指令微调**更新了`video_chat`！相关内容可见我们的[技术报告](https://arxiv.org/pdf/2305.06355.pdf)。相关的**指令微调数据**可见[InternVideo](https://github.com/OpenGVLab/InternVideo/tree/main/Data/instruction_data)。`video_chat`之前版本已经移动到`video_chat_with_chatGPT`。
 
 ⭐️: 我们还在进行更新版本的开发，敬请期待！
 

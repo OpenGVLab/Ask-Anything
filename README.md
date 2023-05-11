@@ -20,7 +20,7 @@
 
 [中文 README 及 中文交流群](README_cn.md) | [Paper](https://arxiv.org/abs/2305.06355)
 
-🚀: We update `video_chat` by **instruction tuning for video & image chatting** now! Its paper is now [available](https://arxiv.org/pdf/2305.06355.pdf). The old version of `video_chat` moved to `video_chat_with_chatGPT`. We release **instruction data** at [InternVideo](https://github.com/OpenGVLab/InternVideo/blob/main/Data/instruction_data.md).
+🚀: We update `video_chat` by **instruction tuning for video & image chatting** now! Find it details [here](https://arxiv.org/pdf/2305.06355.pdf). We release **instruction data** at [InternVideo](https://github.com/OpenGVLab/InternVideo/tree/main/Data/instruction_data). The old version of `video_chat` moved to `video_chat_with_chatGPT`. 
 
 ⭐️: We are also working on a updated version, stay tuned! 
 
