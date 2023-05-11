@@ -124,7 +124,12 @@ In this study, we initiate an exploration into video understanding by introducin
 
 If you find this project useful in your research, please consider cite:
 ```BibTeX
-
+@article{2023videochat,
+  title={VideoChat: Chat-Centric Video Understanding},
+  author={KunChang Li, Yinan He, Yi Wang, Yizhuo Li, Wenhai Wang, Ping Luo, Yali Wang, Limin Wang, and Yu Qiao},
+  journal={arXiv preprint arXiv:2305.06355},
+  year={2023}
+}
 ```
 
 # :thumbsup: Acknowledgement
