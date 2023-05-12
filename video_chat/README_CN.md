@@ -110,7 +110,7 @@
     
   - 下载[StableVicuna](https://huggingface.co/CarperAI/stable-vicuna-13b-delta)模型：
       -  您需要从[llama github](https://github.com/facebookresearch/llama) 或 [huggingface](https://huggingface.co/decapoda-research/llama-13b-hf) 下载预训练权重
-      - **如果您是从llama github中下载的LLAMA，请先对泉州进行预处理
+      - **如果您是从llama github中下载的LLAMA，请先对权重进行预处理**
       ```shell
          # convert_llama_weights_to_hf is copied from transformers
           python src/transformers/models/llama/convert_llama_weights_to_hf.py \
@@ -136,13 +136,15 @@
         ```
         - Change the `llama_model_path` in [config.json](./configs/config.json) or [config_7b.json](./configs/config_7b.json).
   
-        -  下载[VideoChat-13B](https://drive.google.com/file/d/1BqmWHWCZBPkhTNWDAq0IfGpbkKLz9C0V/view?usp=share_link) or [VideoChat-7B](https://drive.google.com/file/d/1C4s65TC5Zr85I8dZmnfrrw6oDAjj1H4P/view?usp=sharing):
-    - Change the `videochat_model_path` in [config.json](./configs/config.json)or [config_7b.json](./configs/config_7b.json).
+      -  下载[VideoChat-13B](https://drive.google.com/file/d/1BqmWHWCZBPkhTNWDAq0IfGpbkKLz9C0V/view?usp=share_link) or [VideoChat-7B](https://drive.google.com/file/d/1C4s65TC5Zr85I8dZmnfrrw6oDAjj1H4P/view?usp=sharing):
+	
+         - Change the `videochat_model_path` in [config.json](./configs/config.json)or [config_7b.json](./configs/config_7b.json).
         
     4) 开始运行demo
       ```shell
         python demo.py
-        ```
+	```
+	
     5) 打开 127.0.0.1:7860 开始体验~
   
     6) [可选] 我们也提供了Jupyter Notebook 的demo
