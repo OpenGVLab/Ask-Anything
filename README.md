@@ -1,6 +1,6 @@
 
 
-# 🦜 Ask-Anything \[[Paper\]](https://arxiv.org/pdf/2305.06355.pdf)
+# 🦜 Ask-Anything \[[Paper](https://arxiv.org/pdf/2305.06355.pdf)]
 
 <a src="https://img.shields.io/badge/%F0%9F%A4%97-Open%20in%20Spaces-blue" href="https://huggingface.co/spaces/ynhe/AskAnything">
     <img src="https://img.shields.io/badge/%F0%9F%A4%97-Open%20in%20Spaces-blue" alt="Open in Huggingface">
