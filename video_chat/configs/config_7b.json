@@ -1,0 +1,28 @@
+{
+  "model": {
+    "vit_model": "eva_clip_g",
+    "vit_model_path": "model/eva_vit_g.pth",
+    "q_former_model_path": "model/blip2_pretrained_flant5xxl.pth",
+    "llama_model_path": "model/vicuna-7b-v0",
+    "videochat_model_path": "model/videochat.pth",
+    "img_size": 224,
+    "num_query_token": 32,
+    "drop_path_rate": 0.0,
+    "use_grad_checkpoint": false,
+    "vit_precision": "fp32",
+    "freeze_vit": true,
+    "freeze_mhra": false,
+    "freeze_qformer": true,
+    "low_resource": false,
+    "max_txt_len": 320,
+    "temporal_downsample": false,
+    "no_lmhra": true,
+    "double_lmhra": false,
+    "lmhra_reduction": 2.0,
+    "gmhra_layers": 8,
+    "gmhra_drop_path_rate": 0.0,
+    "gmhra_dropout": 0.5,
+    "extra_num_query_token": 64
+  },
+  "device": "cuda"
+}

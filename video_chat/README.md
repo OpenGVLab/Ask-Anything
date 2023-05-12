@@ -5,8 +5,10 @@ In this study, we initiate an exploration into video understanding by introducin
 
 
 # :fire: Updates
+- **2023/05/12**: Release the 7B version:
+    - 🎊 [**Model-7B**](https://drive.google.com/file/d/1C4s65TC5Zr85I8dZmnfrrw6oDAjj1H4P/view?usp=sharing): 7B requires ~20GB GPU memory, while 13B requires ~32GB GPU memory.
 - **2023/05/11**: Release the 🦜**VideoChat V1**, which can **handle both image and video understanding!**
-    - 🎊 [**Model**](https://drive.google.com/file/d/1BqmWHWCZBPkhTNWDAq0IfGpbkKLz9C0V/view?usp=share_link) and [**Data**](https://github.com/OpenGVLab/InternVideo/blob/main/Data/instruction_data.md).
+    - 🎊 [**Model-13B**](https://drive.google.com/file/d/1BqmWHWCZBPkhTNWDAq0IfGpbkKLz9C0V/view?usp=share_link) and [**Data**](https://github.com/OpenGVLab/InternVideo/blob/main/Data/instruction_data.md).
     - 🤗 [**Online Demo**](https://vchat.opengvlab.com/)
     - 🧑‍🔧 *Tuning scripts are cleaning*.
 
@@ -88,7 +90,7 @@ In this study, we initiate an exploration into video understanding by introducin
 - Download [BLIP2](https://huggingface.co/docs/transformers/main/model_doc/blip-2) model:
     - ViT: `wget https://storage.googleapis.com/sfr-vision-language-research/LAVIS/models/BLIP2/eva_vit_g.pth`
     - QFormer: `wget https://storage.googleapis.com/sfr-vision-language-research/LAVIS/models/BLIP2/blip2_pretrained_flant5xxl.pth`
-    - Change the `vit_model_path` and `q_former_model_path` in [config.json](./configs/config.json).
+    - Change the `vit_model_path` and `q_former_model_path` in [config.json](./configs/config.json) or [config_7b.json](./configs/config_7b.json).
     
 - Download [StabelVicuna](https://huggingface.co/CarperAI/stable-vicuna-13b-delta) model:
     - LLAMA: Download it from the [original repo](https://github.com/facebookresearch/llama) or [hugging face](https://huggingface.co/decapoda-research/llama-13b-hf).
@@ -97,9 +99,9 @@ In this study, we initiate an exploration into video understanding by introducin
     # convert_llama_weights_to_hf is copied from transformers
     python src/transformers/models/llama/convert_llama_weights_to_hf.py \
       --input_dir /path/to/downloaded/llama/weights \
-      --model_size 7B --output_dir /output/path
+      --model_size 13B --output_dir /output/path
     ```
-    - Download [StableVicuna-13b-deelta](https://huggingface.co/CarperAI/stable-vicuna-13b-delta) and process it:
+    - For 13B: Download [stable-vicuna-13b-delta](https://huggingface.co/CarperAI/stable-vicuna-13b-delta) and process it:
     ```shell
     # fastchat v0.1.10
     python3 apply_delta.py \
@@ -107,11 +109,18 @@ In this study, we initiate an exploration into video understanding by introducin
       --target stable-vicuna-13b \
       --delta CarperAI/stable-vicuna-13b-delta
     ```
-    - Change the `llama_model_path` in [config.json](./configs/config.json).
+    - For 7B: Download [vicuna-7b-delta-v0](https://huggingface.co/lmsys/vicuna-7b-delta-v0) and process it:
+    ```shell
+    # fastchat v0.1.10
+    python3 apply_delta.py \
+      --base /path/to/model_weights/llama-7b \
+      --target vicuna-7b-v0 \
+      --delta CarperAI/vicuna-7b-delta-v0
+    ```
+    - Change the `llama_model_path` in [config.json](./configs/config.json) or [config_7b.json](./configs/config_7b.json).
     
-- Download [VideoChat](https://drive.google.com/file/d/1BqmWHWCZBPkhTNWDAq0IfGpbkKLz9C0V/view?usp=share_link) model:
-  
-    - Change the `videochat_model_path` in [config.json](./configs/config.json).
+- Download [VideoChat-13B](https://drive.google.com/file/d/1BqmWHWCZBPkhTNWDAq0IfGpbkKLz9C0V/view?usp=share_link) or [VideoChat-7B](https://drive.google.com/file/d/1C4s65TC5Zr85I8dZmnfrrw6oDAjj1H4P/view?usp=sharing):
+    - Change the `videochat_model_path` in [config.json](./configs/config.json)or [config_7b.json](./configs/config_7b.json).
     
 - Running demo with Gradio:
     ```shell
