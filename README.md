@@ -11,7 +11,7 @@
 </a>
 <br>
 <a src="https://img.shields.io/badge/Video%20Chat%20(vChat)-Open-green?logo=alibabacloud" href="https://vchat.opengvlab.com">
-    <img src="https://img.shields.io/badge/Video%20Chat%20(vChat)-Open-green?logo=alibabacloud"> End2end ChatBOT for video and image.
+    <img src="https://img.shields.io/badge/Video%20Chat%20(vChat)-Open-green?logo=alibabacloud"> End2End ChatBOT for video and image.
 <br>    
     <a src="https://img.shields.io/badge/Video%20Chat%20with%20ChatGPT-Open-green?logo=alibabacloud" href="https://ask.opengvlab.com">
     <img src="https://img.shields.io/badge/Video%20Chat%20with%20ChatGPT-Open-green?logo=alibabacloud">  Explicit communication with ChatGPT.  </a>
@@ -23,9 +23,20 @@
 🚀: We update `video_chat` by **instruction tuning for video & image chatting** now! Find its details [here](https://arxiv.org/pdf/2305.06355.pdf). We release **instruction data** at [InternVideo](https://github.com/OpenGVLab/InternVideo/tree/main/Data/instruction_data). The old version of `video_chat` moved to `video_chat_with_chatGPT`. 
 
 ⭐️: We are also working on a updated version, stay tuned! 
+    
+
+# :clapper: [\[End2End ChatBot\]](https://vchat.opengvlab.com)
 
 
-# :movie_camera: Online Demo [\[click here\]](https://ask.opengvlab.com)
+https://github.com/OpenGVLab/Ask-Anything/assets/24236723/a8667e87-49dd-4fc8-a620-3e408c058e26
+    
+<video controls>
+  <source src="[https://user-images.githubusercontent.com/24236723/233630363-b20304ab-763b-40e5-b526-e2a6b9e9cae2.mp4](https://github.com/OpenGVLab/Ask-Anything/assets/24236723/a8667e87-49dd-4fc8-a620-3e408c058e26)" type="video/mp4">
+Your browser does not support the video tag.
+</video>
+
+
+# :movie_camera: [\[Communication with ChatGPT\]](https://ask.opengvlab.com)
 
 https://user-images.githubusercontent.com/24236723/233630363-b20304ab-763b-40e5-b526-e2a6b9e9cae2.mp4
 
@@ -54,16 +65,17 @@ Your browser does not support the video tag.
   - [MiniGPT-4 for video](./video_miniGPT4/): Implicit communication with Vicuna. Not sensitive with time. (Simple extension of [MiniGPT-4](https://github.com/Vision-CAIR/MiniGPT-4), which will be improved in the future.)
 
 
-# :speech_balloon: Example
-https://user-images.githubusercontent.com/24236723/233631602-6a69d83c-83ef-41ed-a494-8e0d0ca7c1c8.mp4
+<!-- # :speech_balloon: Example
+https://user-images.githubusercontent.com/24236723/233631602-6a69d83c-83ef-41ed-a494-8e0d0ca7c1c8.mp4 -->
 
 # 🔨 Getting Started
 
 ### Build video chat with:
-* [ChatGPT](https://github.com/OpenGVLab/Ask-Anything/tree/main/video_chat#running-usage)
+* [End2End](https://github.com/OpenGVLab/Ask-Anything/tree/main/video_chat#running-usage)
+* [ChatGPT](https://github.com/OpenGVLab/Ask-Anything/tree/main/video_chat_with_ChatGPT#running-usage)
 * [StableLM](https://github.com/OpenGVLab/Ask-Anything/tree/main/video_chat_with_StableLM#running-usage)
-* [MiniGPT-4](https://github.com/OpenGVLab/Ask-Anything/tree/main/video_miniGPT4#running-usage)
 * [MOSS](https://github.com/OpenGVLab/Ask-Anything/tree/main/video_chat_with_MOSS#running-usage)
+* [MiniGPT-4](https://github.com/OpenGVLab/Ask-Anything/tree/main/video_miniGPT4#running-usage)
 
 # :page_facing_up: Citation
 
@@ -91,7 +103,7 @@ Our team constantly studies general video understanding and long-term video reas
 
 If you have any questions during the trial, running or deployment, feel free to join our WeChat group discussion! If you have any ideas or suggestions for the project, you are also welcome to join our WeChat group discussion!
 
-<p align="center"><img width="300" alt="image" src="https://s1.ax1x.com/2023/05/11/p9rBdaT.jpg"></p> 
+<p align="center"><img width="300" alt="image" src="https://i.328888.xyz/2023/05/12/iqMI7d.jpeg"></p> 
 
 
 We are hiring researchers, engineers and interns in **General Vision Group, Shanghai AI Lab**.  If you are interested in working with us, please contact [Yi Wang](https://shepnerd.github.io/) (`wangyi@pjlab.org.cn`).
