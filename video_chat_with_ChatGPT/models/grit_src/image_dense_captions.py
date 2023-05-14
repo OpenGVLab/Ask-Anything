@@ -58,7 +58,7 @@ def setup_cfg(args):
 
 def get_parser(device):
     arg_dict = {'config_file': "models/grit_src/configs/GRiT_B_DenseCap_ObjectDet.yaml", 'cpu': False, 'confidence_threshold': 0.5, 'test_task': 'DenseCap', 'opts': ["MODEL.WEIGHTS", "pretrained_models/grit_b_densecap_objectdet.pth"]}
-    if device == "cpu":
+    if device.type == "cpu":
         arg_dict["cpu"] = True
     return arg_dict
 
