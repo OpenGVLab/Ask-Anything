@@ -115,7 +115,7 @@ In this study, we initiate an exploration into video understanding by introducin
     python3 apply_delta.py \
       --base /path/to/model_weights/llama-7b \
       --target vicuna-7b-v0 \
-      --delta CarperAI/vicuna-7b-delta-v0
+      --delta lmsys/vicuna-7b-delta-v0
     ```
     - Change the `llama_model_path` in [config.json](./configs/config.json) or [config_7b.json](./configs/config_7b.json).
     
