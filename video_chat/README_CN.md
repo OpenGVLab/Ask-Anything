@@ -132,7 +132,7 @@
         python3 apply_delta.py \
           --base  {llama-7b的模型路径} \
           --target vicuna-7b-v0 \
-          --delta CarperAI/vicuna-7b-delta-v0
+          --delta lmsys/vicuna-7b-delta-v0
         ```
         - Change the `llama_model_path` in [config.json](./configs/config.json) or [config_7b.json](./configs/config_7b.json).
   
