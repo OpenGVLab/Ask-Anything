@@ -10,8 +10,11 @@
     <img src="https://img.shields.io/twitter/follow/opengvlab?style=social"> </a>
 </a>
 <br>
-<a src="https://img.shields.io/badge/Video%20Chat%20(vChat)-Open-green?logo=alibabacloud" href="https://vchat.opengvlab.com">
-    <img src="https://img.shields.io/badge/Video%20Chat%20(vChat)-Open-green?logo=alibabacloud"> End2End ChatBOT for video and image.
+<a src="https://img.shields.io/badge/Video%20Chat%20(vChat%207B)-Open-green?logo=alibabacloud" href="https://beta.openxlab.org.cn/apps/detail/yinanhe/vchat">
+    <img src="https://img.shields.io/badge/Video%20Chat%20(vChat%207B)-Open-green?logo=alibabacloud"> [VideoChat-7B]End2End ChatBOT for video and image.
+<br>
+<a src="https://img.shields.io/badge/Video%20Chat%20(vChat%2013B)-Open-green?logo=alibabacloud" href="https://vchat.opengvlab.com">
+    <img src="https://img.shields.io/badge/Video%20Chat%20(vChat%2013B)-Open-green?logo=alibabacloud"> [VideoChat-13B]End2End ChatBOT for video and image.
 <br>    
     <a src="https://img.shields.io/badge/Video%20Chat%20with%20ChatGPT-Open-green?logo=alibabacloud" href="https://ask.opengvlab.com">
     <img src="https://img.shields.io/badge/Video%20Chat%20with%20ChatGPT-Open-green?logo=alibabacloud">  Explicit communication with ChatGPT.  </a>
