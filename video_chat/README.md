@@ -1,4 +1,4 @@
-# 🦜 VideoChat [[paper](https://arxiv.org/abs/2305.06355)/[demo](https://vchat.opengvlab.com/)]
+# 🦜 VideoChat [[paper](https://arxiv.org/abs/2305.06355)/[demo](https://vchat.opengvlab.com/)/[中文文档](README_CN.md)]
 
 ![images](assert/framework.png)
 In this study, we initiate an exploration into video understanding by introducing VideoChat, an **end-to-end chat-centric video understanding system**. It integrates video foundation models and large language models via a learnable neural interface, excelling in **spatiotemporal reasoning, event localization, and causal relationship inference**. To instructively tune this system, we propose a **video-centric instruction dataset**, composed of thousands of videos matched with detailed descriptions and conversations. This dataset emphasizes **spatiotemporal reasoning and causal relationships**, providing a valuable asset for training chat-centric video understanding systems. Preliminary qualitative experiments reveal our system’s potential across a broad spectrum of video applications and set the standard for future research.
