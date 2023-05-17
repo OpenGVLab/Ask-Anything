@@ -106,7 +106,7 @@ Our team constantly studies general video understanding and long-term video reas
 
 If you have any questions during the trial, running or deployment, feel free to join our WeChat group discussion! If you have any ideas or suggestions for the project, you are also welcome to join our WeChat group discussion!
 
-<p align="center"><img width="300" alt="image" src="https://i.328888.xyz/2023/05/12/iqMI7d.jpeg"></p> 
+<p align="center"><img width="300" alt="image" src="https://pjlab-gvm-data.oss-cn-shanghai.aliyuncs.com/papers/media/wechat_group.jpg"></p> 
 
 
 We are hiring researchers, engineers and interns in **General Vision Group, Shanghai AI Lab**.  If you are interested in working with us, please contact [Yi Wang](https://shepnerd.github.io/) (`wangyi@pjlab.org.cn`).
