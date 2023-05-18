@@ -64,7 +64,7 @@ Your browser does not support the video tag.
   - [VideoChat with StableLM](./video_chat_with_StableLM/): Explicit communication with StableLM. 
 
 - 2023/04/19: Code release & Online Demo
-  - [VideoChat with ChatGPT](./video_chat_with_ChatGPT): Explicit communication with ChatGPT. Sensitive with time. [demo is avaliable!](https://ask.opengvlab.com)
+  - [VideoChat with ChatGPT](./video_chat_with_ChatGPT): Explicit communication with ChatGPT. Sensitive with time. [demo is available!](https://ask.opengvlab.com)
   - [MiniGPT-4 for video](./video_miniGPT4/): Implicit communication with Vicuna. Not sensitive with time. (Simple extension of [MiniGPT-4](https://github.com/Vision-CAIR/MiniGPT-4), which will be improved in the future.)
 
 
