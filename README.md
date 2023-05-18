@@ -10,7 +10,7 @@
     <img src="https://img.shields.io/twitter/follow/opengvlab?style=social"> </a>
 </a>
 <br>
-<a src="https://img.shields.io/badge/Video%20Chat%20(vChat%207B)-Open-green?logo=alibabacloud" href="https://beta.openxlab.org.cn/apps/detail/yinanhe/vchat">
+<a src="https://img.shields.io/badge/Video%20Chat%20(vChat%207B)-Open-green?logo=alibabacloud" href="https://app-center-159608-1986-m4xwab1.0.mai4u.com">
     <img src="https://img.shields.io/badge/Video%20Chat%20(vChat%207B)-Open-green?logo=alibabacloud"> [VideoChat-7B]End2End ChatBOT for video and image.
 <br>
 <a src="https://img.shields.io/badge/Video%20Chat%20(vChat%2013B)-Open-green?logo=alibabacloud" href="https://vchat.opengvlab.com">
