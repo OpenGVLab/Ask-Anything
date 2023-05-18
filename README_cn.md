@@ -2,7 +2,8 @@
 
 目前，Ask-Anything是一个简单而有趣的与视频聊天工具。
 我们的团队正在努力建立一个智能且强大的用于视频理解的聊天机器人。
-
+<a href="https://huggingface.co/spaces/OpenGVLab/VideoChatGPT"><img src="https://huggingface.co/datasets/huggingface/badges/raw/main/open-in-hf-spaces-sm-dark.svg" alt="Open in Spaces"> [VideoChat-7B-8Bit] End2End ChatBOT for video and image. </a>
+<br>
  <a src="https://img.shields.io/badge/%F0%9F%A4%97-Open%20in%20Spaces-blue" href="https://huggingface.co/spaces/ynhe/AskAnything">
     <img src="https://img.shields.io/badge/%F0%9F%A4%97-Open%20in%20Spaces-blue" alt="Open in Huggingface">
 </a> | <a src="https://img.shields.io/discord/1099920215724277770?label=Discord&logo=discord" href="https://discord.gg/A2Ex6Pph6A">
