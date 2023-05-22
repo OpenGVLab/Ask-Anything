@@ -9,7 +9,9 @@
     <img src="https://img.shields.io/discord/1099920215724277770?label=Discord&logo=discord">
 </a>   |
 <a src="https://img.shields.io/badge/WeChat-Group-green?logo=wechat" href="https://pjlab-gvm-data.oss-cn-shanghai.aliyuncs.com/papers/media/wechat_group.jpg"> <img src="https://img.shields.io/badge/WeChat-Group-green?logo=wechat">|
-    <a src="https://img.shields.io/badge/cs.CV-2305.06355-b31b1b?logo=arxiv&logoColor=red" href="https://arxiv.org/abs/2305.06355"> <img src="https://img.shields.io/badge/cs.CV-2305.06355-b31b1b?logo=arxiv&logoColor=red">| <a src="https://img.shields.io/twitter/follow/opengvlab?style=social" href="https://twitter.com/opengvlab">
+<a src="https://img.shields.io/badge/cs.CV-2305.06355-b31b1b?logo=arxiv&logoColor=red" href="https://arxiv.org/abs/2305.06355"> <img src="https://img.shields.io/badge/cs.CV-2305.06355-b31b1b?logo=arxiv&logoColor=red">
+</a>| 
+<a src="https://img.shields.io/twitter/follow/opengvlab?style=social" href="https://twitter.com/opengvlab">
     <img src="https://img.shields.io/twitter/follow/opengvlab?style=social"> </a>
 </a>
 <br>
