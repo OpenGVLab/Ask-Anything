@@ -45,7 +45,7 @@ https://github.com/OpenGVLab/Ask-Anything/assets/43169235/579ddc8c-d1bd-4508-a07
 
 如果您在试用、运行、部署中有任何问题，欢迎加入我们的微信群讨论！如果您对项目有任何的想法和建议，欢迎加入我们的微信群讨论！
 
-<p align="center"><img width="300" alt="image" src="https://s1.ax1x.com/2023/05/11/p9rBdaT.jpg"></p> 
+<p align="center"><img width="300" alt="image" src="https://pjlab-gvm-data.oss-cn-shanghai.aliyuncs.com/papers/media/wechatv.jpg"></p> 
 
 # :speech_balloon: 示例
 https://user-images.githubusercontent.com/24236723/233631602-6a69d83c-83ef-41ed-a494-8e0d0ca7c1c8.mp4
