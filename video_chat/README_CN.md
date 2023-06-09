@@ -10,12 +10,14 @@
 
 ## 🔥 更新
 
+- **2023/06/09**: 发布代码和训练微调脚本:
+    - 直接运行 [scripts](./scripts)，比如 `bash ./exp/run_7b_stage1.sh`.
+    - 你可以自行修改 `NNODE` 或者 `MASTER_NODE`。对于第一阶段，至少需要8个GPU来快速训练。对于第二阶段，4个GPU足够。
 - **2023/05/12**: 发布**7B**版本：
    - 🎊 [**模型-7B**](https://drive.google.com/file/d/1C4s65TC5Zr85I8dZmnfrrw6oDAjj1H4P/view?usp=sharing)：7B版本需要约**20GB的GPU内存**，而13B版本需要约32GB的GPU内存。
 - **2023/05/11**: 发布**🦜VideoChat V1**版本，可以**处理图像和视频理解**！
-   - 🎊 [**模型-13B**](https://drive.google.com/file/d/1BqmWHWCZBPkhTNWDAq0IfGpbkKLz9C0V/view?usp=share_link) and [**数据**](https://github.com/OpenGVLab/InternVideo/blob/main/Data/instruction_data.md).
+   - 🎊 [**模型-13B**](https://drive.google.com/file/d/1BqmWHWCZBPkhTNWDAq0IfGpbkKLz9C0V/view?usp=share_link) and [**数据**](https://github.com/OpenGVLab/InternVideo/tree/main/Data/instruction_data).
    - 🤗 [**在线演示Demo**](https://vchat.opengvlab.com/)
-   - 🧑‍🔧 *训练脚本在整理代码中，稍后开源*.
 
 ## :hourglass_flowing_sand: 计划
 

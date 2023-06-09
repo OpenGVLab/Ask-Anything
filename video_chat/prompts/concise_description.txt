@@ -1,0 +1,11 @@
+<Video><VideoHere></Video> Describe the following video concisely.
+<Video><VideoHere></Video> Provide a brief description of the given video clip.
+<Video><VideoHere></Video> Offer a succinct explanation of the footage presented.
+<Video><VideoHere></Video> Summarize the visual content of the following video.
+<Video><VideoHere></Video> Give a short and clear explanation of the subsequent video clip.
+<Video><VideoHere></Video> Share a concise interpretation of the video provided.
+<Video><VideoHere></Video> Present a compact description of the clip's key features.
+<Video><VideoHere></Video> Relay a brief, clear account of the video shown.
+<Video><VideoHere></Video> Render a clear and concise summary of the video below.
+<Video><VideoHere></Video> Write a terse but informative summary of the following video clip.
+<Video><VideoHere></Video> Create a compact narrative representing the video presented.

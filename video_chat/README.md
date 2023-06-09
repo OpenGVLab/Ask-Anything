@@ -5,14 +5,16 @@ In this study, we initiate an exploration into video understanding by introducin
 
 
 # :fire: Updates
+- **2023/06/09**: Release code and scripts for pre-training and instruction tuning:
+    - Simply run the [scripts](./scripts) like `bash ./exp/run_7b_stage1.sh`.
+    - You can change the `NNODE` and set `MASTER_NODE` by yourself. For stage1, it requires at least 8 GPUs for fast training. For stage2, 4 GPU is enough.
 - **2023/05/24**: Release the Stage-pretrained models:
     - [**Model-7B-stage1**](https://pjlab-gvm-data.oss-cn-shanghai.aliyuncs.com/internvideo/video_chat/videochat_7b_stage1.pth), [**Model-13B-stage1**](https://pjlab-gvm-data.oss-cn-shanghai.aliyuncs.com/internvideo/video_chat/videochat_13b_stage1.pth)
 - **2023/05/12**: Release the 7B version:
     - 🎊 [**Model-7B**](https://drive.google.com/file/d/1C4s65TC5Zr85I8dZmnfrrw6oDAjj1H4P/view?usp=sharing): 7B requires ~20GB GPU memory, while 13B requires ~32GB GPU memory.
 - **2023/05/11**: Release the 🦜**VideoChat V1**, which can **handle both image and video understanding!**
-    - 🎊 [**Model-13B**](https://drive.google.com/file/d/1BqmWHWCZBPkhTNWDAq0IfGpbkKLz9C0V/view?usp=share_link) and [**Data**](https://github.com/OpenGVLab/InternVideo/blob/main/Data/instruction_data.md).
+    - 🎊 [**Model-13B**](https://drive.google.com/file/d/1BqmWHWCZBPkhTNWDAq0IfGpbkKLz9C0V/view?usp=share_link) and [**Data**](https://github.com/OpenGVLab/InternVideo/tree/main/Data/instruction_data).
     - 🤗 [**Online Demo**](https://vchat.opengvlab.com/)
-    - 🧑‍🔧 *Tuning scripts are cleaning*.
 
 # :hourglass_flowing_sand: Schedule
 
