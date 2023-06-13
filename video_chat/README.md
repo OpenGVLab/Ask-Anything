@@ -134,6 +134,16 @@ In this study, we initiate an exploration into video understanding by introducin
 - Another demo on Jupyter Notebook can found in [demo.ipynb](demo.ipynb)
 
 
+# :robot: Instruction Tuning
+
+- Simply run the scripts.
+    ```shell
+    bash ./exp/run_7b_stage1.sh
+    bash ./exp/run_7b_stage2.sh
+    ```
+- You can change the `NNODE` and set `MASTER_NODE` by yourself. For stage1, it requires at least 8 GPUs for fast training. For stage2, 4 GPU is enough.
+
+
 # :page_facing_up: Citation
 
 If you find this project useful in your research, please consider cite:
