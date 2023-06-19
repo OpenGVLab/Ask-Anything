@@ -21,7 +21,8 @@
 
 <div align=center><h2><a href="https://ask.opengvlab.com">单击此处与ChatVideo一起边看视频边聊天!</a></h2></div>
 
-![fa84a0d672d5c3aee492cad6295d3c9](https://github.com/OpenGVLab/Ask-Anything/assets/43169235/7df10778-7fe2-4b8e-a8a6-c22d62b9bb3f)
+![f9f8acb1a6da540b60ef8660cf26cac](https://github.com/OpenGVLab/Ask-Anything/assets/43169235/c7e115c6-7eaa-461b-ab07-0118d3b54b11)
+
 
 # :fire: 更新
 - 2023/05/11 端到端VideoChat
