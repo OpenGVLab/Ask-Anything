@@ -106,6 +106,8 @@ In this study, we initiate an exploration into video understanding by introducin
       --model_size 13B --output_dir /output/path
     ```
     - For 13B: Download [stable-vicuna-13b-delta](https://huggingface.co/CarperAI/stable-vicuna-13b-delta) and process it:
+      
+      You can download `apply_delta.py` from [huggingface](https://huggingface.co/CarperAI/stable-vicuna-13b-delta/raw/main/apply_delta.py)
     ```shell
     # fastchat v0.1.10
     python3 apply_delta.py \
