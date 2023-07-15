@@ -96,7 +96,7 @@ In this study, we initiate an exploration into video understanding by introducin
     - QFormer: `wget https://storage.googleapis.com/sfr-vision-language-research/LAVIS/models/BLIP2/blip2_pretrained_flant5xxl.pth`
     - Change the `vit_model_path` and `q_former_model_path` in [config.json](./configs/config.json) or [config_7b.json](./configs/config_7b.json).
     
-- Download [StabelVicuna](https://huggingface.co/CarperAI/stable-vicuna-13b-delta) model:
+- Download [StableVicuna](https://huggingface.co/CarperAI/stable-vicuna-13b-delta) model:
     - LLAMA: Download it from the [original repo](https://github.com/facebookresearch/llama) or [hugging face](https://huggingface.co/decapoda-research/llama-13b-hf).
     - If you download LLAMA from the original repo, please process it via the following command:
     ```shell
