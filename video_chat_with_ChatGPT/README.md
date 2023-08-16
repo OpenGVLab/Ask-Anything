@@ -24,7 +24,7 @@ conda activate chatvideo
   
 # Clone the repository:  
 git clone https://github.com/OpenGVLab/Ask-Anything.git  
-cd ask-anything/video_chat  
+cd ask-anything/video_chat_with_ChatGPT
   
 # Install dependencies:  
 pip install -r requirements.txt  
