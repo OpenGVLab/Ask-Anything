@@ -1,9 +1,11 @@
 # Instruction Data
 
+[![Dataset meta](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-VideoChat2%20IT-blue)](https://huggingface.co/datasets/OpenGVLab/VideoChat2-IT) 
+
 ![images](./assert/data.png)
 
 ## Annotations
-A comprehensive dataset of **1.9M** data annotations is available in [JSON](https://huggingface.co/datasets/OpenGVLab/VideoChat2-IT) format. Due to the extensive size of the full data, we provide only JSON files here. For corresponding images and videos, please follow our instructions.
+A comprehensive dataset of **1.9M** data annotations is available in [JSON](https://huggingface.co/datasets/OpenGVLab/VideoChat2-IT) format. Due to the extensive size of the full data, we provide only JSON files [here](https://huggingface.co/datasets/OpenGVLab/VideoChat2-IT). For corresponding images and videos, please follow our instructions.
 
 ## Source data
 
