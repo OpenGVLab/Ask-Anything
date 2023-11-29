@@ -58,6 +58,11 @@ Your browser does not support the video tag.
 
 
 # :fire: Updates
+- 2023/11/29 VideoChat2 and MVBench are released.
+  - [VideoChat2](./video_chat2/) is a robust baseline built on [UMT](https://github.com/OpenGVLab/unmasked_teacher) and [Vicuna-v0](https://github.com/lm-sys/FastChat/blob/main/docs/vicuna_weights_version.md).
+  - **1.9M** diverse [instruction data](./video_chat2/DATA.md) are released for effective tuning.
+  - [MVBench](./video_chat2/MVBENCH.md) is a comprehensive benchmark for video understanding.
+
 - 2023/05/11 End-to-end VideoChat and its technical report.
   - [VideoChat](./video_chat/): Instruction tuning for video chatting (also supports image one).
   - [Paper](https://arxiv.org/pdf/2305.06355.pdf): We present how we craft VideoChat with two versions (via text and embed) along with some discussions on its background, applications, and more.

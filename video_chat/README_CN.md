@@ -9,7 +9,10 @@
 初步的实验展示了我们系统在广泛的视频应用中的潜力。
 
 ## 🔥 更新
-
+- **2023/11/29** VideoChat2和MVBench发布:
+  - [VideoChat2](./video_chat2/)是基于[UMT](https://github.com/OpenGVLab/unmasked_teacher)和[Vicuna-v0](https://github.com/lm-sys/FastChat/blob/main/docs/vicuna_weights_version.md)构建的强大基线
+  - **1.9M** 多样[指令数据](./video_chat2/data.md)以便有效调优
+  - [MVBench](./video_chat2/MVBench.md)是一个全面的视频理解基准
 - **2023/06/09**: 发布代码和训练微调脚本:
     - 直接运行 [scripts](./scripts)，比如 `bash ./exp/run_7b_stage1.sh`.
     - 你可以自行修改 `NNODE` 或者 `MASTER_NODE`。对于第一阶段，至少需要8个GPU来快速训练。对于第二阶段，4个GPU足够。

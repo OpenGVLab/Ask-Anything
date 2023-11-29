@@ -25,6 +25,11 @@
 
 
 # :fire: 更新
+- 2023/11/29 VideoChat2和MVBench发布
+  - [VideoChat2](./video_chat2/)是基于[UMT](https://github.com/OpenGVLab/unmasked_teacher)和[Vicuna-v0](https://github.com/lm-sys/FastChat/blob/main/docs/vicuna_weights_version.md)构建的强大基线
+  - **1.9M** 多样[指令数据](./video_chat2/data.md)以便有效调优
+  - [MVBench](./video_chat2/MVBench.md)是一个全面的视频理解基准
+
 - 2023/05/11 端到端VideoChat
   - [VideoChat](./video_chat/): 基于**指令微调**的视频聊天机器人（也支持图像聊天）
   - [论文](https://arxiv.org/pdf/2305.06355.pdf): 我们展示了如何制作具有两个版本的VideoChat（通过文本和特征），同时还讨论了其背景、应用等方面。

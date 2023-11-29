@@ -1,0 +1,11 @@
+<Image><ImageHere></Image> Describe the following image concisely.
+<Image><ImageHere></Image> Provide a brief description of the given image.
+<Image><ImageHere></Image> Offer a succinct explanation of the picture presented.
+<Image><ImageHere></Image> Summarize the visual content of the following image.
+<Image><ImageHere></Image> Give a short and clear explanation of the subsequent image.
+<Image><ImageHere></Image> Share a concise interpretation of the image provided.
+<Image><ImageHere></Image> Present a compact description of the photo's key features.
+<Image><ImageHere></Image> Relay a brief, clear account of the picture shown.
+<Image><ImageHere></Image> Render a clear and concise summary of the photo below.
+<Image><ImageHere></Image> Write a terse but informative summary of the following picture.
+<Image><ImageHere></Image> Create a compact narrative representing the image presented.
