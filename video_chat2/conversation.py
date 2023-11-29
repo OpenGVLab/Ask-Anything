@@ -229,12 +229,12 @@ class Chat:
         assert len(prompt_segs) == len(img_list) + 1, "Unmatched numbers of visual placeholders and videos."
         with torch.no_grad():
             seg_tokens = [
-                model.llama_tokenizer(
+                self.model.llama_tokenizer(
                     seg, return_tensors="pt", add_special_tokens=i == 0).to("cuda:0").input_ids
                 # only add bos to the first seg
                 for i, seg in enumerate(prompt_segs)
             ]
-            seg_embs = [model.llama_model.base_model.model.model.embed_tokens(seg_t) for seg_t in seg_tokens]
+            seg_embs = [self.model.llama_model.base_model.model.model.embed_tokens(seg_t) for seg_t in seg_tokens]
         mixed_embs = [emb for pair in zip(seg_embs[:-1], img_list) for emb in pair] + [seg_embs[-1]]
         mixed_embs = torch.cat(mixed_embs, dim=1)
         return mixed_embs
