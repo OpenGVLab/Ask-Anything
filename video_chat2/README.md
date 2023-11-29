@@ -6,6 +6,7 @@
 
 </div>
 
+[![Paper](https://img.shields.io/badge/cs.CV-2311.17005-b31b1b?logo=arxiv&logoColor=red)](https://arxiv.org/abs/2311.17005)
 [![Dataset meta](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-VideoChat2%20IT-blue)](https://huggingface.co/datasets/OpenGVLab/VideoChat2-IT) 
 [![Dataset meta](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-MVBench-blue)](https://huggingface.co/datasets/OpenGVLab/MVBench) 
 
