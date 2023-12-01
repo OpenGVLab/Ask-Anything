@@ -63,7 +63,7 @@ def upload_img(gr_img, gr_video, chat_state, num_segments):
     })
     img_list = []
     if gr_img is None and gr_video is None:
-        return None, None, gr.update(interactive=True), chat_state, None
+        return None, None, gr.update(interactive=True),gr.update(interactive=True, placeholder='Please upload video/image first!'), chat_state, None
     if gr_video: 
         llm_message, img_list, chat_state = chat.upload_video(gr_video, chat_state, img_list, num_segments)
         return gr.update(interactive=True), gr.update(interactive=True), gr.update(interactive=True, placeholder='Type and press Enter'), gr.update(value="Start Chatting", interactive=False), chat_state, img_list
