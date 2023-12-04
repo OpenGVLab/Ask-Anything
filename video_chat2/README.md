@@ -11,6 +11,8 @@
 [![Dataset meta](https://img.shields.io/badge/%F0%9F%A4%97%20Dataset-MVBench-blue)](https://huggingface.co/datasets/OpenGVLab/MVBench) 
 [![Dataset meta](https://img.shields.io/badge/%F0%9F%A4%97%20Space-VideoChat2-yellow)](https://huggingface.co/spaces/OpenGVLab/VideoChat2) 
 [![Open in OpenXLab](https://cdn-static.openxlab.org.cn/app-center/openxlab_app.svg)](https://openxlab.org.cn/apps/detail/yinanhe/VideoChat2)
+[![YouTube Video](https://img.shields.io/badge/YouTube-Video-red)](https://www.youtube.com/watch?v=OMXlbt7A2OU)
+
 
 	
 [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/mvbench-a-comprehensive-multi-modal-video/zeroshot-video-question-answer-on-activitynet)](https://paperswithcode.com/sota/zeroshot-video-question-answer-on-activitynet?p=mvbench-a-comprehensive-multi-modal-video)
@@ -31,6 +33,9 @@
 With the rapid development of Multi-modal Large Language Models (MLLMs), a number of diagnostic benchmarks have recently emerged to evaluate the comprehension capabilities of these models. However, most benchmarks predominantly assess spatial understanding in the static image tasks, while overlooking temporal understanding in the dynamic video tasks. To alleviate this issue, we introduce a comprehensive **M**ulti-modal **V**ideo understanding **Bench**mark, namely **MVBench**, which covers **20** challenging video tasks that cannot be effectively solved with a single frame. Specifically, we first introduce a novel static-to-dynamic method to define these temporal-related tasks. By transforming various static tasks into dynamic ones, we enable the systematic generation of video tasks that require a broad spectrum of temporal skills, ranging from perception to cognition. Then, guided by the task definition, we automatically convert public video annotations into multiple-choice QA to evaluate each task. On one hand, such a distinct paradigm allows us to build MVBench efficiently, without much manual intervention. On the other hand, it guarantees evaluation fairness with ground-truth video annotations, avoiding the biased scoring of LLMs. Moreover, we further develop a robust video MLLM baseline, i.e., **VideoChat2**, by progressive multi-modal training with diverse instruction-tuning data. The extensive results on our MVBench reveal that, the existing MLLMs are far from satisfactory in temporal understanding, while our **VideoChat2** largely surpasses these leading models by over **15%** on MVBench.
 
 ## :fire: Updates
+- **2023/12/04**: Brief introduction:
+    - :page_with_curl: [Chinese Blog](https://zhuanlan.zhihu.com/p/669658267)
+    - :film_projector: [YouTube Video](https://www.youtube.com/watch?v=OMXlbt7A2OU&t=6s), [BiliBili Video](https://www.bilibili.com/video/BV1Qc411Q7Ud/)
 - **2023/11/29**: Release **VideoChat2** and **MVBench**:
     - [VideoChat2](https://arxiv.org/abs/2311.17005) is a robust baseline built on [UMT](https://github.com/OpenGVLab/unmasked_teacher) and [Vicuna-v0](https://github.com/lm-sys/FastChat/blob/main/docs/vicuna_weights_version.md).
     - **1.9M** diverse [instruction data](./DATA.md) are released for effective tuning.
