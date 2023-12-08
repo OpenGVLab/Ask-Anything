@@ -119,7 +119,7 @@ available_corpus = dict(
     ],
     classification_ssv2=[
         f"{anno_root_it}/video/classification/ssv2/train.json", 
-        "your_data_path/ssv2_video",
+        "your_data_path/video_pub/ssv2_video",
         "video"
     ],
     conversation_videochat1=[
