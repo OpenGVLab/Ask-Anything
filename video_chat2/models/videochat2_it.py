@@ -148,7 +148,7 @@ class VideoChat2_it(Blip2Base):
                 r=lora_r, lora_alpha=lora_alpha, lora_dropout=lora_dropout
             )
             self.llama_model = get_peft_model(self.llama_model, peft_config)
-            self.llama_model.logger.info_trainable_parameters()
+            self.llama_model.print_trainable_parameters()
 
         self.llama_proj = nn.Linear(
             self.qformer.config.hidden_size, self.llama_model.config.hidden_size
