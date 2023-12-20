@@ -102,7 +102,7 @@ In this study, we initiate an exploration into video understanding by introducin
     - Change the `vit_model_path` and `q_former_model_path` in [config.json](./configs/config.json) or [config_7b.json](./configs/config_7b.json).
     
 - Download [StableVicuna](https://huggingface.co/CarperAI/stable-vicuna-13b-delta) model:
-    - LLAMA: Download it from the [original repo](https://github.com/facebookresearch/llama) or [hugging face](https://huggingface.co/decapoda-research/llama-13b-hf).
+    - LLAMA: Download it from the [original repo](https://github.com/facebookresearch/llama) or [hugging face](https://huggingface.co/meta-llama/Llama-2-13b-hf/tree/main?clone=true).
     - If you download LLAMA from the original repo, please process it via the following command:
     ```shell
     # convert_llama_weights_to_hf is copied from transformers
