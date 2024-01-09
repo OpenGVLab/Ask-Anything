@@ -17,6 +17,8 @@ For image datasets, we utilized [M3IT](https://huggingface.co/datasets/MMInstruc
 You can easily download the datasets we employed from [M3IT](https://huggingface.co/datasets/MMInstruction/M3IT).
 
 ### Video
+:warning: **For the used videos of InternVid, EgoQA and YouCook2, please check [issues](https://github.com/OpenGVLab/Ask-Anything/issues/86#issuecomment-1882529070).**
+
 We treated video datasets differently. Please download the original videos from the provided links:
 - [VideoChat](https://github.com/OpenGVLab/InternVideo/tree/main/Data/instruction_data): Based on [InternVid](https://github.com/OpenGVLab/InternVideo/tree/main/Data/InternVid), we created additional instruction data and used GPT-4 to condense the existing data.
 - [VideoChatGPT](https://github.com/mbzuai-oryx/Video-ChatGPT/tree/main/data): The original caption data was converted into conversation data based on the same VideoIDs.
