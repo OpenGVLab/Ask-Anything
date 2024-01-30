@@ -230,7 +230,7 @@ class Chat:
         with torch.no_grad():
             seg_tokens = [
                 self.model.llama_tokenizer(
-                    seg, return_tensors="pt", add_special_tokens=i == 0).to("cuda:0").input_ids
+                    seg, return_tensors="pt", add_special_tokens=i == 0).to(self.device).input_ids
                 # only add bos to the first seg
                 for i, seg in enumerate(prompt_segs)
             ]
