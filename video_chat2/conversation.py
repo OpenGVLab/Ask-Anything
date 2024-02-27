@@ -97,9 +97,8 @@ class Chat:
         num_frames = len(vr)
         frame_indices = self.get_index(num_frames, num_segments)
         
-        duration = len(vr) // vr.get_avg_fps()
-        index = np.linspace(0, len(vr)-1, num=int(duration))
-        buffer = vr.get_batch(index).asnumpy()
+        #duration = len(vr) // vr.get_avg_fps()
+        #index = np.linspace(0, len(vr)-1, num=int(duration))
         # transform
         input_mean = [0.48145466, 0.4578275, 0.40821073]
         input_std = [0.26862954, 0.26130258, 0.27577711]
@@ -112,10 +111,6 @@ class Chat:
             GroupNormalize(input_mean, input_std) 
         ])
 
-        images_group = list()
-        for frame in buffer:
-            img = Image.fromarray(frame)
-            images_group.append(img)
         images_group = list()
         for frame_index in frame_indices:
             img = Image.fromarray(vr[frame_index].asnumpy())
