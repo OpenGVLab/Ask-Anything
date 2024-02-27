@@ -1,6 +1,6 @@
 <div align="center">
 
-<h2><a href="https://arxiv.org/abs/2311.17005">MVBench: A Comprehensive Multi-modal Video Understanding Benchmark</a></h2>
+<h2><a href="https://arxiv.org/abs/2311.17005">[CVPR2024] MVBench: A Comprehensive Multi-modal Video Understanding Benchmark</a></h2>
 
 [Kunchang Li](https://scholar.google.com/citations?user=D4tLSbsAAAAJ), [Yali Wang](https://scholar.google.com/citations?user=hD948dkAAAAJ), [Yinan He](https://dblp.org/pid/93/7763.html), [Yizhuo Li](https://scholar.google.com/citations?user=pyBSGjgAAAAJ), [Yi Wang](https://scholar.google.com.hk/citations?hl=zh-CN&user=Xm2M8UwAAAAJ), [Yi Liu](https://scholar.google.com/citations?user=gGPehK4AAAAJ), [Zun Wang](https://scholar.google.com/citations?hl=zh-CN&user=G-jPT9MAAAAJ), [Jilan Xu](https://scholar.google.com/citations?user=mf2U64IAAAAJ&hl=en&oi=ao), [Guo Chen](https://chenguo.netlify.app/), [Ping Luo](https://scholar.google.com.hk/citations?user=aXdjxb4AAAAJ), [Limin Wang](https://scholar.google.com/citations?user=HEuN8PcAAAAJ) and [Yu Qiao](https://scholar.google.com/citations?user=gFtI-8QAAAAJ&hl)
 
@@ -34,6 +34,7 @@
 With the rapid development of Multi-modal Large Language Models (MLLMs), a number of diagnostic benchmarks have recently emerged to evaluate the comprehension capabilities of these models. However, most benchmarks predominantly assess spatial understanding in the static image tasks, while overlooking temporal understanding in the dynamic video tasks. To alleviate this issue, we introduce a comprehensive **M**ulti-modal **V**ideo understanding **Bench**mark, namely **MVBench**, which covers **20** challenging video tasks that cannot be effectively solved with a single frame. Specifically, we first introduce a novel static-to-dynamic method to define these temporal-related tasks. By transforming various static tasks into dynamic ones, we enable the systematic generation of video tasks that require a broad spectrum of temporal skills, ranging from perception to cognition. Then, guided by the task definition, we automatically convert public video annotations into multiple-choice QA to evaluate each task. On one hand, such a distinct paradigm allows us to build MVBench efficiently, without much manual intervention. On the other hand, it guarantees evaluation fairness with ground-truth video annotations, avoiding the biased scoring of LLMs. Moreover, we further develop a robust video MLLM baseline, i.e., **VideoChat2**, by progressive multi-modal training with diverse instruction-tuning data. The extensive results on our MVBench reveal that, the existing MLLMs are far from satisfactory in temporal understanding, while our **VideoChat2** largely surpasses these leading models by over **15%** on MVBench.
 
 ## :fire: Updates
+- **2024/02/27**: MVBench is accepted by CVPR2024! 🎉🎉
 - **2023/12/17**: Online Leaderboard:
     - We maintain an online leaderboard on [HuggingFace](https://huggingface.co/spaces/OpenGVLab/MVBench_Leaderboard).
     - Evaluation results of [GPT-4V](https://openai.com/gpt-4) and [Gemini Pro](https://deepmind.google/technologies/gemini/#introduction) are added.
