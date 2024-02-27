@@ -58,6 +58,7 @@ Your browser does not support the video tag.
 
 
 # :fire: Updates
+- 2024/2/27 MVBench[./video_chat2] is accepted by CVPR2024.
 - 2023/11/29 VideoChat2 and MVBench are released.
   - [VideoChat2](./video_chat2/) is a robust baseline built on [UMT](https://github.com/OpenGVLab/unmasked_teacher) and [Vicuna-v0](https://github.com/lm-sys/FastChat/blob/main/docs/vicuna_weights_version.md).
   - **1.9M** diverse [instruction data](./video_chat2/DATA.md) are released for effective tuning.
