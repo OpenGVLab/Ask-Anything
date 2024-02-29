@@ -79,7 +79,7 @@ With the rapid development of Multi-modal Large Language Models (MLLMs), a numbe
     bash scripts/run_7b_stage1.sh
     ```
 - Stage2 training:
-    - Set `vit_blip_model_path` and `llama_model_path` in [stage2_config](/mnt/petrelfs/likunchang/code/mvchat/scripts/config_7b_stage2.py)
+    - Set `vit_blip_model_path` and `llama_model_path` in [stage2_config](scripts/config_7b_stage2.py)
     - For VideoBLIP, you can download Stage1 [model](https://pjlab-gvm-data.oss-cn-shanghai.aliyuncs.com/videochat2/umt_l16_qformer.pth)
     - For LLM, please follow [here](https://github.com/OpenGVLab/Ask-Anything/tree/main/video_chat#running-usage) to prepare vicuna-7b-v0
     ```shell
@@ -87,7 +87,7 @@ With the rapid development of Multi-modal Large Language Models (MLLMs), a numbe
     ```
 - Stage3 training:
     - Download [instruction data](./DATA.md) and set `data_dir` in [instruction_data.py](configs/instruction_data.py)
-    - Set `vit_blip_model_path`, `llama_model_path` and `videochat2_model_path` in [stage3_config](/mnt/petrelfs/likunchang/code/mvchat/scripts/config_7b_stage3.py)
+    - Set `vit_blip_model_path`, `llama_model_path` and `videochat2_model_path` in [stage3_config](scripts/config_7b_stage3.py)
     - You can download Stage2 [model](videochat2_model_path) and create instruction data for your own tuning
     ```shell
     bash scripts/run_7b_stage3.sh
