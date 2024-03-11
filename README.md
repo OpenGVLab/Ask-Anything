@@ -8,7 +8,7 @@
 [![Open in OpenXLab](https://cdn-static.openxlab.org.cn/app-center/openxlab_app.svg)](https://openxlab.org.cn/apps/detail/yinanhe/VideoChat2) | 
 <a src="https://img.shields.io/discord/1099920215724277770?label=Discord&logo=discord" href="https://discord.gg/A2Ex6Pph6A">
     <img src="https://img.shields.io/discord/1099920215724277770?label=Discord&logo=discord">
-</a>   |
+</a> |
 <a src="https://img.shields.io/badge/WeChat-Group-green?logo=wechat" href="https://pjlab-gvm-data.oss-cn-shanghai.aliyuncs.com/papers/media/wechatv.jpg"> <img src="https://img.shields.io/badge/WeChat-Group-green?logo=wechat">|
 <a src="https://img.shields.io/badge/cs.CV-2305.06355-b31b1b?logo=arxiv&logoColor=red" href="https://arxiv.org/abs/2305.06355"> <img src="https://img.shields.io/badge/cs.CV-2305.06355-b31b1b?logo=arxiv&logoColor=red">
 </a>| 
@@ -17,16 +17,16 @@
 </a>
 <br>
 <a href="https://huggingface.co/spaces/OpenGVLab/VideoChatGPT"><img src="https://huggingface.co/datasets/huggingface/badges/raw/main/open-in-hf-spaces-sm-dark.svg" alt="Open in Spaces"> [VideoChat-7B-8Bit] End2End ChatBOT for video and image. </a>
-<br>
+<!-- <br>
 <a src="https://img.shields.io/badge/Video%20Chat%20(vChat%207B)-Open-green?logo=alibabacloud" href="https://app-center-159608-1986-m4xwab1.0.mai4u.com">
     <img src="https://img.shields.io/badge/Video%20Chat%20(vChat%207B)-Open-green?logo=alibabacloud"> [VideoChat-7B]End2End ChatBOT for video and image.
-<br>
-<a src="https://img.shields.io/badge/Video%20Chat%20(vChat%2013B)-Open-green?logo=alibabacloud" href="https://vchat.opengvlab.com">
-    <img src="https://img.shields.io/badge/Video%20Chat%20(vChat%2013B)-Open-green?logo=alibabacloud"> [VideoChat-13B]End2End ChatBOT for video and image.
-<br>    
+<br> -->
+<a src="https://img.shields.io/badge/Video%20Chat2%20(vChat2%207B)-Open-green?logo=alibabacloud" href="https://vchat.opengvlab.com">
+    <img src="https://img.shields.io/badge/Video%20Chat2%20(vChat2%207B)-Open-green?logo=alibabacloud"> [VideoChat2-7B]End2End ChatBOT for video and image.
+<!--<br>    
     <a src="https://img.shields.io/badge/Video%20Chat%20with%20ChatGPT-Open-green?logo=alibabacloud" href="https://ask.opengvlab.com">
     <img src="https://img.shields.io/badge/Video%20Chat%20with%20ChatGPT-Open-green?logo=alibabacloud">  Explicit communication with ChatGPT.  </a>
-</a> 
+</a> -->
 
 
 [中文 README 及 中文交流群](README_cn.md) | [Paper](https://arxiv.org/abs/2305.06355)
