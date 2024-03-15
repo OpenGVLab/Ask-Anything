@@ -59,9 +59,9 @@ With the rapid development of Multi-modal Large Language Models (MLLMs), a numbe
 
 |        | ViT | QFormer | LLM | LoRA | shell | Model |
 |--------|:-------:|:------:|:------:|:------:|:------:|:------:|
-| Stage1 | :snowflake: | :fire: | :no_entry_sign: | :no_entry_sign: | [config](./scripts/config_7b_stage1.py) & [run]((./scripts/run_7b_stage1.sh)) | [ckpt](https://pjlab-gvm-data.oss-cn-shanghai.aliyuncs.com/videochat2/umt_l16_qformer.pth) |
-| Stage2 | :fire: | :fire: | :snowflake: | :no_entry_sign: | [config](./scripts/config_7b_stage2.py) & [run]((./scripts/run_7b_stage2.sh)) | [ckpt](https://pjlab-gvm-data.oss-cn-shanghai.aliyuncs.com/videochat2/videochat2_7b_stage2.pth) |
-| Stage3 | :fire: | :fire: | :snowflake:| :fire: | [config](./scripts/config_7b_stage3.py) & [run]((./scripts/run_7b_stage3.sh)) | [ckpt](https://pjlab-gvm-data.oss-cn-shanghai.aliyuncs.com/videochat2/videochat2_7b_stage3.pth) |
+| Stage1 | :snowflake: | :fire: | :no_entry_sign: | :no_entry_sign: | [config](./scripts/config_7b_stage1.py) & [run](./scripts/run_7b_stage1.sh) | [ckpt](https://pjlab-gvm-data.oss-cn-shanghai.aliyuncs.com/videochat2/umt_l16_qformer.pth) |
+| Stage2 | :fire: | :fire: | :snowflake: | :no_entry_sign: | [config](./scripts/config_7b_stage2.py) & [run](./scripts/run_7b_stage2.sh) | [ckpt](https://pjlab-gvm-data.oss-cn-shanghai.aliyuncs.com/videochat2/videochat2_7b_stage2.pth) |
+| Stage3 | :fire: | :fire: | :snowflake:| :fire: | [config](./scripts/config_7b_stage3.py) & [run](./scripts/run_7b_stage3.sh) | [ckpt](https://pjlab-gvm-data.oss-cn-shanghai.aliyuncs.com/videochat2/videochat2_7b_stage3.pth) |
 
 
 #### [Instruction Data](./DATA.md)
