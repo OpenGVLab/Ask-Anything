@@ -111,7 +111,7 @@ def create_dataset(dataset_type, config):
                 datasets.append(dataset_cls(**dataset_kwargs))
             dataset = ConcatDataset(datasets)
             train_datasets.append(dataset)
-            return train_datasets
+        return train_datasets
     
     elif dataset_type in ["it_train"]:
         # convert to list of lists
