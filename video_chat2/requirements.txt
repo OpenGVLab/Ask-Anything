@@ -25,4 +25,4 @@ sentencepiece==0.1.99
 wandb==0.14.0
 peft==0.3.0
 packaging==24.0
-flash-attn==2.5.6
+flash-attn==2.3.6
