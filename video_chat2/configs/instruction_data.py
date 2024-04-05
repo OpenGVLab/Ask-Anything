@@ -97,11 +97,6 @@ available_corpus = dict(
         "your_data_path/WebVid10M",
         "video"
     ],
-    caption_videochatgpt=[
-        f"{anno_root_it}/video/caption/videochatgpt/train.json", 
-        "your_data_path/ANet/ANet_320p_fps30",
-        "video"
-    ],
     caption_webvid=[
         f"{anno_root_it}/video/caption/webvid/train.json", 
         "your_data_path/WebVid2M",
