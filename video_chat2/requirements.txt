@@ -24,4 +24,5 @@ transformers==4.28.1
 sentencepiece==0.1.99
 wandb==0.14.0
 peft==0.3.0
-flash_attn==1.0.4
+packaging==24.0
+flash-attn==2.5.6
