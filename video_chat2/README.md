@@ -71,6 +71,8 @@ With the rapid development of Multi-modal Large Language Models (MLLMs), a numbe
 #### Usage
 - Prepare the envirment:
     ```shell
+    conda create -n videochat2 python=3.9
+    conda activate videochat2
     pip install -r requirements.txt
     ```
 - Stage1 training:
