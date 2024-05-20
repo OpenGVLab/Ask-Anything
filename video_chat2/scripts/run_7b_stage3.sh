@@ -9,7 +9,7 @@ echo "PYTHONPATH: ${PYTHONPATH}"
 
 NNODE=4
 NUM_GPUS=8
-MASTER_NODE='SH-IDC1-10-140-1-1'
+MASTER_NODE=$MASTER_NODE
 
 mkdir -p output/run_7b_stage3
 OUTPUT_DIR='output/run_7b_stage3'
