@@ -9,7 +9,7 @@ echo "PYTHONPATH: ${PYTHONPATH}"
 
 NNODE=4
 NUM_GPUS=8
-MASTER_NODE='SH-IDC1-10-140-1-1'
+MASTER_NODE=$MASTER_NODE
 
 torchrun  --nnodes=${NNODE} --nproc_per_node=${NUM_GPUS} \
     --rdzv_endpoint=${MASTER_NODE}:10068 \
