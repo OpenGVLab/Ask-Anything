@@ -5,13 +5,13 @@ import torch
 from torch.cuda.amp import autocast as autocast
 import torch.nn as nn
 
-from .blip2.blip2 import Blip2Base, disabled_train
-from transformers import LlamaTokenizer, LlamaConfig
+from ..blip2.blip2 import Blip2Base, disabled_train
+from transformers import AutoModelForCausalLM, AutoTokenizer, AutoConfig
 
 logger = logging.getLogger(__name__)
 
 
-class VideoChat2_pt(Blip2Base):
+class VideoChat2_pt_mistral(Blip2Base):
     """
     VideoChat2 model.
     """
@@ -19,7 +19,7 @@ class VideoChat2_pt(Blip2Base):
         super().__init__()
         # pretrained_path
         vit_blip_model_path = config.get("vit_blip_model_path", None)
-        llama_model_path = config.get("llama_model_path")
+        mistral_model_path = config.get("mistral_model_path")
         freeze_vit = config.get("freeze_vit", True)
         freeze_qformer = config.get("freeze_qformer", True)
         # vit
@@ -35,14 +35,15 @@ class VideoChat2_pt(Blip2Base):
         img_prompt_path = config.get("img_prompt_path", "")
         prompt_template = config.get("prompt_template", "")
         max_txt_len = config.get("max_txt_len", 32)
-        end_sym = config.get("end_sym", '\n')
+        end_sym = config.get("end_sym", '</s>')
         # debug
         debug = config.get("debug", False)
+        self.debug = debug
         use_flash_attention = config.get("use_flash_attention", False)
 
         self.tokenizer = self.init_tokenizer(truncation_side="left")
         self.low_resource = low_resource
-        self.vision_encoder, self.vision_layernorm, = self.init_vision_encoder_umt(config)
+        self.vision_encoder, self.vision_layernorm = self.init_vision_encoder_umt(config)
         self.qformer, self.query_tokens = self.init_Qformer(
             num_query_token, config.vision_encoder.encoder_embed_dim,
             qformer_hidden_dropout_prob=qformer_hidden_dropout_prob,
@@ -89,48 +90,42 @@ class VideoChat2_pt(Blip2Base):
             self.qformer.train = disabled_train
             self.query_tokens.requires_grad = False
 
-        logger.info('Loading LLAMA')
+        logger.info('Loading Mistral')
         # problem: do we need to set truncation_side="left"?
-        self.llama_tokenizer = LlamaTokenizer.from_pretrained(llama_model_path, use_fast=False)
-        if not self.llama_tokenizer.pad_token:
+        self.mistral_tokenizer = AutoTokenizer.from_pretrained(mistral_model_path)
+        if not self.mistral_tokenizer.pad_token:
             logger.info("Set pad_token")
-            self.llama_tokenizer.pad_token = self.llama_tokenizer.eos_token
+            self.mistral_tokenizer.pad_token = self.mistral_tokenizer.eos_token
 
-        if use_flash_attention:
-            logger.info("Use flash attention")
-            from .blip2.modeling_llama_mem import LlamaForCausalLM
-        else:
-            from .blip2.modeling_llama import LlamaForCausalLM
         if debug:
-            logger.info("Debug mode, build small LLAMA")
-            llama_config = LlamaConfig.from_pretrained(llama_model_path)
-            llama_config.hidden_size = 512
-            llama_config.intermediate_size = 2048
-            llama_config.num_attention_heads = 8
-            llama_config.num_hidden_layers = 12
-            llama_config.torch_dtype = torch.float16
-            self.llama_model = LlamaForCausalLM(llama_config)
+            logger.info("Debug mode, build small Mistral")
+            mistral_config = AutoConfig.from_pretrained(mistral_model_path)
+            mistral_config.hidden_size = 512
+            mistral_config.intermediate_size = 2048
+            mistral_config.num_attention_heads = 8
+            mistral_config.num_hidden_layers = 12
+            mistral_config.torch_dtype = torch.float16
+            self.mistral_model = AutoModelForCausalLM.from_config(mistral_config)
         else:
-            if self.low_resource:
-                self.llama_model = LlamaForCausalLM.from_pretrained(
-                    llama_model_path,
+            if use_flash_attention:
+                self.mistral_model = AutoModelForCausalLM.from_pretrained(
+                    mistral_model_path,
                     torch_dtype=torch.float16,
-                    load_in_8bit=True,
-                    device_map="auto"
+                    attn_implementation="flash_attention_2",
                 )
             else:
-                self.llama_model = LlamaForCausalLM.from_pretrained(
-                    llama_model_path,
+                self.mistral_model = AutoModelForCausalLM.from_pretrained(
+                    mistral_model_path,
                     torch_dtype=torch.float16,
                 )
 
-        logger.info("freeze LLAMA")
-        for _, param in self.llama_model.named_parameters():
+        logger.info("freeze Mistral")
+        for _, param in self.mistral_model.named_parameters():
             param.requires_grad = False
-        logger.info('Loading LLAMA Done')
+        logger.info('Loading Mistral Done')
 
-        self.llama_proj = nn.Linear(
-            self.qformer.config.hidden_size, self.llama_model.config.hidden_size
+        self.mistral_proj = nn.Linear(
+            self.qformer.config.hidden_size, self.mistral_model.config.hidden_size
         )
         self.max_txt_len = max_txt_len
         self.end_sym = end_sym
@@ -190,9 +185,9 @@ class VideoChat2_pt(Blip2Base):
                 return_dict=True,
             )
 
-            inputs_llama = self.llama_proj(query_output.last_hidden_state)
-            atts_llama = torch.ones(inputs_llama.size()[:-1], dtype=torch.long).to(image.device)
-        return inputs_llama, atts_llama
+            inputs_mistral = self.mistral_proj(query_output.last_hidden_state)
+            atts_mistral = torch.ones(inputs_mistral.size()[:-1], dtype=torch.long).to(image.device)
+        return inputs_mistral, atts_mistral
 
     def prompt_wrap(self, img_embeds, atts_img, prompt, use_image=False):
         if prompt:
@@ -201,12 +196,12 @@ class VideoChat2_pt(Blip2Base):
                 p_before, p_after = prompt.split('<ImageHere>')
             else:
                 p_before, p_after = prompt.split('<VideoHere>')
-            p_before_tokens = self.llama_tokenizer(
+            p_before_tokens = self.mistral_tokenizer(
                 p_before, return_tensors="pt", add_special_tokens=False).to(img_embeds.device)
-            p_after_tokens = self.llama_tokenizer(
+            p_after_tokens = self.mistral_tokenizer(
                 p_after, return_tensors="pt", add_special_tokens=False).to(img_embeds.device)
-            p_before_embeds = self.llama_model.model.embed_tokens(p_before_tokens.input_ids).expand(batch_size, -1, -1)
-            p_after_embeds = self.llama_model.model.embed_tokens(p_after_tokens.input_ids).expand(batch_size, -1, -1)
+            p_before_embeds = self.mistral_model.model.embed_tokens(p_before_tokens.input_ids).expand(batch_size, -1, -1)
+            p_after_embeds = self.mistral_model.model.embed_tokens(p_after_tokens.input_ids).expand(batch_size, -1, -1)
             wrapped_img_embeds = torch.cat([p_before_embeds, img_embeds, p_after_embeds], dim=1)
             wrapped_atts_img = atts_img[:, :1].expand(-1, wrapped_img_embeds.shape[1])
             return wrapped_img_embeds, wrapped_atts_img
@@ -227,10 +222,10 @@ class VideoChat2_pt(Blip2Base):
         if self.prompt_list:
             img_embeds, atts_img = self.prompt_wrap(img_embeds, atts_img, prompt, use_image)
 
-        self.llama_tokenizer.padding_side = "right"
+        self.mistral_tokenizer.padding_side = "right"
         text = [t + self.end_sym for t in text_input]
 
-        to_regress_tokens = self.llama_tokenizer(
+        to_regress_tokens = self.mistral_tokenizer(
             text,
             return_tensors="pt",
             padding="longest",
@@ -240,7 +235,7 @@ class VideoChat2_pt(Blip2Base):
         ).to(image.device)
 
         targets = to_regress_tokens.input_ids.masked_fill(
-            to_regress_tokens.input_ids == self.llama_tokenizer.pad_token_id, -100
+            to_regress_tokens.input_ids == self.mistral_tokenizer.pad_token_id, -100
         )
 
         empty_targets = (
@@ -249,19 +244,24 @@ class VideoChat2_pt(Blip2Base):
         )
         targets = torch.cat([empty_targets, targets], dim=1)
 
+        if self.debug:  # Inspect and check the correctness of masking
+            z = targets[0].clone()
+            z = torch.where(z == -100, self.mistral_tokenizer.unk_token_id, z)
+            logger.info(self.mistral_tokenizer.decode(z))
+
         batch_size = img_embeds.shape[0]
         bos = torch.ones([batch_size, 1],
                          dtype=to_regress_tokens.input_ids.dtype,
-                         device=to_regress_tokens.input_ids.device) * self.llama_tokenizer.bos_token_id
-        bos_embeds = self.llama_model.model.embed_tokens(bos)
+                         device=to_regress_tokens.input_ids.device) * self.mistral_tokenizer.bos_token_id
+        bos_embeds = self.mistral_model.model.embed_tokens(bos)
         atts_bos = atts_img[:, :1]
 
-        to_regress_embeds = self.llama_model.model.embed_tokens(to_regress_tokens.input_ids)
+        to_regress_embeds = self.mistral_model.model.embed_tokens(to_regress_tokens.input_ids)
         inputs_embeds = torch.cat([bos_embeds, img_embeds, to_regress_embeds], dim=1)
         attention_mask = torch.cat([atts_bos, atts_img, to_regress_tokens.attention_mask], dim=1)
 
         with self.maybe_autocast():
-            outputs = self.llama_model(
+            outputs = self.mistral_model(
                 inputs_embeds=inputs_embeds,
                 attention_mask=attention_mask,
                 return_dict=True,

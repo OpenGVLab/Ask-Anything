@@ -9,7 +9,7 @@ import torch.distributed as dist
 import wandb
 
 from dataset import MetaLoader, create_dataset, create_loader, create_sampler
-from models.videochat2_it import VideoChat2_it
+from models import *
 from tasks.shared_utils import get_media_types, setup_model
 from utils.basic_utils import (MetricLogger, SmoothedValue, setup_seed)
 from utils.config_utils import setup_main

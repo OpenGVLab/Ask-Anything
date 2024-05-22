@@ -33,16 +33,15 @@ inputs = dict(
 
 # ========================= model ==========================
 model = dict(
-    model_cls="VideoChat2_it",
-    vit_blip_model_path="your_model_path/umt_l16_qformer.pth",
-    llama_model_path="your_model_path/vicuna-7b-v0",
-    videochat2_model_path="your_model_path/videochat2_7b_stage2.pth",
+    model_cls="VideoChat2_it_vicuna",
+    vit_blip_model_path="your_model_path/videochat2/umt_l16_qformer.pth",
+    llama_model_path="your_model_path/llm/vicuna-7b-v0",
+    videochat2_model_path="your_model_path/videochat2/videochat2_7b_stage2.pth",
     freeze_vit=False,
     freeze_qformer=False,
     max_txt_len="${max_txt_l}", # use large max_txt_len on stage3
     # vit
     low_resource=False,
-    add_temp_embed=False,
     vision_encoder=dict(
         name="vit_l14",
         img_size=224, 

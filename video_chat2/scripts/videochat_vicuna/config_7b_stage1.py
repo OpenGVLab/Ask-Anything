@@ -1,19 +1,21 @@
 from configs.data import *
+from configs.model import *
 
 # ========================= data ==========================
-train_corpus = "webvid10m_cc14m_plus"
+train_corpus = "webvid10m_cc14m"
 train_file = "${available_corpus[${train_corpus}]}"  # for lazy evaluation
-test_file = dict()
-test_types = []
+test_file = dict(msrvtt_1k_test=available_corpus["msrvtt_1k_test"])
+test_types = ["msrvtt_1k_test"]
+
 num_workers = 6
 
 stop_key = None
 
 # ========================= input ==========================
-num_frames = 8
-num_frames_test = 8
-batch_size = 4
-max_txt_l = 512
+num_frames = 4
+num_frames_test = 4
+batch_size = 128
+max_txt_l = 32
 
 pre_text = False
 
@@ -32,15 +34,9 @@ inputs = dict(
 )
 
 # ========================= model ==========================
+text_enc = "bert"
 model = dict(
-    model_cls="VideoChat2_pt",
-    vit_blip_model_path="your_model_path/umt_l16_qformer.pth",
-    llama_model_path="your_model_path/vicuna-7b-v0",
-    freeze_vit=False,
-    freeze_qformer=False,
-    max_txt_len="${max_txt_l}",
-    # vit
-    low_resource=False,
+    model_cls="VideoChat2_qformer",
     vision_encoder=dict(
         name="vit_l14",
         img_size=224, 
@@ -53,23 +49,23 @@ model = dict(
         num_frames="${num_frames}",
         tubelet_size=1,
         use_checkpoint=False,
-        checkpoint_num=0,
-        pretrained="",
+        checkpoint_num=12,
+        pretrained="/mnt/petrelfs/share_data/likunchang/model/videochat2/l16_25m.pth",
         return_index=-2,
-        vit_add_ln=True,
     ),
-    # prompt
-    prompt_path="prompts/concise_description.txt",
-    img_prompt_path="prompts/concise_image_description.txt",
-    prompt_template="###Human: {} ###Assistant: ",
-    end_sym="###",
-    # qformer
-    num_query_token=32,
-    qformer_hidden_dropout_prob=0.1,
-    qformer_attention_probs_dropout_prob=0.1,
-    qformer_drop_path_rate=0.2,
-    extra_num_query_token=64,
-    # debug=True,
+    text_encoder="${TextEncoders[${text_enc}]}",
+    vit_add_ln=True,
+    embed_dim=768,
+    temp=0.07,
+    qformer_num_query_tokens=32,
+    agg_method="mean",
+    drop_path_rate=0.2,
+)
+
+criterion = dict(
+    loss_weight=dict(vtc=1.0, mlm=0.0, vtm=1.0, mvm=0.0, cap=1.0),  # 0: disabled.
+    vtm_hard_neg=True,
+    vtm_cat_text_cls=True
 )
 
 optimizer = dict(
@@ -82,7 +78,7 @@ optimizer = dict(
     different_lr=dict(enable=False, module_names=[], lr=1e-3),
 )
 
-scheduler = dict(sched="cosine", epochs=1, min_lr_multi=0.01, warmup_epochs=0.2)
+scheduler = dict(sched="cosine", epochs=10, min_lr_multi=0.01, warmup_epochs=0.2)
 
 evaluate = False
 deep_fusion = False

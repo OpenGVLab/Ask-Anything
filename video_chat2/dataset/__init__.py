@@ -6,6 +6,7 @@ from torchvision.transforms import InterpolationMode
 from dataset.dataloader import MetaLoader
 from dataset.pt_dataset import PTImgTrainDataset, PTVidTrainDataset, PTImgEvalDataset, PTVidEvalDataset
 from dataset.it_dataset import ITImgTrainDataset, ITVidTrainDataset
+from dataset.it_dataset_mistral import ITImgTrainDataset_mistral, ITVidTrainDataset_mistral
 
 
 def get_media_type(dataset_config):
@@ -123,6 +124,49 @@ def create_dataset(dataset_type, config):
         train_datasets = []
         for m in train_media_types:
             dataset_cls = ITImgTrainDataset if m == "image" else ITVidTrainDataset
+            # dataset of the same media_type will be mixed in a single Dataset object
+            _train_files = [e for e in train_files if get_media_type(e) == m]
+
+            datasets = []
+            for train_file in _train_files:
+                dataset_kwargs = dict(
+                    ann_file=train_file,
+                    transform=train_transform,
+                    system=config.model.get("system", ""),
+                    start_token=config.model.get("img_start_token", "<Image>"), 
+                    end_token=config.model.get("img_end_token", "</Image>"),
+                )
+                if m == "video":
+                    video_only_dataset_kwargs_train.update({
+                        "start_token": config.model.get("start_token", "<Video>"),
+                        "end_token": config.model.get("end_token", "</Video>"),
+                    })
+                    dataset_kwargs.update(video_only_dataset_kwargs_train)
+                    if "tgif" in train_file[1]:
+                        video_only_dataset_kwargs_train.update({
+                            "video_reader_type": "gif"
+                        })
+                        dataset_kwargs.update(video_only_dataset_kwargs_train)
+                    else:
+                        video_only_dataset_kwargs_train.update({
+                            "video_reader_type": "decord"
+                        })
+                        dataset_kwargs.update(video_only_dataset_kwargs_train)
+                datasets.append(dataset_cls(**dataset_kwargs))
+            dataset = ConcatDataset(datasets)
+            train_datasets.append(dataset)
+        return train_datasets
+
+    elif dataset_type in ["it_mistral_train"]:
+        # convert to list of lists
+        train_files = (
+            [config.train_file] if isinstance(config.train_file[0], str) else config.train_file
+        )
+        train_media_types = sorted(list({get_media_type(e) for e in train_files}))
+
+        train_datasets = []
+        for m in train_media_types:
+            dataset_cls = ITImgTrainDataset_mistral if m == "image" else ITVidTrainDataset_mistral
             # dataset of the same media_type will be mixed in a single Dataset object
             _train_files = [e for e in train_files if get_media_type(e) == m]
 

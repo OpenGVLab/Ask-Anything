@@ -6,13 +6,13 @@ from torch.cuda.amp import autocast as autocast
 import torch.nn as nn
 from peft import get_peft_model, LoraConfig, TaskType
 
-from .blip2.blip2 import Blip2Base, disabled_train
+from ..blip2.blip2 import Blip2Base, disabled_train
 from transformers import LlamaTokenizer, LlamaConfig
 
 logger = logging.getLogger(__name__)
 
 
-class VideoChat2_it(Blip2Base):
+class VideoChat2_it_vicuna(Blip2Base):
     """
     VideoChat2 model.
     """
@@ -52,7 +52,7 @@ class VideoChat2_it(Blip2Base):
 
         self.tokenizer = self.init_tokenizer(truncation_side="left")
         self.low_resource = low_resource
-        self.vision_encoder, self.vision_layernorm, = self.init_vision_encoder_umt(config)
+        self.vision_encoder, self.vision_layernorm = self.init_vision_encoder_umt(config)
         self.qformer, self.query_tokens = self.init_Qformer(
             num_query_token, config.vision_encoder.encoder_embed_dim,
             qformer_hidden_dropout_prob=qformer_hidden_dropout_prob,
@@ -110,9 +110,9 @@ class VideoChat2_it(Blip2Base):
 
         if use_flash_attention:
             logger.info("Use flash attention")
-            from .blip2.modeling_llama_mem import LlamaForCausalLM
+            from ..blip2.modeling_llama_mem import LlamaForCausalLM
         else:
-            from .blip2.modeling_llama import LlamaForCausalLM
+            from ..blip2.modeling_llama import LlamaForCausalLM
         if debug:
             logger.info("Debug mode, build small LLAMA")
             llama_config = LlamaConfig.from_pretrained(llama_model_path)
@@ -137,7 +137,7 @@ class VideoChat2_it(Blip2Base):
                 )
 
         logger.info("freeze LLAMA")
-        for name, param in self.llama_model.named_parameters():
+        for _, param in self.llama_model.named_parameters():
             param.requires_grad = False
         logger.info('Loading LLAMA Done')
 

@@ -34,6 +34,7 @@
 With the rapid development of Multi-modal Large Language Models (MLLMs), a number of diagnostic benchmarks have recently emerged to evaluate the comprehension capabilities of these models. However, most benchmarks predominantly assess spatial understanding in the static image tasks, while overlooking temporal understanding in the dynamic video tasks. To alleviate this issue, we introduce a comprehensive **M**ulti-modal **V**ideo understanding **Bench**mark, namely **MVBench**, which covers **20** challenging video tasks that cannot be effectively solved with a single frame. Specifically, we first introduce a novel static-to-dynamic method to define these temporal-related tasks. By transforming various static tasks into dynamic ones, we enable the systematic generation of video tasks that require a broad spectrum of temporal skills, ranging from perception to cognition. Then, guided by the task definition, we automatically convert public video annotations into multiple-choice QA to evaluate each task. On one hand, such a distinct paradigm allows us to build MVBench efficiently, without much manual intervention. On the other hand, it guarantees evaluation fairness with ground-truth video annotations, avoiding the biased scoring of LLMs. Moreover, we further develop a robust video MLLM baseline, i.e., **VideoChat2**, by progressive multi-modal training with diverse instruction-tuning data. The extensive results on our MVBench reveal that, the existing MLLMs are far from satisfactory in temporal understanding, while our **VideoChat2** largely surpasses these leading models by over **15%** on MVBench.
 
 ## :fire: Updates
+- **2024/05/22**: :loudspeaker: We release **VideoChat2_mistral**, which shows better capacity on diverse tasks and achieves **60.4%** on MVBench.
 - **2024/04/05**: MVBench is selected as Poster (**Highlight**)! 🎉🎉
 - **2024/02/27**: MVBench is accepted by CVPR2024! 🎉🎉
 - **2023/12/17**: Online Leaderboard:
@@ -58,11 +59,11 @@ With the rapid development of Multi-modal Large Language Models (MLLMs), a numbe
 
 #### Model
 
-|        | ViT | QFormer | LLM | LoRA | shell | Model |
-|--------|:-------:|:------:|:------:|:------:|:------:|:------:|
-| Stage1 | :snowflake: | :fire: | :no_entry_sign: | :no_entry_sign: | [config](./scripts/config_7b_stage1.py) & [run]((./scripts/run_7b_stage1.sh)) | [ckpt](https://pjlab-gvm-data.oss-cn-shanghai.aliyuncs.com/videochat2/umt_l16_qformer.pth) |
-| Stage2 | :fire: | :fire: | :snowflake: | :no_entry_sign: | [config](./scripts/config_7b_stage2.py) & [run]((./scripts/run_7b_stage2.sh)) | [ckpt](https://pjlab-gvm-data.oss-cn-shanghai.aliyuncs.com/videochat2/videochat2_7b_stage2.pth) |
-| Stage3 | :fire: | :fire: | :snowflake:| :fire: | [config](./scripts/config_7b_stage3.py) & [run]((./scripts/run_7b_stage3.sh)) | [ckpt](https://pjlab-gvm-data.oss-cn-shanghai.aliyuncs.com/videochat2/videochat2_7b_stage3.pth) |
+|        | ViT | QFormer | LLM | LoRA | shell (Vicuna) | Model (Vicuna) | shell (Mistral) | Model (Mistral) |
+|--------|:-------:|:------:|:------:|:------:|:------:|:------:| :------:| :------:|
+| Stage1 | :snowflake: | :fire: | :no_entry_sign: | :no_entry_sign: | [config](./scripts/videochat_vicuna/config_7b_stage1.py) & [run]((./scripts/videochat_vicuna/run_7b_stage1.sh)) | [ckpt](https://pjlab-gvm-data.oss-cn-shanghai.aliyuncs.com/videochat2/umt_l16_qformer.pth) | SAME | SMAE |
+| Stage2 | :fire: | :fire: | :snowflake: | :no_entry_sign: | [config](./scripts/videochat_vicuna/config_7b_stage2.py) & [run]((./scripts/videochat_vicuna/run_7b_stage2.sh)) | [ckpt](https://pjlab-gvm-data.oss-cn-shanghai.aliyuncs.com/videochat2/videochat2_7b_stage2.pth) | [config](./scripts/videochat_mistral/config_7b_stage2.py) & [run]((./scripts/videochat_mistral/run_7b_stage2.sh)) | TBD | 
+| Stage3 | :fire: | :fire: | :snowflake:| :fire: | [config](./scripts/videochat_vicuna/config_7b_stage3.py) & [run](./scripts/videochat_vicuna/run_7b_stage3.sh) | [ckpt](https://pjlab-gvm-data.oss-cn-shanghai.aliyuncs.com/videochat2/videochat2_7b_stage3.pth) | [config](./scripts/videochat_mistral/config_7b_stage3.py) & [run](./scripts/videochat_mistral/run_7b_stage3.sh) | TBD | 
 
 
 #### [Instruction Data](./DATA.md)
@@ -79,33 +80,39 @@ With the rapid development of Multi-modal Large Language Models (MLLMs), a numbe
 - Stage1 training:
     - Download [UMT-L/16](https://pjlab-gvm-data.oss-cn-shanghai.aliyuncs.com/videochat2/l16_25m.pth) model and set `pretrained` in [stage1_config](/mnt/petrelfs/likunchang/code/mvchat/scripts/config_7b_stage1.py)
     ```shell
-    bash scripts/run_7b_stage1.sh
+    bash scripts/videochat_vicuna/run_7b_stage1.sh
     ```
 - Stage2 training:
-    - Set `vit_blip_model_path` and `llama_model_path` in [stage2_config](scripts/config_7b_stage2.py)
+    - Set `vit_blip_model_path` and `llama_model_path` in [vicuna_stage2_config](scripts/videochat_vicuna/config_7b_stage2.py), or `mistral_model_path` in [mistral_stage2_config](scripts/videochat_mistral/config_7b_stage2.py)
     - For VideoBLIP, you can download Stage1 [model](https://pjlab-gvm-data.oss-cn-shanghai.aliyuncs.com/videochat2/umt_l16_qformer.pth)
-    - For LLM, please follow [here](https://github.com/OpenGVLab/Ask-Anything/tree/main/video_chat#running-usage) to prepare vicuna-7b-v0
+    - For LLM, please follow [here](https://github.com/OpenGVLab/Ask-Anything/tree/main/video_chat#running-usage) to prepare vicuna-7b-v0. Or directly download [Mistral-7B-Instruct-v0.2](https://huggingface.co/mistralai/Mistral-7B-Instruct-v0.2).
     ```shell
-    bash scripts/run_7b_stage2.sh
+    # Vicuna
+    bash scripts/videochat_vicuna/run_7b_stage2.sh
+    # Mistral
+    bash scripts/videochat_mistral/run_7b_stage2.sh
     ```
 - Stage3 training:
     - Download [instruction data](./DATA.md) and set `data_dir` in [instruction_data.py](configs/instruction_data.py)
-    - Set `vit_blip_model_path`, `llama_model_path` and `videochat2_model_path` in [stage3_config](scripts/config_7b_stage3.py)
-    - You can download Stage2 [model](videochat2_model_path) and create instruction data for your own tuning
+    - Set `vit_blip_model_path`, `llama_model_path` and `videochat2_model_path` in [vicuna_stage3_config](scripts/videochat_vicuna/config_7b_stage3.py) or [mistral_stage3_config](scripts/videochat_mistral/config_7b_stage3.py)
+    - You can download Stage2 model and create instruction data for your own tuning
     ```shell
-    bash scripts/run_7b_stage3.sh
+    # Vicuna
+    bash scripts/videochat_vicuna/run_7b_stage3.sh
+    # Mistral
+    bash scripts/videochat_mistral/run_7b_stage3.sh
     ```
 
 - Runing demo:
-    - Jupyter Notebook: [demo.ipynb](demo.ipynb)
+    - Jupyter Notebook: [demo.ipynb](demo/demo.ipynb)
     - Gradio:
     ```shell
-    # Set the related model path in configs/config.json and demo.py
-    python demo.py
+    # Set the related model path in configs/config.json and demo/demo.py
+    python demo/demo.py
     ```
 
 - Evaluation:
-    - **MVBench**: [mvbench.ipynb](mvbench.ipynb)
+    - **MVBench**: [mvbench.ipynb](mvbench.ipynb). The script is used for Vicuna, and for Mistral, please follow [demo_mistral.ipynb](demo/demo_mistral.ipynb) to change the script.
     - For VideoChatGPT Benchmark, we follow the original [repo](https://github.com/mbzuai-oryx/Video-ChatGPT/tree/main/quantitative_evaluation) and use ChatGPT-3.5 to evalute the performances.
     - For NExT-QA, STAR and TVQA, we follow [SeViLA](https://github.com/Yui010206/SeViLA/blob/main/sevila_data/Data%20Preprocess.ipynb) to prepare the data. And we simple modify [mvbench.ipynb](mvbench.ipynb) and directly output the options to calculate the accuracy.
 

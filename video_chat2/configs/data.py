@@ -55,6 +55,11 @@ available_corpus["msrvtt_1k_test"] = [
     "video",
 ]
 
+available_corpus["webvid10m_cc3m"] = [
+    available_corpus["webvid_10m"],
+    available_corpus["cc3m"],
+]
+
 available_corpus["webvid10m_cc14m"] = [
     available_corpus["webvid_10m"],
     available_corpus["cc3m"],
