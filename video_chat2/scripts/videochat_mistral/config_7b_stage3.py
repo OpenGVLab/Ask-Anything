@@ -1,7 +1,7 @@
 from configs.instruction_data import *
 
 # ========================= data ==========================
-train_corpus = "videochat2_instruction"
+train_corpus = "videochat2_instruction_new"
 train_file = "${available_corpus[${train_corpus}]}"  # for lazy evaluation
 test_file = dict()
 test_types = []

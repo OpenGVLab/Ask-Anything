@@ -15,8 +15,6 @@
 [![Dataset meta](https://img.shields.io/badge/%F0%9F%A4%97%20Leaderboard-MVBench-blue)](https://huggingface.co/spaces/OpenGVLab/MVBench_Leaderboard) 
 
 
-
-[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/mvbench-a-comprehensive-multi-modal-video/zero-shot-video-question-answer-on-intentqa)](https://paperswithcode.com/sota/zero-shot-video-question-answer-on-intentqa?p=mvbench-a-comprehensive-multi-modal-video)
 [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/mvbench-a-comprehensive-multi-modal-video/zero-shot-video-question-answer-on-egoschema-1)](https://paperswithcode.com/sota/zero-shot-video-question-answer-on-egoschema-1?p=mvbench-a-comprehensive-multi-modal-video)
 [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/mvbench-a-comprehensive-multi-modal-video/zero-shot-video-question-answer-on-egoschema)](https://paperswithcode.com/sota/zero-shot-video-question-answer-on-egoschema?p=mvbench-a-comprehensive-multi-modal-video)
 [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/mvbench-a-comprehensive-multi-modal-video/video-question-answering-on-next-qa)](https://paperswithcode.com/sota/video-question-answering-on-next-qa?p=mvbench-a-comprehensive-multi-modal-video)
@@ -38,7 +36,7 @@
 With the rapid development of Multi-modal Large Language Models (MLLMs), a number of diagnostic benchmarks have recently emerged to evaluate the comprehension capabilities of these models. However, most benchmarks predominantly assess spatial understanding in the static image tasks, while overlooking temporal understanding in the dynamic video tasks. To alleviate this issue, we introduce a comprehensive **M**ulti-modal **V**ideo understanding **Bench**mark, namely **MVBench**, which covers **20** challenging video tasks that cannot be effectively solved with a single frame. Specifically, we first introduce a novel static-to-dynamic method to define these temporal-related tasks. By transforming various static tasks into dynamic ones, we enable the systematic generation of video tasks that require a broad spectrum of temporal skills, ranging from perception to cognition. Then, guided by the task definition, we automatically convert public video annotations into multiple-choice QA to evaluate each task. On one hand, such a distinct paradigm allows us to build MVBench efficiently, without much manual intervention. On the other hand, it guarantees evaluation fairness with ground-truth video annotations, avoiding the biased scoring of LLMs. Moreover, we further develop a robust video MLLM baseline, i.e., **VideoChat2**, by progressive multi-modal training with diverse instruction-tuning data. The extensive results on our MVBench reveal that, the existing MLLMs are far from satisfactory in temporal understanding, while our **VideoChat2** largely surpasses these leading models by over **15%** on MVBench.
 
 ## :fire: Updates
-- **2024/05/22**: :loudspeaker: We release **VideoChat2_mistral**, which shows better capacity on diverse tasks (**60.4% on MVBench, 78.6% on NExT-QA, 63.8% on STAR, 46.4% on TVQA, 54.4% on EgoSchema-full and 80.5% on IntentQA**). Have a try! 🏃🏻‍♀️🏃🏻
+- **2024/05/22**: :loudspeaker: We release **VideoChat2_mistral**, which shows better capacity on diverse tasks (**60.4% on MVBench, 78.6% on NExT-QA, 63.8% on STAR, 46.4% on TVQA, 54.4% on EgoSchema-full and 80.5% on IntentQA**). More details will be updated in the paper. Have a try! 🏃🏻‍♀️🏃🏻
 - **2024/04/05**: MVBench is selected as Poster (**Highlight**)! 🎉🎉
 - **2024/02/27**: MVBench is accepted by CVPR2024! 🎉🎉
 - **2023/12/17**: Online Leaderboard:
@@ -82,7 +80,7 @@ With the rapid development of Multi-modal Large Language Models (MLLMs), a numbe
         <th>TVQA<br>(zero-shot)</th>
         <th>EgoSchema<br>(full)</th>
         <th>EgoSchema<br>(subset)</th>
-        <th>IntentQA<br>(zero-shot)</th>
+        <th>IntentQA<br>(in domain)</th>
     </tr>
     <tr align="center">
         <th>VideoChat2<br>(Vicuna)</th>
@@ -112,7 +110,7 @@ With the rapid development of Multi-modal Large Language Models (MLLMs), a numbe
 > - For **VideoChatGPT**, the VideoChat2_mistral is evaluated based on `gpt-3.5-turbo-0125`, while the VideoChat2_vicuna used `gpt-3.5-turbo-1106`.
 > - For **NExT-QA**, we report in-domain results since the training set are used as instruction data.
 > - For **STAR**, we input 32 frames, but we input 16 frames for other datasets.
-> - For **IntentQA**, we report the result on validation split, and the result on testing is slighlty better.
+> - For **IntentQA**, we report the result on validation split, and the result on testing is slighlty better (81.9\%).
 
 
 #### [Instruction Data](./DATA.md)

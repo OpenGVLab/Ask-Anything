@@ -10,6 +10,10 @@ available_corpus = dict(
         f"{anno_root_it}/image/caption/coco/train.json", 
         "your_data_path/coco_caption",
     ],
+    caption_coco_100k=[
+        f"{anno_root_it}/image/caption/coco/train_100k.json", 
+        "your_data_path/coco_caption",
+    ],
     caption_llava=[
         f"{anno_root_it}/image/caption/llava/train.json", 
         "your_data_path/coco_caption",
@@ -102,9 +106,19 @@ available_corpus = dict(
         "your_data_path/WebVid2M",
         "video"
     ],
+    caption_webvid_80k=[
+        f"{anno_root_it}/video/caption/webvid/train_80k.json", 
+        "your_data_path/WebVid2M",
+        "video"
+    ],
     caption_youcook2=[
         f"{anno_root_it}/video/caption/youcook2/train.json", 
         "your_data_path/youcook2/split_videos",
+        "video"
+    ],
+    caption_smit=[
+        f"{anno_root_it}/video/caption/s_mit/train.json", 
+        "your_data_path/S-MiT",
         "video"
     ],
     classification_k710=[
@@ -170,7 +184,6 @@ available_corpus = dict(
 )
 
 
-# add mc for clevrer_qa
 available_corpus["videochat2_instruction"] = [
     available_corpus["caption_coco"],
     available_corpus["caption_llava"],
@@ -209,3 +222,46 @@ available_corpus["videochat2_instruction"] = [
     available_corpus["vqa_tgif_transition_qa"],
     available_corpus["vqa_webvid_qa"],
 ]
+
+
+# add smit
+available_corpus["videochat2_instruction_new"] = [
+    available_corpus["caption_coco_100k"],
+    available_corpus["caption_llava"],
+    available_corpus["caption_minigpt4"],
+    available_corpus["caption_paragraph_captioning"],
+    available_corpus["caption_textcaps"],
+    available_corpus["classification_imagenet"],
+    available_corpus["classification_coco_itm"],
+    available_corpus["conversation_llava"],
+    available_corpus["reasoning_clevr"],
+    available_corpus["reasoning_visual_mrc"],
+    available_corpus["reasoning_llava"],
+    available_corpus["vqa_vqav2"],
+    available_corpus["vqa_gqa"],
+    available_corpus["vqa_okvqa"],
+    available_corpus["vqa_a_okvqa"],
+    available_corpus["vqa_viquae"],
+    available_corpus["vqa_ocr_vqa"],
+    available_corpus["vqa_text_vqa"],
+    available_corpus["vqa_st_vqa"],
+    available_corpus["vqa_docvqa"],
+    available_corpus["caption_textvr"],
+    available_corpus["caption_videochat"],
+    available_corpus["caption_webvid_80k"],
+    available_corpus["caption_youcook2"],
+    available_corpus["caption_smit"],
+    available_corpus["classification_k710"],
+    available_corpus["classification_ssv2"],
+    available_corpus["conversation_videochat1"],
+    available_corpus["conversation_videochat2"],
+    available_corpus["conversation_videochatgpt"],
+    available_corpus["reasoning_next_qa"],
+    available_corpus["reasoning_clevrer_qa"],
+    available_corpus["reasoning_clevrer_mc"],
+    available_corpus["vqa_ego_qa"],
+    available_corpus["vqa_tgif_frame_qa"],
+    available_corpus["vqa_tgif_transition_qa"],
+    available_corpus["vqa_webvid_qa"],
+]
+
