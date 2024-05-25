@@ -5,7 +5,7 @@
 ![images](./assert/data.png)
 
 ## Annotations
-A comprehensive dataset of **1.9M** data annotations is available in [JSON](https://huggingface.co/datasets/OpenGVLab/VideoChat2-IT) format. Due to the extensive size of the full data, we provide only JSON files [here](https://huggingface.co/datasets/OpenGVLab/VideoChat2-IT). For corresponding images and videos, please follow our instructions.
+A comprehensive dataset of **2M** data annotations is available in [JSON](https://huggingface.co/datasets/OpenGVLab/VideoChat2-IT) format. Due to the extensive size of the full data, we provide only JSON files [here](https://huggingface.co/datasets/OpenGVLab/VideoChat2-IT). For corresponding images and videos, please follow our instructions.
 
 ## Source data
 
