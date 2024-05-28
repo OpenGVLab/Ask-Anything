@@ -15,6 +15,8 @@
 [![Dataset meta](https://img.shields.io/badge/%F0%9F%A4%97%20Leaderboard-MVBench-blue)](https://huggingface.co/spaces/OpenGVLab/MVBench_Leaderboard) 
 
 
+	
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/mvbench-a-comprehensive-multi-modal-video/video-question-answering-on-intentqa)](https://paperswithcode.com/sota/video-question-answering-on-intentqa?p=mvbench-a-comprehensive-multi-modal-video)
 [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/mvbench-a-comprehensive-multi-modal-video/zero-shot-video-question-answer-on-egoschema-1)](https://paperswithcode.com/sota/zero-shot-video-question-answer-on-egoschema-1?p=mvbench-a-comprehensive-multi-modal-video)
 [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/mvbench-a-comprehensive-multi-modal-video/zero-shot-video-question-answer-on-egoschema)](https://paperswithcode.com/sota/zero-shot-video-question-answer-on-egoschema?p=mvbench-a-comprehensive-multi-modal-video)
 [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/mvbench-a-comprehensive-multi-modal-video/video-question-answering-on-next-qa)](https://paperswithcode.com/sota/video-question-answering-on-next-qa?p=mvbench-a-comprehensive-multi-modal-video)
