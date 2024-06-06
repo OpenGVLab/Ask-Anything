@@ -12,7 +12,7 @@ stop_key = None
 # ========================= input ==========================
 num_frames = 4
 num_frames_test = 4
-batch_size = 16
+batch_size = 20
 max_txt_l = 32
 
 pre_text = False
@@ -33,9 +33,9 @@ inputs = dict(
 
 # ========================= model ==========================
 model = dict(
-    model_cls="VideoChat2_pt_mistral",
+    model_cls="VideoChat2_it_phi",
     vit_blip_model_path="your_model_path/videochat2/umt_l16_qformer.pth",
-    mistral_model_path="your_model_path/llm/Mistral-7B-Instruct-v0.2",
+    mistral_model_path="your_model_path/llm/Phi-3-mini-128k-instruct",
     gpt_model_path="",
     freeze_vit=False,
     freeze_qformer=False,
@@ -61,9 +61,9 @@ model = dict(
     # prompt
     prompt_path="prompts/concise_description.txt",
     img_prompt_path="prompts/concise_image_description.txt",
-    prompt_template="[INST] {} [/INST]",
+    prompt_template="<|user|>\n{}<|end|>\n<|assistant|>\n",
     max_txt_len="${max_txt_l}", # use large max_txt_len on stage2
-    end_sym="</s>",
+    end_sym="<|end|>",
     # qformers
     num_query_token=32,
     qformer_hidden_dropout_prob=0.1,
