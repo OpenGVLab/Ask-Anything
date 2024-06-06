@@ -113,7 +113,7 @@ We build a diver instruction data with **2M** samples from 34 distince sources. 
     <tr align="center">
         <th>VideoChat2<br>(Phi3)</th>
         <td>55.1</td>
-        <td>-</td>
+        <td>2.91</td>
         <td>73.1</td>
         <td>63.3</td>
         <td>40.1</td>
@@ -124,7 +124,7 @@ We build a diver instruction data with **2M** samples from 34 distince sources. 
 </table>
 </div>
 
-> - For **VideoChatGPT**, the VideoChat2_mistral is evaluated based on `gpt-3.5-turbo-0125`, while the VideoChat2_vicuna used `gpt-3.5-turbo-1106`.
+> - For **VideoChatGPT**, the VideoChat2_mistral and VideoChat2_phi3 are evaluated based on `gpt-3.5-turbo-0125`, while the VideoChat2_vicuna used `gpt-3.5-turbo-1106`.
 > - For **NExT-QA**, we report in-domain results since the training set are used as instruction data.
 > - For **STAR**, we input 32 frames, but we input 16 frames for other datasets.
 > - For **IntentQA**, we report the result on validation split, and the result on testing is slighlty better (81.9\%).
