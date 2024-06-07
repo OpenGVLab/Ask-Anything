@@ -152,7 +152,7 @@ We build a diver instruction data with **2M** samples from 34 distince sources. 
 </table>
 </div>
 
-> - (2024/06/07) For **Video-MME**, our current version has some missing videos and subtitles, see [issue]()
+> - (2024/06/07) For **Video-MME**, our current version has some missing videos and subtitles, see [issue](https://github.com/BradyFU/Video-MME/issues/7)
 >   - Missing videos: Short (2), Medium (3), Long (11)
 >   - Missing subtitles: Short (93), Medium (52), Long (10)
 > - For **VideoChatGPT**, the VideoChat2_mistral and VideoChat2_phi3 are evaluated based on `gpt-3.5-turbo-0125`, while the VideoChat2_vicuna used `gpt-3.5-turbo-1106`.
