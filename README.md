@@ -58,8 +58,9 @@ Your browser does not support the video tag.
 
 
 # :fire: Updates
-- **2024/06/06**: :loudspeaker: We release **VideoChat2_phi3**, a faster model with robust performaces. 
-- **2024/05/22**: :loudspeaker: We release **VideoChat2_mistral**, which shows better capacity on diverse tasks (**60.4% on MVBench, 78.6% on NExT-QA, 63.8% on STAR, 46.4% on TVQA, 54.4% on EgoSchema-full and 80.5% on IntentQA**). More details have been updated in the paper. Have a try! 🏃🏻‍♀️🏃🏻
+- **2024/06/07**: :fire::fire::fire: We release **VideoChat2_HD**, which is fine-tuned with high-resolution data and is capable of handling more diverse tasks. It showcases better performance on different benchmarks, especially for detailed captioning. Furthermore, it achieves **54.8% on [Video-MME](https://github.com/BradyFU/Video-MME/tree/main)**, the best score among 7B MLLMs. Have a try! 🏃🏻‍♀️🏃🏻
+- **2024/06/06**: We release **VideoChat2_phi3**, a faster model with robust performaces. 
+- **2024/05/22**: We release **VideoChat2_mistral**, which shows better capacity on diverse tasks (**60.4% on MVBench, 78.6% on NExT-QA, 63.8% on STAR, 46.4% on TVQA, 54.4% on EgoSchema-full and 80.5% on IntentQA**). More details have been updated in the paper. 
 - 2024/04/05 MVBench is selected as Poster (**Highlight**)!
 - 2024/2/27 [MVBench](./video_chat2) is accepted by CVPR2024.
 - 2023/11/29 VideoChat2 and MVBench are released.

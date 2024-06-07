@@ -6,15 +6,23 @@ from torchvision.transforms import InterpolationMode
 from dataset.dataloader import MetaLoader
 from dataset.pt_dataset import PTImgTrainDataset, PTVidTrainDataset, PTImgEvalDataset, PTVidEvalDataset
 from dataset.it_dataset import ITImgTrainDataset, ITVidTrainDataset
-from dataset.it_dataset_mistral import ITImgTrainDataset_mistral, ITVidTrainDataset_mistral
+from dataset.it_dataset_mistral import (
+    ITImgTrainDataset_mistral, 
+    ITVidTrainDataset_mistral,
+    ITTextTrainDataset_mistral,
+)
 from dataset.it_dataset_phi import ITImgTrainDataset_phi, ITVidTrainDataset_phi
+
+import logging
+
+logger = logging.getLogger(__name__)
 
 
 def get_media_type(dataset_config):
-    if len(dataset_config) == 3 and dataset_config[2] == "video":
+    if len(dataset_config) >= 3 and dataset_config[2] == "video":
         return "video"
-    elif dataset_config[-1] == "only_video":
-        return "only_video"
+    elif len(dataset_config) >= 3 and dataset_config[2] == "text":
+        return "text"
     else:
         return "image"
 
@@ -48,19 +56,28 @@ def create_dataset(dataset_type, config):
     else:
         aug_transform = transforms.Lambda(lambda x: x)
 
-    train_transform = transforms.Compose(
-        [
-            aug_transform,
-            transforms.RandomResizedCrop(
-                config.inputs.image_res,
-                scale=(0.5, 1.0),
-                interpolation=InterpolationMode.BICUBIC,
-            ),
-            transforms.RandomHorizontalFlip(),
-            type_transform,
-            normalize,
-        ]
-    )
+    if config.model.get('dynamic_config', None):
+        logger.info("No training augmentation when finetuning with dynamic resolution.")
+        train_transform = transforms.Compose(
+            [
+                type_transform,
+                normalize,
+            ]
+        )
+    else:
+        train_transform = transforms.Compose(
+            [
+                aug_transform,
+                transforms.RandomResizedCrop(
+                    config.inputs.image_res,
+                    scale=(0.5, 1.0),
+                    interpolation=InterpolationMode.BICUBIC,
+                ),
+                transforms.RandomHorizontalFlip(),
+                type_transform,
+                normalize,
+            ]
+        )
     test_transform = transforms.Compose(
         [
             transforms.Resize(
@@ -167,7 +184,14 @@ def create_dataset(dataset_type, config):
 
         train_datasets = []
         for m in train_media_types:
-            dataset_cls = ITImgTrainDataset_mistral if m == "image" else ITVidTrainDataset_mistral
+            if m == "image":
+                dataset_cls = ITImgTrainDataset_mistral
+            elif m == "video":
+                dataset_cls = ITVidTrainDataset_mistral
+            elif m == "text":
+                dataset_cls = ITTextTrainDataset_mistral
+            else:
+                raise NotImplementedError
             # dataset of the same media_type will be mixed in a single Dataset object
             _train_files = [e for e in train_files if get_media_type(e) == m]
 
@@ -179,6 +203,7 @@ def create_dataset(dataset_type, config):
                     system=config.model.get("system", ""),
                     start_token=config.model.get("img_start_token", "<Image>"), 
                     end_token=config.model.get("img_end_token", "</Image>"),
+                    dynamic_config=config.model.get("dynamic_config", None),
                 )
                 if m == "video":
                     video_only_dataset_kwargs_train.update({

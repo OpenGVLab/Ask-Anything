@@ -75,7 +75,6 @@ model = dict(
     img_start_token="<Image>", 
     img_end_token="</Image>",
     random_shuffle=True, 
-    return_question_instruction=False,
     use_flash_attention=True,
     use_lora=True,
     lora_r=16,

@@ -4,6 +4,7 @@ import random
 from torch.utils.data import Dataset
 
 from dataset.utils import load_image_from_path
+from dataset.hd_utils import HD_transform_padding, HD_transform_no_padding
 
 try:
     from petrel_client.client import Client
@@ -20,7 +21,7 @@ class ImageVideoBaseDataset(Dataset):
     media_type = "video"
 
     def __init__(self):
-        assert self.media_type in ["image", "video", "only_video"]
+        assert self.media_type in ["image", "video", "text"]
         self.data_root = None
         self.anno_list = (
             None  # list(dict), each dict contains {"image": str, # image or video path}
@@ -66,7 +67,7 @@ class ImageVideoBaseDataset(Dataset):
         image = self.transform(image)
         return image, index
 
-    def load_and_transform_media_data_video(self, index, data_path, return_fps=False, clip=None):
+    def load_and_transform_media_data_video(self, index, data_path, return_fps=False, clip=None, dynamic_config=None):
         for _ in range(self.num_tries):
             try:
                 max_num_frames = self.max_num_frames if hasattr(self, "max_num_frames") else -1
@@ -83,10 +84,23 @@ class ImageVideoBaseDataset(Dataset):
                 ann = self.get_anno(index)
                 data_path = ann["image"]
                 continue
+
+            if dynamic_config:
+                local_size = dynamic_config["local_size"]
+                hd_num = dynamic_config["hd_num"]
+                padding = dynamic_config["padding"]
+                if padding:
+                    frames = HD_transform_padding(frames.float(), image_size=local_size, hd_num=hd_num)
+                else:
+                    frames = HD_transform_no_padding(frames.float(), image_size=local_size, hd_num=hd_num)
+
             # shared aug for video frames
             frames = self.transform(frames)
             if return_fps:
-                sec = [str(round(f / fps, 1)) for f in frame_indices]
+                if fps == None:
+                    sec = None
+                else:
+                    sec = [str(round(f / fps, 1)) for f in frame_indices]
                 return frames, index, sec
             else:
                 return frames, index

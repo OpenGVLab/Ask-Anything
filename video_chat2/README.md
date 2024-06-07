@@ -37,8 +37,9 @@
 ![images](./assert/mvbench_poster.jpg)
 
 ## :fire: Updates
-- **2024/06/06**: :loudspeaker: We release **VideoChat2_phi3**, a faster model with robust performaces. 
-- **2024/05/22**: :loudspeaker: We release **VideoChat2_mistral**, which shows better capacity on diverse tasks (**60.4% on MVBench, 78.6% on NExT-QA, 63.8% on STAR, 46.4% on TVQA, 54.4% on EgoSchema-full and 80.5% on IntentQA**). More details have been updated in the paper. Have a try! 🏃🏻‍♀️🏃🏻
+- **2024/06/07**: :fire::fire::fire: We release **VideoChat2_HD**, which is fine-tuned with high-resolution data and is capable of handling more diverse tasks. It showcases better performance on different benchmarks, especially for detailed captioning. Furthermore, it achieves **54.8% on [Video-MME](https://github.com/BradyFU/Video-MME/tree/main)**, the best score among 7B MLLMs. Have a try! 🏃🏻‍♀️🏃🏻
+- **2024/06/06**: We release **VideoChat2_phi3**, a faster model with robust performaces. 
+- **2024/05/22**: We release **VideoChat2_mistral**, which shows better capacity on diverse tasks (**60.4% on MVBench, 78.6% on NExT-QA, 63.8% on STAR, 46.4% on TVQA, 54.4% on EgoSchema-full and 80.5% on IntentQA**). More details have been updated in the paper. 
 - **2024/04/05**: MVBench is selected as Poster (**Highlight**)! 🎉🎉
 - **2024/02/27**: MVBench is accepted by CVPR2024! 🎉🎉
 - **2023/12/17**: Online Leaderboard:
@@ -67,11 +68,12 @@ We build a diver instruction data with **2M** samples from 34 distince sources. 
 
 #### Model
 
-|        | ViT | QFormer | LLM | LoRA | shell (Vicuna) | Model (Vicuna) | shell (Mistral) | Model (Mistral) | shell (Phi3) | Model (Phi3) |
+|        | ViT | QFormer | LLM | LoRA | Shell (Vicuna) | Model (Vicuna) | Shell (Mistral) | Model (Mistral) | Shell (Phi3) | Model (Phi3) |
 |--------|:-------:|:------:|:------:|:------:|:------:|:------:| :------:| :------:| :------:| :------:|
 | Stage1 | :snowflake: | :fire: | :no_entry_sign: | :no_entry_sign: | [config](./scripts/videochat_vicuna/config_7b_stage1.py) & [run]((./scripts/videochat_vicuna/run_7b_stage1.sh)) | [ckpt](https://pjlab-gvm-data.oss-cn-shanghai.aliyuncs.com/videochat2/umt_l16_qformer.pth) | SAME | SMAE | SAME | SMAE |
 | Stage2 | :fire: | :fire: | :snowflake: | :no_entry_sign: | [config](./scripts/videochat_vicuna/config_7b_stage2.py) & [run]((./scripts/videochat_vicuna/run_7b_stage2.sh)) | [ckpt](https://pjlab-gvm-data.oss-cn-shanghai.aliyuncs.com/videochat2/videochat2_7b_stage2.pth) | [config](./scripts/videochat_mistral/config_7b_stage2.py) & [run]((./scripts/videochat_mistral/run_7b_stage2.sh)) | :hugs:[ckpt](https://huggingface.co/OpenGVLab/VideoChat2_stage2_Mistral_7B) | [config](./scripts/videochat_phi/config_7b_stage2.py) & [run]((./scripts/videochat_phi/run_7b_stage2.sh)) | :hugs:[ckpt](https://huggingface.co/OpenGVLab/VideoChat2_stage2_Phi3) |
 | Stage3 | :fire: | :fire: | :snowflake:| :fire: | [config](./scripts/videochat_vicuna/config_7b_stage3.py) & [run](./scripts/videochat_vicuna/run_7b_stage3.sh) | [ckpt](https://pjlab-gvm-data.oss-cn-shanghai.aliyuncs.com/videochat2/videochat2_7b_stage3.pth) | [config](./scripts/videochat_mistral/config_7b_stage3.py) & [run](./scripts/videochat_mistral/run_7b_stage3.sh) | :hugs:[ckpt](https://huggingface.co/OpenGVLab/VideoChat2_stage3_Mistral_7B) | [config](./scripts/videochat_phi/config_7b_stage3.py) & [run]((./scripts/videochat_phi/run_7b_stage3.sh)) | :hugs:[ckpt](https://huggingface.co/OpenGVLab/VideoChat2_stage3_Phi3) |
+| Stage4_**HD** | :fire: | :fire: | :snowflake:| :fire: | - | - | [config](./scripts/videochat_mistral/config_7b_stage4.py) & [run](./scripts/videochat_mistral/run_7b_hd_stage4.sh) | :hugs:[ckpt](https://huggingface.co/OpenGVLab/VideoChat2_HD_stage4_Mistral_7B) | - | - |
 
 ### Results
 
@@ -80,17 +82,22 @@ We build a diver instruction data with **2M** samples from 34 distince sources. 
     <tr align="center">
         <th>Model</th>
         <th>MVBench</th>
+        <th>Video-MME</th>
+        <th>Video-MME<br>w/ subtitles</th>
         <th>Video<br>ChatGPT</th>
-        <th>NExT-QA<br>(in domain)</th>
+        <th>NExT-QA<br>(in-domain)</th>
         <th>STAR<br>(zero-shot)</th>
         <th>TVQA<br>(zero-shot)</th>
         <th>EgoSchema<br>(full)</th>
         <th>EgoSchema<br>(subset)</th>
-        <th>IntentQA<br>(in domain)</th>
+        <th>IntentQA<br>(in-domain Val)</th>
+        <th>IntentQA<br>(in-domain Test)</th>
     </tr>
     <tr align="center">
         <th>VideoChat2<br>(Vicuna)</th>
         <td>51.1</td>
+        <td>-</td>
+        <td>-</td>
         <td>2.98</td>
         <td>68.6</td>
         <td>59.0</td>
@@ -98,10 +105,27 @@ We build a diver instruction data with **2M** samples from 34 distince sources. 
         <td>-</td>
         <td>-</td>
         <td>-</td>
+        <td>-</td>
+    </tr>
+    <tr align="center">
+        <th>VideoChat2<br>(Phi3)</th>
+        <td>55.1</td>
+        <td>-</td>
+        <td>-</td>
+        <td>2.91</td>
+        <td>73.1</td>
+        <td>63.3</td>
+        <td>40.1</td>
+        <th>56.7</th>
+        <td>59.8</td>
+        <td>69.0</td>
+        <td>71.6</td>
     </tr>
     <tr align="center">
         <th>VideoChat2<br>(Mistral)</th>
         <td>60.4</td>
+        <td>42.3</td>
+        <td>54.6</td>
         <td>2.95</td>
         <td>78.6</td>
         <td>63.8</td>
@@ -109,25 +133,32 @@ We build a diver instruction data with **2M** samples from 34 distince sources. 
         <td>54.4</td>
         <td>63.6</td>
         <td>80.5</td>
+        <td>81.9</td>
     </tr>
     <tr align="center">
-        <th>VideoChat2<br>(Phi3)</th>
-        <td>55.1</td>
-        <td>2.91</td>
-        <td>73.1</td>
-        <td>63.3</td>
-        <td>40.1</td>
-        <td>56.7</td>
-        <td>59.8</td>
-        <td>69.0</td>
+        <th><span style="color: #ff0000;">VideoChat2_HD</span><br>(Mistral)</th>
+        <th>62.3</th>
+        <th>45.3</th>
+        <th>55.7</th>
+        <th>3.10</td>
+        <th>79.5</th>
+        <th>63.9</th>
+        <th>50.6</th>
+        <td>55.8</td>
+        <th>65.6</th>
+        <th>81.1</th>
+        <th>83.4</th>
     </tr>
 </table>
 </div>
 
+> - (2024/06/07) For **Video-MME**, our current version has some missing videos and subtitles, see [issue]()
+>   - Missing videos: Short (2), Medium (3), Long (11)
+>   - Missing subtitles: Short (93), Medium (52), Long (10)
 > - For **VideoChatGPT**, the VideoChat2_mistral and VideoChat2_phi3 are evaluated based on `gpt-3.5-turbo-0125`, while the VideoChat2_vicuna used `gpt-3.5-turbo-1106`.
 > - For **NExT-QA**, we report in-domain results since the training set are used as instruction data.
 > - For **STAR**, we input 32 frames, but we input 16 frames for other datasets.
-> - For **IntentQA**, we report the result on validation split, and the result on testing is slighlty better (81.9\%).
+> - For **IntentQA**, we report the result on validation and testing splits.
 
 
 #### Usage

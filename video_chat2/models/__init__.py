@@ -5,3 +5,7 @@ from .videochat_vicuna.videochat2_it_vicuna import VideoChat2_it_vicuna
 
 from .videochat_mistra.videochat2_pt_mistral import VideoChat2_pt_mistral
 from .videochat_mistra.videochat2_it_mistral import VideoChat2_it_mistral
+from .videochat_mistra.videochat2_it_hd_mistral import VideoChat2_it_hd_mistral
+
+from .videochat_phi.videochat2_pt_phi import VideoChat2_pt_phi
+from .videochat_phi.videochat2_it_phi import VideoChat2_it_phi

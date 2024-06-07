@@ -1,7 +1,7 @@
 from configs.instruction_data import *
 
 # ========================= data ==========================
-train_corpus = "videochat2_instruction_new"
+train_corpus = "videochat2_instruction_hd"
 train_file = "${available_corpus[${train_corpus}]}"  # for lazy evaluation
 test_file = dict()
 test_types = []
@@ -12,7 +12,7 @@ stop_key = None
 # ========================= input ==========================
 num_frames = 8
 num_frames_test = 8
-batch_size = 8
+batch_size = 3
 max_txt_l = 512
 
 pre_text = False
@@ -26,17 +26,17 @@ inputs = dict(
         sample_type_test="middle",
         random_aug=False,
     ),
-    max_txt_l=dict(image="${max_txt_l}", video="${max_txt_l}"),
-    batch_size=dict(image="${batch_size}", video="${batch_size}"),
-    batch_size_test=dict(image="${batch_size}", video="${batch_size}"),
+    max_txt_l=dict(image="${max_txt_l}", video="${max_txt_l}", text="${max_txt_l}"),
+    batch_size=dict(image="${batch_size}", video="${batch_size}", text="${batch_size}"),
+    batch_size_test=dict(image="${batch_size}", video="${batch_size}", text="${batch_size}"),
 )
 
 # ========================= model ==========================
 model = dict(
-    model_cls="VideoChat2_it_phi",
+    model_cls="VideoChat2_it_hd_mistral",
     vit_blip_model_path="your_model_path/videochat2/umt_l16_qformer.pth",
-    mistral_model_path="your_model_path/llm//Phi-3-mini-128k-instruct",
-    videochat2_model_path="your_model_path/videochat2/videochat2_phi3_stage2.pth",
+    mistral_model_path="your_model_path/llm//Mistral-7B-Instruct-v0.2",
+    videochat2_model_path="your_model_path/videochat2/videochat2_mistral_7b_stage3.pth",
     freeze_vit=False,
     freeze_qformer=False,
     max_txt_len="${max_txt_l}", # use large max_txt_len on stage3
@@ -54,7 +54,7 @@ model = dict(
         num_frames="${num_frames}",
         tubelet_size=1,
         use_checkpoint=True,
-        checkpoint_num=18,
+        checkpoint_num=24,
         pretrained="",
         return_index=-2,
         vit_add_ln=True,
@@ -75,17 +75,25 @@ model = dict(
     img_start_token="<Image>", 
     img_end_token="</Image>",
     random_shuffle=True, 
+    return_question_instruction=False,
     use_flash_attention=True,
     use_lora=True,
     lora_r=16,
     lora_alpha=32,
     lora_dropout=0.1,
+    # dynamic resolution
+    dynamic_config=dict(
+        local_size=224,
+        hd_num=6,
+        padding=False,
+        add_global=True,
+    ),
     # debug=True,
 )
 
 optimizer = dict(
     opt="adamW",
-    lr=2e-5,
+    lr=1e-5,
     opt_betas=[0.9, 0.999],  # default
     weight_decay=0.02,
     max_grad_norm=-1,  # requires a positive float, use -1 to disable
@@ -93,7 +101,7 @@ optimizer = dict(
     different_lr=dict(enable=False, module_names=[], lr=1e-3),
 )
 
-scheduler = dict(sched="cosine", epochs=3, min_lr_multi=0.25, warmup_epochs=0.6)
+scheduler = dict(sched="cosine", epochs=1, min_lr_multi=0.01, warmup_epochs=0.)
 
 evaluate = False
 deep_fusion = False
@@ -124,6 +132,12 @@ debug = False
 log_freq = 10
 seed = 42
 
+save_iter = 0
 save_latest = True
 auto_resume = True
 pretrained_path = ""  # path to pretrained model weights, for resume only?
+
+deepspeed = dict(
+    enable=True,
+    stage=1,
+)
