@@ -3,7 +3,8 @@ from torch.utils.data import ConcatDataset, DataLoader
 from torchvision import transforms
 from torchvision.transforms import InterpolationMode
 
-from dataset.dataloader import MetaLoader
+from dataset.sampler import StatefulDistributedSampler
+from dataset.dataloader import MetaLoader, MetaLoader_rs
 from dataset.pt_dataset import PTImgTrainDataset, PTVidTrainDataset, PTImgEvalDataset, PTVidEvalDataset
 from dataset.it_dataset import ITImgTrainDataset, ITVidTrainDataset
 from dataset.it_dataset_mistral import (
@@ -291,6 +292,13 @@ def create_dataset(dataset_type, config):
             test_datasets.append(test_dataset_cls(**dataset_kwargs))
         return test_datasets, test_dataset_names
 
+
+def create_stateful_sampler(datasets, batch_size):
+    samplers = []
+    for dataset, bs in zip(datasets, batch_size):
+        sampler = StatefulDistributedSampler(dataset, batch_size=bs)
+        samplers.append(sampler)
+    return samplers
 
 
 def create_sampler(datasets, shuffles, num_tasks, global_rank):
