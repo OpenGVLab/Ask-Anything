@@ -58,6 +58,9 @@ Your browser does not support the video tag.
 
 
 # :fire: Updates
+- **2024/06/13**: Fix some bug and give testing scripts/
+    - :warning: We replace some repeated  (~30) QAs in MVBench, which may only affect the results by 0.5%.
+    - :loudspeaker: We give the scripts for testing [EgoSchema](https://github.com/egoschema/EgoSchema/tree/main) and [Video-MME](https://github.com/BradyFU/Video-MME/tree/main), please check the [demo_mistral.ipynb](./video_chat2/demo/demo_mistral.ipynb) and [demo_mistral_hd.ipynb](./video_chat2/demo/demo_mistral_hd.ipynb).
 - **2024/06/07**: :fire::fire::fire: We release **VideoChat2_HD**, which is fine-tuned with high-resolution data and is capable of handling more diverse tasks. It showcases better performance on different benchmarks, especially for detailed captioning. Furthermore, it achieves **54.8% on [Video-MME](https://github.com/BradyFU/Video-MME/tree/main)**, the best score among 7B MLLMs. Have a try! 🏃🏻‍♀️🏃🏻
 - **2024/06/06**: We release **VideoChat2_phi3**, a faster model with robust performaces. 
 - **2024/05/22**: We release **VideoChat2_mistral**, which shows better capacity on diverse tasks (**60.4% on MVBench, 78.6% on NExT-QA, 63.8% on STAR, 46.4% on TVQA, 54.4% on EgoSchema-full and 80.5% on IntentQA**). More details have been updated in the paper. 
