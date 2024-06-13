@@ -84,7 +84,7 @@ def create_optimizer_params_group(named_param_tuples_with_lr):
     return optimizer_params_group
 
 
-def create_optimizer(args, model, filter_bias_and_bn=True):
+def create_optimizer(args, model, filter_bias_and_bn=True, return_group=False):
     opt_lower = args.opt.lower()
     weight_decay = args.weight_decay
     # check for modules that requires different lr
@@ -103,6 +103,9 @@ def create_optimizer(args, model, filter_bias_and_bn=True):
     named_param_tuples = add_different_lr(
         named_param_tuples, diff_lr_module_names, diff_lr, args.lr)
     parameters = create_optimizer_params_group(named_param_tuples)
+
+    if return_group:
+        return parameters
 
     if 'fused' in opt_lower:
         assert has_apex and torch.cuda.is_available(), 'APEX and CUDA required for fused optimizers'
