@@ -99,6 +99,7 @@ class Config(object):
             cfg_from_file = cls.from_file(args.config_file)
             cfg = merge_a_into_b(cfg_from_file, cfg)
         cfg = cls.merge_list(cfg, args.opts)
+        
         cfg = eval_dict_leaf(cfg)
 
         # update some keys to make them show at the last
@@ -181,6 +182,7 @@ class Config(object):
         Returns: dict.
 
         """
+        # print(opts)
         assert len(opts) % 2 == 0, f"length of opts must be even. Got: {opts}"
         for i in range(0, len(opts), 2):
             full_k, v = opts[i], opts[i + 1]

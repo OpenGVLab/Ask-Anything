@@ -1,9 +1,9 @@
 {
   "model": {
     "model_cls": "VideoChat2_it",
-    "vit_blip_model_path": "your_model_path/umt_l16_qformer.pth",
-    "llama_model_path": "your_model_path/vicuna-7b-v0",
-    "videochat2_model_path": "your_model_path/videochat2_7b_stage2.pth",
+    "vit_blip_model_path": "/mnt/petrelfs/yanziang/Ask-Anything/video_chat2/ckpts/umt_l16_qformer.pth",
+    "llama_model_path": "/mnt/petrelfs/yanziang/Ask-Anything/video_chat2/ckpts/vicuna-7b-v0",
+    "videochat2_model_path": "/mnt/petrelfs/yanziang/Ask-Anything/video_chat2/ckpts/videochat2_7b_stage2.pth",
     "freeze_vit": false,
     "freeze_qformer": false,
     "max_txt_len": 512,
@@ -43,5 +43,6 @@
     "lora_alpha": 32,
     "lora_dropout": 0.1
   },
-  "device": "cuda"
+  "device": "cuda",
+  "merged_language_model_path": "/mnt/petrelfs/yanziang/vllm2/videochat2/vicuna"
 }

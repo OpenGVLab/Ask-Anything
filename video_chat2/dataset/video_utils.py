@@ -132,7 +132,7 @@ def read_frames_gif(
 
 
 def read_frames_decord(
-        video_path, num_frames, sample='rand', fix_start=None, 
+        video_path, num_frames=-1, sample='rand', fix_start=None, 
         max_num_frames=-1, client=None, clip=None
     ):
     if video_path.startswith('s3') or video_path.startswith('p2'):
@@ -141,6 +141,7 @@ def read_frames_decord(
     else:
         video_reader = VideoReader(video_path, num_threads=1)
     vlen = len(video_reader)
+
     fps = video_reader.get_avg_fps()
     duration = vlen / float(fps)
 
@@ -149,7 +150,8 @@ def read_frames_decord(
         duration = end - start
         vlen = int(duration * fps)
         start_index = int(start * fps)
-
+    if(num_frames == -1):
+        num_frames = vlen
     frame_indices = get_frame_indices(
         num_frames, vlen, sample=sample, fix_start=fix_start,
         input_fps=fps, max_num_frames=max_num_frames

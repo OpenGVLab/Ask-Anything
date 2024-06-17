@@ -423,6 +423,7 @@ def build_vit(config):
     model.default_cfg = _cfg()
     if config.vision_encoder.pretrained:
         logger.info(f"Loading pretrained weights from {config.vision_encoder.pretrained}")
+        
         state_dict = torch.load(config.vision_encoder.pretrained, map_location='cpu')
         model.load_state_dict(state_dict, strict=False)
     else:
