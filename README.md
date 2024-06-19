@@ -58,6 +58,7 @@ Your browser does not support the video tag.
 
 
 # :fire: Updates
+- **2024/06/19**: 🎉🎉 Our VideoChat2 achieves the best performances among the open-sourced VideoLLMs on [MLVU](https://github.com/FlagOpen/FlagEmbedding/tree/master/MLVU), a multi-task long video understanding benchmark.
 - **2024/06/13**: Fix some bug and give testing scripts/
     - :warning: We replace some repeated  (~30) QAs in MVBench, which may only affect the results by 0.5%.
     - :loudspeaker: We give the scripts for testing [EgoSchema](https://github.com/egoschema/EgoSchema/tree/main) and [Video-MME](https://github.com/BradyFU/Video-MME/tree/main), please check the [demo_mistral.ipynb](./video_chat2/demo/demo_mistral.ipynb) and [demo_mistral_hd.ipynb](./video_chat2/demo/demo_mistral_hd.ipynb).
