@@ -36,6 +36,7 @@
 ![images](./assert/mvbench_poster.jpg)
 
 ## :fire: Updates
+- **2024/06/29**: The instruction data for VideoChat2_HD is updated in [VideoChat2-IT](https://huggingface.co/datasets/OpenGVLab/VideoChat2-IT), which is helpful for more detailed and accurate responses.
 - **2024/06/19**: 🎉🎉 Our VideoChat2 achieves the best performances among the open-sourced VideoLLMs on [MLVU](https://github.com/JUNJIE99/MLVU), a multi-task long video understanding benchmark.
 - **2024/06/13**: Fix some bug and give testing scripts/
     - :warning: We replace some repeated  (~30) QAs in MVBench, which may only affect the results by 0.5%.
