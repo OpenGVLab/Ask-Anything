@@ -58,6 +58,7 @@ Your browser does not support the video tag.
 
 
 # :fire: Updates
+- **2024/06/25**: We release the [branch of videochat2 using `vllm`](https://github.com/OpenGVLab/Ask-Anything/tree/vllm), speed up the inference of videochat2.
 - **2024/06/19**: 🎉🎉 Our VideoChat2 achieves the best performances among the open-sourced VideoLLMs on [MLVU](https://github.com/JUNJIE99/MLVU), a multi-task long video understanding benchmark.
 - **2024/06/13**: Fix some bug and give testing scripts/
     - :warning: We replace some repeated  (~30) QAs in MVBench, which may only affect the results by 0.5%.
