@@ -44,7 +44,7 @@ Please follow the instrction in [MiniGPT-4](https://github.com/Vision-CAIR/MiniG
         python3 -m fastchat.model.apply_delta \
         --base /path/to/llama-13b \
         --target /output/path/to/vicuna-13b \
-        --delta lmsys/vicuna-13b-delta-v1.0
+        --delta lmsys/vicuna-13b-delta-v0
     ```
     - Change the `llama_model` in [minigpt4.yaml](./minigpt4/configs/models/minigpt4.yaml).
 - Download [MiniGPT-4](https://github.com/Vision-CAIR/MiniGPT-4) model:
