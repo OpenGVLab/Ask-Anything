@@ -24,7 +24,7 @@
 <a src="https://img.shields.io/badge/Video%20Chat2%20(vChat2%207B)-Open-green?logo=alibabacloud" href="https://vchat.opengvlab.com">
     <img src="https://img.shields.io/badge/Video%20Chat2%20(vChat2%207B)-Open-green?logo=alibabacloud"> [VideoChat2-7B]End2End ChatBOT for video and image.
 <!--<br>    
-    <a src="https://img.shields.io/badge/Video%20Chat%20with%20ChatGPT-Open-green?logo=alibabacloud" href="https://ask.opengvlab.com">
+    <a src="https://img.shields.io/badge/Video%20Chat%20with%20ChatGPT-Open-green?logo=alibabacloud" href="https://vchat.opengvlab.com">
     <img src="https://img.shields.io/badge/Video%20Chat%20with%20ChatGPT-Open-green?logo=alibabacloud">  Explicit communication with ChatGPT.  </a>
 </a> -->
 
@@ -47,7 +47,7 @@ Your browser does not support the video tag.
 </video>
 
 
-# :movie_camera: [\[Communication with ChatGPT\]](https://ask.opengvlab.com)
+# :movie_camera: [\[Communication with ChatGPT\]](https://vchat.opengvlab.com)
 
 https://user-images.githubusercontent.com/24236723/233630363-b20304ab-763b-40e5-b526-e2a6b9e9cae2.mp4
 
@@ -87,7 +87,7 @@ Your browser does not support the video tag.
   - [VideoChat with StableLM](./video_chat_with_StableLM/): Explicit communication with StableLM. 
 
 - 2023/04/19: Code release & Online Demo
-  - [VideoChat with ChatGPT](./video_chat_with_ChatGPT): Explicit communication with ChatGPT. Sensitive with time. [demo is available!](https://ask.opengvlab.com)
+  - [VideoChat with ChatGPT](./video_chat_with_ChatGPT): Explicit communication with ChatGPT. Sensitive with time. 
   - [MiniGPT-4 for video](./video_miniGPT4/): Implicit communication with Vicuna. Not sensitive with time. (Simple extension of [MiniGPT-4](https://github.com/Vision-CAIR/MiniGPT-4), which will be improved in the future.)
 
 
