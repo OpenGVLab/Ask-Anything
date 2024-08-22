@@ -7,7 +7,8 @@ from conversation import Chat
 # videochat
 from utils.config import Config
 from utils.easydict import EasyDict
-from models.videochat2_it import VideoChat2_it
+# from models.videochat2_it import VideoChat2_it
+from models import VideoChat2_it_vicuna as VideoChat2_it
 from peft import get_peft_model, LoraConfig, TaskType
 
 
