@@ -11,6 +11,7 @@ JOB_NAME='stage3'
 OUTPUT_DIR="$(dirname $0)/$JOB_NAME"
 PARTITION='video'
 NNODE=4
+NUM_GPUS=8
 NUM_CPU=128
 
 srun -p ${PARTITION} \
