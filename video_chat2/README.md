@@ -175,13 +175,13 @@ We build a diver instruction data with **2M** samples from 34 distince sources. 
     pip install -r requirements.txt
     ```
 - Stage1 training:
-    - Download [UMT-L/16](https://pjlab-gvm-data.oss-cn-shanghai.aliyuncs.com/videochat2/l16_25m.pth) model and set `pretrained` in [stage1_config](/mnt/petrelfs/likunchang/code/mvchat/scripts/config_7b_stage1.py)
+    - Download [UMT-L/16](https://huggingface.co/OpenGVLab/videochat2/resolve/main/l16_25m.pth) model and set `pretrained` in [stage1_config](scripts/videochat_vicuna/config_7b_stage1.py)
     ```shell
     bash scripts/videochat_vicuna/run_7b_stage1.sh
     ```
 - Stage2 training:
     - Set `vit_blip_model_path` and `llama_model_path` in [vicuna_stage2_config](scripts/videochat_vicuna/config_7b_stage2.py), or `mistral_model_path` in [mistral_stage2_config](scripts/videochat_mistral/config_7b_stage2.py)
-    - For VideoBLIP, you can download Stage1 [model](https://pjlab-gvm-data.oss-cn-shanghai.aliyuncs.com/videochat2/umt_l16_qformer.pth)
+    - For VideoBLIP, you can download Stage1 [model](https://huggingface.co/OpenGVLab/videochat/resolve/main/umt_l16_qformer.pth)
     - For LLM, please follow [here](https://github.com/OpenGVLab/Ask-Anything/tree/main/video_chat#running-usage) to prepare vicuna-7b-v0. Or directly download [Mistral-7B-Instruct-v0.2](https://huggingface.co/mistralai/Mistral-7B-Instruct-v0.2).
     ```shell
     # Vicuna
