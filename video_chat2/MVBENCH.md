@@ -1,10 +1,10 @@
 # MVBench
 
-![images](./assert/generation.png)
+![images](./asset/generation.png)
 
 We introduce a novel static-to-dynamic method for defining temporal-related tasks. By converting static tasks into dynamic ones, we facilitate systematic generation of video tasks necessitating a wide range of temporal abilities, from perception to cognition. Guided by task definitions, we then **automatically transform public video annotations into multiple-choice QA** for task evaluation. This unique paradigm enables efficient creation of MVBench with minimal manual intervention while ensuring evaluation fairness through ground-truth video annotations and avoiding biased LLM scoring. The **20** temporal task examples are as follows.
 
-![images](./assert/task_example.png)
+![images](./asset/task_example.png)
 
 ## :fire: Download
 
@@ -21,4 +21,4 @@ An evaluation example is provided in [mvbench.ipynb](mvbench.ipynb). Please foll
 
 While an [Online leaderboard]() is under construction, the current standings are as follows:
 
-![images](./assert/leaderboard.png)
+![images](./asset/leaderboard.png)

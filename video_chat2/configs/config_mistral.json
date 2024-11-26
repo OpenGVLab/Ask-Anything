@@ -1,9 +1,9 @@
 {
   "model": {
     "model_cls": "VideoChat2_it_mistral",
-    "vit_blip_model_path": "your_model_path/videochat2/umt_l16_qformer.pth",
-    "mistral_model_path": "your_model_path/llm//Mistral-7B-Instruct-v0.2",
-    "videochat2_model_path": "your_model_path/videochat2/videochat2_mistral_7b_stage2.pth",
+    "vit_blip_model_path": "/mnt/hwfile/internvideo/share_data/oss/videochat2/videochat/umt_l16_qformer.pth",
+    "mistral_model_path": "/mnt/hwfile/llm-safety/models/Mistral-7B-Instruct-v0.2/",
+    "videochat2_model_path": "/mnt/hwfile/internvideo/share_data/oss/videochat2/videochat2_mistral_7b_stage2.pth",
     "freeze_vit": false,
     "freeze_qformer": false,
     "max_txt_len": 512,

@@ -1,6 +1,6 @@
 # 🦜 VideoChat [[论文](https://arxiv.org/abs/2305.06355)/[demo](https://vchat.opengvlab.com/)]
 
-![images](assert/framework_cn.png)
+![images](asset/framework_cn.png)
 
 我们提出了VideoChat，一个以聊天为中心的视频理解系统，开展了探索性的视频理解研究。
 它通过一个可学习的接口将视频预训练模型和大语言模型结合在一起，擅长于空间-时间推理、事件定位和因果关系推断。
@@ -41,7 +41,7 @@
 </b>
 </div>
 <div align="center">
-<img src="assert/comparison.png" width="90%">
+<img src="asset/comparison.png" width="90%">
 </div>
 
 
@@ -51,7 +51,7 @@
   </font>
 </div>
 <div align="center">
-<img src="assert/humor.png" width="50%">
+<img src="asset/humor.png" width="50%">
 </div>
 
 <div align="center">
@@ -60,7 +60,7 @@
   </font>
 </div>
 <div align="center">
-<img src="assert/spatial.png" width="50%">
+<img src="asset/spatial.png" width="50%">
 </div>
 
 <div align="center">
@@ -69,7 +69,7 @@
   </font>
 </div>
 <div align="center">
-<img src="assert/temporal.png" width="50%">
+<img src="asset/temporal.png" width="50%">
 </div>
 
 <div align="center">
@@ -78,7 +78,7 @@
   </font>
 </div>
 <div align="center">
-<img src="assert/multi_turn.png" width="50%">
+<img src="asset/multi_turn.png" width="50%">
 </div>
 
 <div align="center">
@@ -87,7 +87,7 @@
   </font>
 </div>
 <div align="center">
-<img src="assert/image.png" width="100%">
+<img src="asset/image.png" width="100%">
 </div>
   
 ## :running: 使用方法

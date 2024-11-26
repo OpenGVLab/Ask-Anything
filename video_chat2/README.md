@@ -33,7 +33,7 @@
 [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/mvbench-a-comprehensive-multi-modal-video/video-based-generative-performance-5)](https://paperswithcode.com/sota/video-based-generative-performance-5?p=mvbench-a-comprehensive-multi-modal-video)
 [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/mvbench-a-comprehensive-multi-modal-video/video-based-generative-performance-4)](https://paperswithcode.com/sota/video-based-generative-performance-4?p=mvbench-a-comprehensive-multi-modal-video)
 
-![images](./assert/mvbench_poster.jpg)
+![images](./asset/mvbench_poster.jpg)
 
 ## :fire: Updates
 - **2024/06/29**: The instruction data for VideoChat2_HD is updated in [VideoChat2-IT](https://huggingface.co/datasets/OpenGVLab/VideoChat2-IT), which is helpful for more detailed and accurate responses.
@@ -64,7 +64,7 @@
 
 ### Progressive Training
 
-![images](./assert/training.png)
+![images](./asset/training.png)
 **Stage1** aligns UMT-L, the visual encoder, with QFormer to efficiently compress extensive visual inputs. **Stage2** extends this connection to incorporate LLM, while **Stage3** focuses on effective instruction tuning to enhance model performance.
 
 #### [Instruction Data](./DATA.md)
@@ -79,6 +79,10 @@ We build a diver instruction data with **2M** samples from 34 distince sources. 
 | Stage2 | :fire: | :fire: | :snowflake: | :no_entry_sign: | [config](./scripts/videochat_vicuna/config_7b_stage2.py) & [run]((./scripts/videochat_vicuna/run_7b_stage2.sh)) | :hugs:[ckpt](https://huggingface.co/OpenGVLab/videochat/resolve/main/videochat2_7b_stage2.pth) | [config](./scripts/videochat_mistral/config_7b_stage2.py) & [run]((./scripts/videochat_mistral/run_7b_stage2.sh)) | :hugs:[ckpt](https://huggingface.co/OpenGVLab/VideoChat2_stage2_Mistral_7B) | [config](./scripts/videochat_phi/config_7b_stage2.py) & [run]((./scripts/videochat_phi/run_7b_stage2.sh)) | :hugs:[ckpt](https://huggingface.co/OpenGVLab/VideoChat2_stage2_Phi3) |
 | Stage3 | :fire: | :fire: | :snowflake:| :fire: | [config](./scripts/videochat_vicuna/config_7b_stage3.py) & [run](./scripts/videochat_vicuna/run_7b_stage3.sh) | :hugs:[ckpt](https://huggingface.co/OpenGVLab/videochat/resolve/main/videochat2_7b_stage3.pth) | [config](./scripts/videochat_mistral/config_7b_stage3.py) & [run](./scripts/videochat_mistral/run_7b_stage3.sh) | :hugs:[ckpt](https://huggingface.co/OpenGVLab/VideoChat2_stage3_Mistral_7B) | [config](./scripts/videochat_phi/config_7b_stage3.py) & [run]((./scripts/videochat_phi/run_7b_stage3.sh)) | :hugs:[ckpt](https://huggingface.co/OpenGVLab/VideoChat2_stage3_Phi3) |
 | Stage4_**HD** | :fire: | :fire: | :snowflake:| :fire: | - | - | [config](./scripts/videochat_mistral/config_7b_stage4.py) & [run](./scripts/videochat_mistral/run_7b_hd_stage4.sh) | :hugs:[ckpt](https://huggingface.co/OpenGVLab/VideoChat2_HD_stage4_Mistral_7B) | - | - |
+
+### Inference
+
+You can refer to [demo.ipynb](https://huggingface.co/OpenGVLab/VideoChat2_HD_stage4_Mistral_7B_hf/blob/main/vc2_hd_hf.ipynb)
 
 ### Results
 
@@ -167,7 +171,7 @@ We build a diver instruction data with **2M** samples from 34 distince sources. 
 > - For testing [EgoSchema](https://github.com/egoschema/EgoSchema/tree/main) and [Video-MME](https://github.com/BradyFU/Video-MME/tree/main), please check the [demo_mistral.ipynb](./demo/demo_mistral.ipynb) and [demo_mistral_hd.ipynb](./demo/demo_mistral_hd.ipynb).
 
 
-#### Usage
+#### Training
 - Prepare the envirment:
     ```shell
     conda create -n videochat2 python=3.9
