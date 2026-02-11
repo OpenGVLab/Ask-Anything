@@ -296,7 +296,12 @@ class VideoChat2_it_vicuna(Blip2Base):
         attention_mask = torch.zeros([batch_size, txt_len], dtype=torch.long).to(img_embeds.device)
         targets = torch.ones([batch_size, txt_len], dtype=torch.long).to(img_embeds.device).fill_(-100)
         # set bos_token
-        inputs_embeds[:, :1] = self.llama_tokenizer.bos_token_id
+        bos_token_id = torch.tensor([[self.llama_tokenizer.bos_token_id]], device=inputs_embeds.device)
+        if self.use_lora:
+            bos_embeds = self.llama_model.base_model.model.model.embed_tokens(bos_token_id)
+        else:
+            bos_embeds = self.llama_model.model.embed_tokens(bos_token_id)
+        inputs_embeds[:, :1] = bos_embeds
         for idx in range(batch_size):
             input_len = min(input_embed_list[idx].shape[1], txt_len - 1)
             # if less than txt_len, the input will be padding
