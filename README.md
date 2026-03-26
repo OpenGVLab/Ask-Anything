@@ -69,6 +69,7 @@ https://user-images.githubusercontent.com/24236723/233631602-6a69d83c-83ef-41ed-
 ### Build video chat with:
 * [End2End](https://github.com/OpenGVLab/Ask-Anything/tree/main/video_chat#running-usage)
 * [ChatGPT](https://github.com/OpenGVLab/Ask-Anything/tree/main/video_chat_text/video_chat_with_ChatGPT#running-usage)
+* [MiniMax](https://github.com/OpenGVLab/Ask-Anything/tree/main/video_chat_with_ChatGPT#using-minimax-as-llm-provider) — Use MiniMax M2.7 as an alternative LLM provider
 * [StableLM](https://github.com/OpenGVLab/Ask-Anything/tree/main/video_chat_text/video_chat_with_StableLM#running-usage)
 * [MOSS](https://github.com/OpenGVLab/Ask-Anything/tree/main/video_chat_text/video_chat_with_MOSS#running-usage)
 * [MiniGPT-4](https://github.com/OpenGVLab/Ask-Anything/tree/main/video_chat_text/video_miniGPT4#running-usage)

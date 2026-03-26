@@ -40,12 +40,29 @@ cd ./pretrained_models/flan-t5-large-finetuned-openai-summarize_from_feedback
 git lfs pull  
 cd ../..  
   
-# Configure the necessary ChatGPT APIs  
-export OPENAI_API_KEY={Your_Private_Openai_Key}  
-  
-# Run the VideoChat gradio demo.  
-python app.py  
+# Configure the necessary ChatGPT APIs
+export OPENAI_API_KEY={Your_Private_Openai_Key}
+
+# Run the VideoChat gradio demo.
+python app.py
 ```
+
+## Using MiniMax as LLM Provider
+
+You can use [MiniMax](https://www.minimaxi.com) as an alternative LLM provider instead of OpenAI. MiniMax offers the MiniMax-M2.7 model via an OpenAI-compatible API.
+
+```shell
+# Set your MiniMax API key
+export MINIMAX_API_KEY={Your_MiniMax_API_Key}
+
+# Optionally set the default provider via environment variable
+export LLM_PROVIDER=minimax
+
+# Run the demo
+python app.py
+```
+
+You can also select the LLM provider from the **LLM Provider** dropdown in the Gradio UI at runtime.
 
 # Acknowledgement
 

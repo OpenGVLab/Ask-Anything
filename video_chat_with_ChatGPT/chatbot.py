@@ -2,9 +2,63 @@ from langchain.agents.initialize import initialize_agent
 from langchain.agents.tools import Tool
 from langchain.chains.conversation.memory import ConversationBufferMemory
 from langchain.llms.openai import OpenAI
+from langchain.chat_models import ChatOpenAI
+import os
 import re
 import gradio as gr
 import openai
+
+# Supported LLM providers and their default models
+LLM_PROVIDERS = {
+    "openai": {
+        "default_model": "gpt-4",
+        "api_base": None,  # uses default OpenAI endpoint
+    },
+    "minimax": {
+        "default_model": "MiniMax-M2.7",
+        "api_base": "https://api.minimax.io/v1",
+    },
+}
+
+
+def create_llm(provider, api_key, model_name=None, temperature=0):
+    """Create an LLM instance based on the selected provider.
+
+    Args:
+        provider: LLM provider name ("openai" or "minimax").
+        api_key: API key for the chosen provider.
+        model_name: Model name override.  Uses provider default when None.
+        temperature: Sampling temperature.
+
+    Returns:
+        A LangChain LLM or ChatModel instance.
+    """
+    provider = provider.lower()
+    if provider not in LLM_PROVIDERS:
+        raise ValueError(
+            f"Unsupported provider '{provider}'. "
+            f"Supported: {list(LLM_PROVIDERS.keys())}"
+        )
+
+    cfg = LLM_PROVIDERS[provider]
+    model = model_name or cfg["default_model"]
+
+    if provider == "minimax":
+        # MiniMax requires temperature in (0.0, 1.0]
+        temperature = max(0.01, min(temperature, 1.0))
+        return ChatOpenAI(
+            model_name=model,
+            openai_api_key=api_key,
+            openai_api_base=cfg["api_base"],
+            temperature=temperature,
+        )
+
+    # Default: OpenAI
+    return OpenAI(
+        temperature=temperature,
+        openai_api_key=api_key,
+        model_name=model,
+    )
 
 
 def cut_dialogue_history(history_memory, keep_last_n_words=400):
@@ -32,14 +86,14 @@ class ConversationBot:
         self.agent.memory.buffer = cut_dialogue_history(self.agent.memory.buffer, keep_last_n_words=500)
         res = self.agent({"input": text.strip()})
         res['output'] = res['output'].replace("\\", "/")
-        response = res['output'] 
+        response = res['output']
         state = state + [(text, response)]
         print(f"\nProcessed run_text, Input text: {text}\nCurrent state: {state}\n"
               f"Current Memory: {self.agent.memory.buffer}")
         return state, state
 
 
-    def init_agent(self, openai_api_key, image_caption, dense_caption, video_caption, tags, state):
+    def init_agent(self, api_key, image_caption, dense_caption, video_caption, tags, state, provider="openai"):
         chat_history =''
         PREFIX = "ChatVideo is a chatbot that chats with you based on video descriptions."
         FORMAT_INSTRUCTIONS = """
@@ -65,10 +119,18 @@ class ConversationBot:
                 {agent_scratchpad}
                 """
         self.memory.clear()
-        if not openai_api_key.startswith('sk-'):
-            return gr.update(visible = False),state, state, "Please paste your key here !"
-        self.llm = OpenAI(temperature=0, openai_api_key=openai_api_key,model_name="gpt-4")
-        # openai.api_base = 'https://api.openai-proxy.com/v1/'  
+
+        # Resolve provider from argument or environment
+        provider = (provider or os.environ.get("LLM_PROVIDER", "openai")).lower()
+
+        if not api_key or not api_key.strip():
+            return gr.update(visible=False), state, state, "Please paste your API key!"
+
+        # Provider-specific API key validation
+        if provider == "openai" and not api_key.startswith("sk-"):
+            return gr.update(visible=False), state, state, "Please paste your OpenAI key (sk-...)!"
+
+        self.llm = create_llm(provider=provider, api_key=api_key)
         self.agent = initialize_agent(
             self.tools,
             self.llm,
@@ -78,7 +140,7 @@ class ConversationBot:
             return_intermediate_steps=True,
             agent_kwargs={'prefix': PREFIX, 'format_instructions': FORMAT_INSTRUCTIONS, 'suffix': SUFFIX}, )
         state = state + [("I upload a video, Please watch it first! ","I have watch this video, Let's chat!")]
-        return gr.update(visible = True),state, state, openai_api_key
+        return gr.update(visible = True),state, state, api_key
 
 if __name__=="__main__":
     import pdb
