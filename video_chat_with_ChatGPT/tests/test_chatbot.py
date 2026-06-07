@@ -73,7 +73,7 @@ class TestLLMProviders:
         assert LLM_PROVIDERS["minimax"]["api_base"] == "https://api.minimax.io/v1"
 
     def test_minimax_default_model(self):
-        assert LLM_PROVIDERS["minimax"]["default_model"] == "MiniMax-M2.7"
+        assert LLM_PROVIDERS["minimax"]["default_model"] == "MiniMax-M3"
 
     def test_openai_default_model(self):
         assert LLM_PROVIDERS["openai"]["default_model"] == "gpt-4"
@@ -102,7 +102,7 @@ class TestCreateLLM:
         mock_chat.return_value = MagicMock()
         llm = create_llm("minimax", "mm-key-abc")
         mock_chat.assert_called_once_with(
-            model_name="MiniMax-M2.7",
+            model_name="MiniMax-M3",
             openai_api_key="mm-key-abc",
             openai_api_base="https://api.minimax.io/v1",
             temperature=0.01,

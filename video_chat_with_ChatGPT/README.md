@@ -49,7 +49,7 @@ python app.py
 
 ## Using MiniMax as LLM Provider
 
-You can use [MiniMax](https://www.minimaxi.com) as an alternative LLM provider instead of OpenAI. MiniMax offers the MiniMax-M2.7 model via an OpenAI-compatible API.
+You can use [MiniMax](https://www.minimaxi.com) as an alternative LLM provider instead of OpenAI. MiniMax offers the MiniMax-M3 model (default, 512K context with up to 128K output) via an OpenAI-compatible API. The previous MiniMax-M2.7 and MiniMax-M2.7-highspeed models remain available.
 
 ```shell
 # Set your MiniMax API key

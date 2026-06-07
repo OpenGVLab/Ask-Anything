@@ -15,7 +15,7 @@ LLM_PROVIDERS = {
         "api_base": None,  # uses default OpenAI endpoint
     },
     "minimax": {
-        "default_model": "MiniMax-M2.7",
+        "default_model": "MiniMax-M3",
         "api_base": "https://api.minimax.io/v1",
     },
 }
